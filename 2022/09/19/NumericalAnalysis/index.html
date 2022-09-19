@@ -667,12 +667,12 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h1 id="��΢�ַ������"><a href="#��΢�ַ������" class="headerlink" title="��΢�ַ������"></a>��΢�ַ������</h1><p>�΢�ַ���<br>$$<br>\begin{cases}<br>y’&#x3D;f(x, y)\<br>y_0&#x3D;y(x_0)<br>\end{cases}<br>$$</p>
-<h2 id="y����"><a href="#y����" class="headerlink" title="ŷ����"></a>ŷ����</h2><p>�õ�ǰ�ݶ���Ϊ�����ı仯�ʽ��е���, ����$h&#x3D;x_{n+1}-x_n$, ���Ȳ���</p>
+        <h1 id="常微分方程求解"><a href="#常微分方程求解" class="headerlink" title="常微分方程求解"></a>常微分方程求解</h1><p>令常微分方程<br>$$<br>\begin{cases}<br>y’&#x3D;f(x, y)\<br>y_0&#x3D;y(x_0)<br>\end{cases}<br>$$</p>
+<h2 id="欧拉法"><a href="#欧拉法" class="headerlink" title="欧拉法"></a>欧拉法</h2><p>用当前梯度作为函数的变化率进行迭代, 步长$h&#x3D;x_{n+1}-x_n$, 精度不高</p>
 <p>$$y_{n+1}&#x3D;y_n+hf(x_n, y_n)$$  </p>
-<h2 id="���η�"><a href="#���η�" class="headerlink" title="���η�"></a>���η�</h2><p>�õ�ǰ���������һ�������ƽ��ֵ��Ϊһ�ε����ı仯��<br>$$y_{n+1}&#x3D;y_n+\frac h2(f(x_n, y_n)+f(x_{n+1}, y_{n+1}))$$</p>
-<h2 id="�L�y����"><a href="#�L�y����" class="headerlink" title="�Ľ�ŷ����"></a>�Ľ�ŷ����</h2><p>�����η���, $y_{n+1}$��δ֪�ģ��޷�ֱ�������k, ���Ҫ������ŷ����ʽ���<br>$$\bar{y}<em>{n+1}&#x3D;y_n+hf(x_n, y_n)$$<br>�ٴ������η��У��õ�$y</em>{n+1}&#x3D;y_n+\frac h2(f(x_n, y_n)+f(x_{n+1}, \bar{y}_{n+1}))$</p>
-<h2 id="���������"><a href="#���������" class="headerlink" title="���������"></a>���������</h2><p>��������������ֵ������$\frac{y_{n+1}-y_n}h&#x3D;y’(x_h+\theta h)$, ����$0&lt;\theta&lt;1$������Եõ�$y_{n+1}$�ľ�ȷ��$y_{n+1}&#x3D;y_n+hf(x_n+\theta h, y(x_n+\theta h))$, ֮ǰ��ŷ�������η������Ա�ʾΪ��������ʽ��ֻ��$\theta$��ȡֵ��ͬ<br>��ƽ��б��$\bar{K}&#x3D;f(x_n+\theta h, y(x_n+\theta h))$, ��һ�ε�����ȡ$n$����Ϊ$n$�������������<br>�������Ľ��������������<br>$$<br>RK4&#x3D;<br>\begin{cases}<br>K_1&#x3D;f(x_n, y_n)\<br>K_2&#x3D;f(x_{n+\frac12}, y_n+\frac h2K_1)\<br>K_3&#x3D;f(x_{n+\frac12}, y_n+\frac h2K_2)\<br>K_4&#x3D;f(x_{n+1}, y_n+hK_3)\<br>y_{n+1}&#x3D;y_n+\frac h6 (K_1+2K_2+2K_3+K_4)<br>\end{cases}\<br>$$<br>����<br>$$\begin{cases}<br>x_{n+1}&#x3D;x_n+h\<br>x_{n+\frac12}&#x3D;x_n+\frac<br>12h\<br>y’&#x3D;f(x_n, y_n)<br>\end{cases}\<br>$$</p>
+<h2 id="梯形法"><a href="#梯形法" class="headerlink" title="梯形法"></a>梯形法</h2><p>用当前迭代点跟下一迭代点的平均值作为一次迭代的变化率<br>$$y_{n+1}&#x3D;y_n+\frac h2(f(x_n, y_n)+f(x_{n+1}, y_{n+1}))$$</p>
+<h2 id="改进欧拉法"><a href="#改进欧拉法" class="headerlink" title="改进欧拉法"></a>改进欧拉法</h2><p>在梯形法中, $y_{n+1}$是未知的，无法直接求出来k, 因此要先利用欧拉公式求出<br>$$\bar{y}<em>{n+1}&#x3D;y_n+hf(x_n, y_n)$$<br>再带入梯形法中，得到$y</em>{n+1}&#x3D;y_n+\frac h2(f(x_n, y_n)+f(x_{n+1}, \bar{y}_{n+1}))$</p>
+<h2 id="龙格库塔法"><a href="#龙格库塔法" class="headerlink" title="龙格库塔法"></a>龙格库塔法</h2><p>根据拉格朗日中值定理，$\frac{y_{n+1}-y_n}h&#x3D;y’(x_h+\theta h)$, 其中$0&lt;\theta&lt;1$，则可以得到$y_{n+1}$的精确解$y_{n+1}&#x3D;y_n+hf(x_n+\theta h, y(x_n+\theta h))$, 之前的欧拉法梯形法都可以表示为这样的形式，只是$\theta$的取值不同<br>令平均斜率$\bar{K}&#x3D;f(x_n+\theta h, y(x_n+\theta h))$, 在一次迭代中取$n$个点为$n$阶龙格库塔方法<br>这里以四阶龙格库塔法举例<br>$$<br>RK4&#x3D;<br>\begin{cases}<br>K_1&#x3D;f(x_n, y_n)\<br>K_2&#x3D;f(x_{n+\frac12}, y_n+\frac h2K_1)\<br>K_3&#x3D;f(x_{n+\frac12}, y_n+\frac h2K_2)\<br>K_4&#x3D;f(x_{n+1}, y_n+hK_3)\<br>y_{n+1}&#x3D;y_n+\frac h6 (K_1+2K_2+2K_3+K_4)<br>\end{cases}\<br>$$<br>其中<br>$$\begin{cases}<br>x_{n+1}&#x3D;x_n+h\<br>x_{n+\frac12}&#x3D;x_n+\frac<br>12h\<br>y’&#x3D;f(x_n, y_n)<br>\end{cases}\<br>$$</p>
 
       </div>
       <div class="post-tags-categories">
@@ -710,15 +710,15 @@
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/1.jpg" class="lazyload placeholder" data-srcset="/medias/1.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/7.jpg" class="lazyload placeholder" data-srcset="/medias/7.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
     </div>
-    <a href="/2022/09/19/AutoODE-COVID/" class="post-nav-link">
+    <a href="/2022/09/01/hello-world/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text"></div>
+        <div class="title-text">Hello World</div>
       </div>
       <!-- <div class="content">
-        AutoODE-COVID1. ����ģ�Ͷ�����ɹ۲����$y\in \R^d$�����ɹ۲����$u\i
+        Welcome to Hexo! This is your very first post. Check documen
       </div> -->
     </a>
   </div>
