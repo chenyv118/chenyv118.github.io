@@ -708,9 +708,13 @@ E(w)&=\frac12\sum_c\sum_j(y_{j, c}-d_{j, c})^2\\
 \end{equation}</script><p>其中$\varepsilon$的作用是放缩一次迭代的长度，称作步长。在这里我们将步长设定为一个常量，称为固定步长的梯度下降法。固定步长的优点是执行起来很简单，同时可以进行并行计算保证效率。<br>我们对固定步长的梯度下降算法进行优化如公式9所示。</p>
 <script type="math/tex; mode=display">\begin{equation}
 \Delta w=-\varepsilon \frac{\partial E}{\partial w(t)}+\alpha \Delta w(t-1)
-\end{equation}</script><p>其中t为迭代的次数，$\alpha$是一个指数衰减的调整因子，范围在(0,1)之间，公式是将本次迭代的变化加上前一时刻步长变化与$\alpha$的乘积。<br>随机梯度下降法：对于每一个样本都直接对其求偏导更新一次参数<br>批量梯度下降法：求出所有样本的总梯度再更新参数。本文用的是批量梯度下降算法。</p>
+\end{equation}</script><p>其中t为迭代的次数，$\alpha$是一个指数衰减的调整因子，范围在(0, 1)之间，公式是将本次迭代的变化加上前一时刻步长变化与$\alpha$的乘积。<br>随机梯度下降法：对于每一个样本都直接对其求偏导更新一次参数<br>批量梯度下降法：求出所有样本的总梯度再更新参数。本文用的是批量梯度下降算法。</p>
 <h2 id="参数初始化"><a href="#参数初始化" class="headerlink" title="参数初始化"></a>参数初始化</h2><p>如果参数直接初始化为全0或全1使得参数具有对称性，那么在训练过程中会导致所有参数的对应梯度都是一样的，这样就导致了参数在进行梯度下降时失去了参数间的独立性，使得一整层的网络只有一个有效的features。因此在参数初始化时我们需要注意让参数初始不相同从而保证将参数间的特征区分开来。</p>
-<h2 id="具体例子"><a href="#具体例子" class="headerlink" title="具体例子"></a>具体例子</h2><h2 id="循环网络"><a href="#循环网络" class="headerlink" title="循环网络"></a>循环网络</h2><h2 id="局部最优"><a href="#局部最优" class="headerlink" title="局部最优"></a>局部最优</h2>
+<h2 id="具体例子"><a href="#具体例子" class="headerlink" title="具体例子"></a>具体例子</h2><p><a target="_blank" rel="noopener" href="https://imgse.com/i/xFD5H1"><img src="https://s1.ax1x.com/2022/09/22/xFD5H1.md.png" class="lazyload placeholder" data-srcset="https://s1.ax1x.com/2022/09/22/xFD5H1.md.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="xFD5H1.md.png"></a><br>中间的是输入层，侧边两个是隐藏层，输出单元在顶层，层间连线上的数字是权重，隐藏单元和输出单元中的值为bias值。$\varepsilon=0.1$, $\alpha=0.9$。权重weight在(-0.3, 0.3)之间随机初始化。<br>这个网络的功能是检测输入的对称性，训练后的结果如下。<br>在这个网络中使得权重中心对称，这样就能保证当输入单元产生对称时，可以使得输入的加权和为0，或者只剩下一个很小的值，起作用的只剩下bias值，bias经过sigmoid函数后的结果为0，加权和为0，再到输出层，同理起作用的只剩下bias值，经过sigmoid函数后结果为1。而当输入不对称时，其中一个隐藏单元不为0，由于两个隐藏单元的权重是左右对称的，因此另一个隐藏单元与其互为相反数，则这两个隐藏单元经过sigmoid变换后的结果为1和0，经过加权使得输出单元的值必定小于0，经过sigmoid变换后结果为0。</p>
+<h2 id="循环网络"><a href="#循环网络" class="headerlink" title="循环网络"></a>循环网络</h2><p>到目前为止，处理的都是分层的前馈网络，事实上处理的还有循环神经网络，可以如图将循环网络展开为一个层级网络。<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xFyWjg"><img src="https://s1.ax1x.com/2022/09/22/xFyWjg.md.png" class="lazyload placeholder" data-srcset="https://s1.ax1x.com/2022/09/22/xFyWjg.md.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="xFyWjg.md.png"></a><br>在展开过程中，有两个复杂的难题需要解决。首先就是在循环神经网络中，每一层都会依赖以前的输入，而不仅仅是其前一层，因此我们需要存储所有隐藏层的输出数据。<br>其次，循环神经网络中只有一个权重$w$，因此当它展平为层级网络后，所有的层间权重都应该相等。对于这样的问题，我们可以对其偏导数求平均，更新权重参数的时候也更新平均梯度，保证层间权重都共享同一个平均权重。</p>
+<h2 id="局部最优"><a href="#局部最优" class="headerlink" title="局部最优"></a>局部最优</h2><p>反向前馈网络和许多网络一样都有一个缺点就是容易陷入局部最小值，因此梯度下降不一定能保证找到全局最优，不过通过实践可以得到，相比全局最小值，即使会陷入局部最小值，也不一定会陷入特别差的局部最小值，对此我们可以稍微加入少许连接帮助网络模型跳出局部最优。<br>补充一点，如果采用小批量随机梯度下降法也能够帮助模型跳出局部最优。</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>BP算法并不能真正模拟大脑学习，不过在权重空间内应用梯度下降算法后能发现很多有意思的特征，因此在认知科学和神经网络中也许存在一些必然的联系，因此可以在生物学中尝试观察是否能够一些方法和思想值得借鉴。</p>
+
       </div>
       <div class="post-tags-categories">
         
