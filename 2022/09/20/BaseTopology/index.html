@@ -682,7 +682,60 @@ f&=X的面数(face)
 <h3 id="同胚"><a href="#同胚" class="headerlink" title="同胚"></a>同胚</h3><p>存在连续双射$\varphi$使得$S\rightarrow E$, 且$\varphi$ 和$\varphi^{-1}$都连续，则称曲面$S$与曲面$E$同胚</p>
 <p>拓扑学的终极目标是分类互不同胚的空间，其中一个重要的方法就是拓扑不变量，其形式可以是一个数，一个群，一个环等</p>
 <h3 id="拓扑不变量"><a href="#拓扑不变量" class="headerlink" title="拓扑不变量"></a>拓扑不变量</h3><p>设对$\forall$空间$X$定义了一个量$\mu(x)$，若$\mu$满足：$X$与$Y$同胚，则$\mu(x)=\mu(y)$，则称$\mu$为一个拓扑不变量<br>一般用法：<br>若$\mu$为一个拓扑不变量，$X, Y$满足$\mu(X)\neq\mu(Y)$, 则$X$与$Y$不同胚<br>例子：$v-e+f$为欧拉示性数</p>
-<h2 id="拓扑空间"><a href="#拓扑空间" class="headerlink" title="拓扑空间"></a>拓扑空间</h2><h3 id="定义：设X为一个集合"><a href="#定义：设X为一个集合" class="headerlink" title="定义：设X为一个集合"></a>定义：设X为一个集合</h3>
+<h2 id="拓扑空间"><a href="#拓扑空间" class="headerlink" title="拓扑空间"></a>拓扑空间</h2><h3 id="开集"><a href="#开集" class="headerlink" title="开集"></a>开集</h3><p>定义$U\subset X$称为一个开集，若  </p>
+<ol>
+<li>$U=\emptyset $</li>
+<li>$U\neq \emptyset,\forall \delta&gt;0, 使得 p\in B(p,\delta)\subset U$ </li>
+</ol>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>设$X$为一个集合，F为X集中某些子集构成的集族，把F中的元素称为X中的开集，需要满足下列条件：  </p>
+<ol>
+<li>$\emptyset\in F$, $X\in F$  </li>
+<li>$U, V$是开集，$U\cap V$开集。注：有限个开集的交为开集    <script type="math/tex; mode=display">
+\begin{array}{l}
+\forall p\in U\cap V\Rightarrow 
+\left\{
+\begin{array}{}
+p\in U \Rightarrow \exist \delta_1>0, p \in B(p, \delta_1)\subset U\\
+p\in V\Rightarrow \exists\delta_2>0, p \in B(p, \delta_2) \subset V
+\end{array}
+\right.\\
+\begin{aligned}
+&取\delta=min{\delta_1, \delta_2}\\
+&\Rightarrow B(p, \delta)\subset U, B(p, \delta_2)\subset V\\
+&\Rightarrow B(p, \delta)\subset U\cap V\\
+&\Rightarrow U\cup V为开集
+\end{aligned}
+\end{array}</script></li>
+<li>$\cup_\alpha, \alpha\in I$都是开集，$\underset{\alpha\in I}{\bigcup} \cup_\alpha$为开集  <script type="math/tex; mode=display">
+\begin{array}{l}
+\begin{aligned}
+&\forall p\in \underset{\alpha \in I}{\bigcup}U_\alpha\\
+&\Rightarrow\exist \alpha_0\in I, p\subset U_\alpha\\
+&\Rightarrow \exist \delta >0, 使得p\in B(p, \delta)\subset U_\alpha\subset\underset{\alpha \in I}{\bigcup}\\
+&\Rightarrow \underset{\alpha in I}{\bigcup}U_\alpha 为开集
+\end{aligned}
+\end{array}</script></li>
+</ol>
+<p>则称X为拓扑空间<br>有时候这样写：设X为拓扑空间$\Leftrightarrow X$为一个集合，且规定了$X$上的一个拓扑$\Leftrightarrow$指定了哪些集合为开集  </p>
+<h3 id="平凡拓扑"><a href="#平凡拓扑" class="headerlink" title="平凡拓扑"></a>平凡拓扑</h3><p>设$X$为一个集合，$F=\{\emptyset, X\}$</p>
+<h3 id="离散拓扑"><a href="#离散拓扑" class="headerlink" title="离散拓扑"></a>离散拓扑</h3><p>设$X$为一个集合，$F=\{U|U\subset X\}$</p>
+<p>同一个集合可以赋予不同的拓扑</p>
+<h3 id="度量空间诱导的拓扑"><a href="#度量空间诱导的拓扑" class="headerlink" title="度量空间诱导的拓扑"></a>度量空间诱导的拓扑</h3><p>设$X$为一个集合，$d$为$x, y$的距离。$d: X\times X\rightarrow\R, (x, y)\mapsto d(x, y)$，满足：  </p>
+<ol>
+<li>$d(x, y)\geq0, “=”\Leftrightarrow “x=y”$</li>
+<li>$d(x,y)=d(y,x)$</li>
+<li>$d(x,y)\leq d(x,z)+d(z,y)$  </li>
+</ol>
+<p>则$(X, d)$称为一个度量空间，诱导一个拓扑<br>$B(x_0, \delta)=\{x\in X|d(x, x_0)&lt;\delta\}$</p>
+<p>则$\{U|U\underset{open}{\subset}X\}$定义了$X$上的一个拓扑（证明见定义），该拓扑称为$(X, d)所诱导的拓扑$</p>
+<p>例子：$X=C[a, b]$, $X$是区间$[a, b]$上的连续函数全体，定义$d(f, g)=max|f(x)-g(x)|, x\in [a, b]$，则$(C[a, b], d)$为一个度量空间。<br>证明：  </p>
+<ol>
+<li>$d(f,g)\geq 0,”=”\Leftrightarrow max|f(x)-g(x)|=0\Leftrightarrow f=g$</li>
+<li>$d(f,g) = d(g,f)$</li>
+<li>$d(f,g) \leq d(f,h)+d(h,g)$</li>
+</ol>
+<h3 id="子空间拓扑"><a href="#子空间拓扑" class="headerlink" title="子空间拓扑"></a>子空间拓扑</h3><p>设$X$为一个拓扑空间，$Y\subset X$<br>$F:=\{U\cap Y|U\underset{open}{\subset}X\}$<br>则$F$给出了$Y$上的一个拓扑，称为$X$在$Y$上诱导的拓扑，又称为子空间拓扑，$(Y, F)$称为$X$的拓扑子空间</p>
+
       </div>
       <div class="post-tags-categories">
         
