@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>常微分方程求解 | YuZai&#39;s Blog</title>
+  <title>YuZai&#39;s Blog</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -629,14 +629,14 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/medias/3.jpg')">
+  background-position: center center;position: relative;background-image:url('/medias/1.jpg')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        常微分方程求解
+        
       </span>
     </div>
     
@@ -667,16 +667,17 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h1 id="常微分方程求解"><a href="#常微分方程求解" class="headerlink" title="常微分方程求解"></a>常微分方程求解</h1><p>令常微分方程</p>
+        <h1 id="��΢�ַ������"><a href="#��΢�ַ������" class="headerlink" title="��΢�ַ������"></a>��΢�ַ������</h1><p>�΢�ַ���</p>
 <script type="math/tex; mode=display">
 \begin{cases}
 y'=f(x, y)\\
 y_0=y(x_0)
-\end{cases}</script><h2 id="欧拉法"><a href="#欧拉法" class="headerlink" title="欧拉法"></a>欧拉法</h2><p>用当前梯度作为函数的变化率进行迭代, 步长$h=x_{n+1}-x_n$, 精度不高</p>
-<script type="math/tex; mode=display">y_{n+1}=y_n+hf(x_n, y_n)</script><h2 id="梯形法"><a href="#梯形法" class="headerlink" title="梯形法"></a>梯形法</h2><p>用当前迭代点跟下一迭代点的平均值作为一次迭代的变化率</p>
-<script type="math/tex; mode=display">y_{n+1}=y_n+\frac h2(f(x_n, y_n)+f(x_{n+1}, y_{n+1}))</script><h2 id="改进欧拉法"><a href="#改进欧拉法" class="headerlink" title="改进欧拉法"></a>改进欧拉法</h2><p>在梯形法中, $y_{n+1}$是未知的，无法直接求出来k, 因此要先利用欧拉公式求出</p>
-<script type="math/tex; mode=display">\bar{y}_{n+1}=y_n+hf(x_n, y_n)</script><p>再带入梯形法中，得到$y_{n+1}=y_n+\frac h2(f(x_n, y_n)+f(x_{n+1}, \bar{y}_{n+1}))$</p>
-<h2 id="龙格库塔法"><a href="#龙格库塔法" class="headerlink" title="龙格库塔法"></a>龙格库塔法</h2><p>根据拉格朗日中值定理，$\frac{y_{n+1}-y_n}h=y’(x_h+\theta h)$, 其中$0&lt;\theta&lt;1$，则可以得到$y_{n+1}$的精确解$y_{n+1}=y_n+hf(x_n+\theta h, y(x_n+\theta h))$, 之前的欧拉法梯形法都可以表示为这样的形式，只是$\theta$的取值不同<br>令平均斜率$\bar{K}=f(x_n+\theta h, y(x_n+\theta h))$, 在一次迭代中取$n$个点为$n$阶龙格库塔方法<br>这里以四阶龙格库塔法举例</p>
+\end{cases}</script><h2 id="y����"><a href="#y����" class="headerlink" title="ŷ����"></a>ŷ����</h2><p>�õ�ǰ�ݶ���Ϊ�����ı仯�ʽ��е���, ����$h=x_{n+1}-x_n$, ���Ȳ���</p>
+<script type="math/tex; mode=display">y_{n+1}=y_n+hf(x_n, y_n)</script><h2 id="���η�"><a href="#���η�" class="headerlink" title="���η�"></a>���η�</h2><p>�õ�ǰ���������һ�������ƽ��ֵ��Ϊһ�ε����ı仯��</p>
+<script type="math/tex; mode=display">y_{n+1}=y_n+\frac h2(f(x_n, y_n)+f(x_{n+1}, y_{n+1}))</script><p><a target="_blank" rel="noopener" href="https://imgse.com/i/xyFUoV"><img src="https://s1.ax1x.com/2022/10/19/xyFUoV.jpg" class="lazyload placeholder" data-srcset="https://s1.ax1x.com/2022/10/19/xyFUoV.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="xyFUoV.jpg"></a></p>
+<h2 id="�L�y����"><a href="#�L�y����" class="headerlink" title="�Ľ�ŷ����"></a>�Ľ�ŷ����</h2><p>�����η���, $y_{n+1}$��δ֪�ģ��޷�ֱ�������k, ���Ҫ������ŷ����ʽ���</p>
+<script type="math/tex; mode=display">\bar{y}_{n+1}=y_n+hf(x_n, y_n)</script><p>�ٴ������η��У��õ�$y_{n+1}=y_n+\frac h2(f(x_n, y_n)+f(x_{n+1}, \bar{y}_{n+1}))$<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xyFdiT"><img src="https://s1.ax1x.com/2022/10/19/xyFdiT.jpg" class="lazyload placeholder" data-srcset="https://s1.ax1x.com/2022/10/19/xyFdiT.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="xyFdiT.jpg"></a></p>
+<h2 id="���������"><a href="#���������" class="headerlink" title="���������"></a>���������</h2><p>��������������ֵ������$\frac{y_{n+1}-y_n}h=y’(x_h+\theta h)$, ����$0&lt;\theta&lt;1$������Եõ�$y_{n+1}$�ľ�ȷ��$y_{n+1}=y_n+hf(x_n+\theta h, y(x_n+\theta h))$, ֮ǰ��ŷ�������η������Ա�ʾΪ��������ʽ��ֻ��$\theta$��ȡֵ��ͬ<br>��ƽ��б��$\bar{K}=f(x_n+\theta h, y(x_n+\theta h))$, ��һ�ε�����ȡ$n$����Ϊ$n$�������������<br><a target="_blank" rel="noopener" href="https://imgse.com/i/xyFwJU"><img src="https://s1.ax1x.com/2022/10/19/xyFwJU.png" class="lazyload placeholder" data-srcset="https://s1.ax1x.com/2022/10/19/xyFwJU.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="xyFwJU.png"></a><br>�������Ľ��������������</p>
 <script type="math/tex; mode=display">
 RK4=
 \begin{cases}
@@ -685,7 +686,7 @@ K_2=f(x_{n+\frac12}, y_n+\frac h2K_1)\\
 K_3=f(x_{n+\frac12}, y_n+\frac h2K_2)\\
 K_4=f(x_{n+1}, y_n+hK_3)\\
 y_{n+1}=y_n+\frac h6 (K_1+2K_2+2K_3+K_4)
-\end{cases}\\</script><p>其中</p>
+\end{cases}\\</script><p>����</p>
 <script type="math/tex; mode=display">\begin{cases}
 x_{n+1}=x_n+h\\
 x_{n+\frac12}=x_n+\frac
@@ -704,7 +705,7 @@ y'=f(x_n, y_n)
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2022/09/19/NumericalAnalysis/" target="_blank" title="常微分方程求解">http://chenyv118.github.io/2022/09/19/NumericalAnalysis/</a>
+    <a href="/2022/09/19/NumericalAnalysis/" target="_blank" title="">http://chenyv118.github.io/2022/09/19/NumericalAnalysis/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -1074,59 +1075,6 @@ y'=f(x_n, y_n)
 		height: 100%;
 	}
 </style>
-
-
-  <script>
-  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = 'https://unpkg.com/mathjax@3.0/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    // 文章章节标题不能为 “MathJax” ，否则会报错。
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
 
 
 
