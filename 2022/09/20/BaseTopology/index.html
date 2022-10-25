@@ -678,17 +678,17 @@
 <h3 id="欧拉定理"><a href="#欧拉定理" class="headerlink" title="欧拉定理"></a>欧拉定理</h3><p>对于$g$亏格曲面$X$，有$v-e+f&#x3D;2-2g$</p>
 <h3 id="同胚"><a href="#同胚" class="headerlink" title="同胚"></a>同胚</h3><p>存在连续双射$\varphi$使得$S\rightarrow E$, 且$\varphi$ 和$\varphi^{-1}$都连续，则称曲面$S$与曲面$E$同胚</p>
 <p>拓扑学的终极目标是分类互不同胚的空间，其中一个重要的方法就是拓扑不变量，其形式可以是一个数，一个群，一个环等</p>
-<h3 id="拓扑不变量"><a href="#拓扑不变量" class="headerlink" title="拓扑不变量"></a>拓扑不变量</h3><p>设对$\forall$空间$X$定义了一个量$\mu(x)$，若$\mu$满足：$X$与$Y$同胚，则$\mu(x)&#x3D;\mu(y)$，则称$\mu$为一个拓扑不变量<br>一般用法：<br>若$\mu$为一个拓扑不变量，$X, Y$满足$\mu(X)\neq\mu(Y)$, 则$X$与$Y$不同胚<br>例子：$v-e+f$为欧拉示性数</p>
+<h3 id="拓扑不变量"><a href="#拓扑不变量" class="headerlink" title="拓扑不变量"></a>拓扑不变量</h3><p>设对${\forall}$空间$X$定义了一个量$\mu(x)$，若$\mu$满足：$X$与$Y$同胚，则$\mu(x)&#x3D;\mu(y)$，则称$\mu$为一个拓扑不变量<br>一般用法：<br>若$\mu$为一个拓扑不变量，$X, Y$满足$\mu(X)\neq\mu(Y)$, 则$X$与$Y$不同胚<br>例子：$v-e+f$为欧拉示性数</p>
 <h2 id="拓扑空间"><a href="#拓扑空间" class="headerlink" title="拓扑空间"></a>拓扑空间</h2><h3 id="开集"><a href="#开集" class="headerlink" title="开集"></a>开集</h3><p>定义$U\subset X$称为一个开集，若  </p>
 <ol>
 <li>$U&#x3D;\emptyset $</li>
-<li>$U\neq \emptyset,\forall \delta&gt;0, 使得 p\in B(p,\delta)\subset U$</li>
+<li>$U\neq \emptyset,{\forall} \delta&gt;0, 使得 p\in B(p,\delta)\subset U$</li>
 </ol>
 <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>设$X$为一个集合，F为X集中某些子集构成的集族，把F中的元素称为X中的开集，需要满足下列条件：  </p>
 <ol>
 <li>$\emptyset\in F$, $X\in F$  </li>
-<li>$U, V$是开集，$U\cap V$开集。注：有限个开集的交为开集<br>$$<br>\begin{array}{l}<br>\forall p\in U\cap V\Rightarrow<br>\left{<br>\begin{array}{}<br>p\in U \Rightarrow \exist \delta_1&gt;0, p \in B(p, \delta_1)\subset U\<br>p\in V\Rightarrow \exists\delta_2&gt;0, p \in B(p, \delta_2) \subset V<br>\end{array}<br>\right.\<br>\begin{aligned}<br>&amp;取\delta&#x3D;min{\delta_1, \delta_2}\<br>&amp;\Rightarrow B(p, \delta)\subset U, B(p, 1·\delta_2)\subset V\<br>&amp;\Rightarrow B(p, \delta)\subset U\cap V\<br>&amp;\Rightarrow U\cup V为开集<br>\end{aligned}<br>\end{array}<br>$$  </li>
-<li>$\cup_\alpha, \alpha\in I$都是开集，$\underset{\alpha\in I}{\bigcup} \cup_\alpha$为开集<br>$$<br>\begin{array}{l}<br>\begin{aligned}<br>&amp;\forall p\in \underset{\alpha \in I}{\bigcup}U_\alpha\<br>&amp;\Rightarrow\exist \alpha_0\in I, p\subset U_\alpha\<br>&amp;\Rightarrow \exist \delta &gt;0, 使得p\in B(p, \delta)\subset U_\alpha\subset\underset{\alpha \in I}{\bigcup}\<br>&amp;\Rightarrow \underset{\alpha in I}{\bigcup}U_\alpha 为开集<br>\end{aligned}<br>\end{array}<br>$$</li>
+<li>$U, V$是开集，$U\cap V$开集。注：有限个开集的交为开集<br>$$<br>\begin{array}{l}<br>{\forall} p\in U\cap V\Rightarrow<br>\left{<br>\begin{array}{}<br>p\in U \Rightarrow {\exist} \delta_1&gt;0, p \in B(p, \delta_1)\subset U\<br>p\in V\Rightarrow {\exist}s\delta_2&gt;0, p \in B(p, \delta_2) \subset V<br>\end{array}<br>\right.\<br>\begin{aligned}<br>&amp;取\delta&#x3D;min{\delta_1, \delta_2}\<br>&amp;\Rightarrow B(p, \delta)\subset U, B(p, 1·\delta_2)\subset V\<br>&amp;\Rightarrow B(p, \delta)\subset U\cap V\<br>&amp;\Rightarrow U\cup V为开集<br>\end{aligned}<br>\end{array}<br>$$  </li>
+<li>$\cup_\alpha, \alpha\in I$都是开集，$\underset{\alpha\in I}{\bigcup} \cup_\alpha$为开集<br>$$<br>\begin{array}{l}<br>\begin{aligned}<br>&amp;{\forall} p\in \underset{\alpha \in I}{\bigcup}U_\alpha\<br>&amp;\Rightarrow{\exist} \alpha_0\in I, p\subset U_\alpha\<br>&amp;\Rightarrow {\exist} \delta &gt;0, 使得p\in B(p, \delta)\subset U_\alpha\subset\underset{\alpha \in I}{\bigcup}\<br>&amp;\Rightarrow \underset{\alpha in I}{\bigcup}U_\alpha 为开集<br>\end{aligned}<br>\end{array}<br>$$</li>
 </ol>
 <p>则称X为拓扑空间<br>有时候这样写：设X为拓扑空间$\Leftrightarrow X$为一个集合，且规定了$X$上的一个拓扑$\Leftrightarrow$指定了哪些集合为开集  </p>
 <h3 id="平凡拓扑"><a href="#平凡拓扑" class="headerlink" title="平凡拓扑"></a>平凡拓扑</h3><p>设$X$为一个集合，$F&#x3D;{\emptyset, X}$</p>
