@@ -672,71 +672,43 @@
         <h2 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h2><p>交、并、补、差、乘积、；单射双射满射；原像，像<br>连续函数<br>一点点抽象代数（拓扑群往后）：群的定义，同态，商群</p>
 <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><h3 id="拓扑"><a href="#拓扑" class="headerlink" title="拓扑"></a>拓扑</h3><p>忘掉具体的形状信息，研究其更本质的空间结构</p>
 <h3 id="多面体"><a href="#多面体" class="headerlink" title="多面体"></a>多面体</h3><p>由若干个多边形沿着边粘起来的一个封闭曲面所包围的立体  </p>
-<h3 id="欧拉定理（弱版本）"><a href="#欧拉定理（弱版本）" class="headerlink" title="欧拉定理（弱版本）"></a>欧拉定理（弱版本）</h3><p>对于凸多面体$X$，记</p>
-<script type="math/tex; mode=display">\begin{aligned}
-v&=X的点数(vertex)\\
-e&=X的棱数(edge)\\
-f&=X的面数(face)
-\end{aligned}</script><p>则有$v-e+f=2$</p>
+<h3 id="欧拉定理（弱版本）"><a href="#欧拉定理（弱版本）" class="headerlink" title="欧拉定理（弱版本）"></a>欧拉定理（弱版本）</h3><p>对于凸多面体$X$，记<br>$$\begin{aligned}<br>v&amp;&#x3D;X的点数(vertex)\<br>e&amp;&#x3D;X的棱数(edge)\<br>f&amp;&#x3D;X的面数(face)<br>\end{aligned}$$<br>则有$v-e+f&#x3D;2$</p>
 <h3 id="亏格"><a href="#亏格" class="headerlink" title="亏格"></a>亏格</h3><p>设多面体$X$的表面可连续的变化为<br>则该多面体称为$g$亏格曲面</p>
 <h3 id="单连通"><a href="#单连通" class="headerlink" title="单连通"></a>单连通</h3><p>设$X$是拓扑空间，如果$X$中任何一个点的回路都可以连续地收缩成这个点，那么就称$X$为单连通的。一个连通表面的亏格为0时，它才是单连通的</p>
-<h3 id="欧拉定理"><a href="#欧拉定理" class="headerlink" title="欧拉定理"></a>欧拉定理</h3><p>对于$g$亏格曲面$X$，有$v-e+f=2-2g$</p>
+<h3 id="欧拉定理"><a href="#欧拉定理" class="headerlink" title="欧拉定理"></a>欧拉定理</h3><p>对于$g$亏格曲面$X$，有$v-e+f&#x3D;2-2g$</p>
 <h3 id="同胚"><a href="#同胚" class="headerlink" title="同胚"></a>同胚</h3><p>存在连续双射$\varphi$使得$S\rightarrow E$, 且$\varphi$ 和$\varphi^{-1}$都连续，则称曲面$S$与曲面$E$同胚</p>
 <p>拓扑学的终极目标是分类互不同胚的空间，其中一个重要的方法就是拓扑不变量，其形式可以是一个数，一个群，一个环等</p>
-<h3 id="拓扑不变量"><a href="#拓扑不变量" class="headerlink" title="拓扑不变量"></a>拓扑不变量</h3><p>设对$\forall$空间$X$定义了一个量$\mu(x)$，若$\mu$满足：$X$与$Y$同胚，则$\mu(x)=\mu(y)$，则称$\mu$为一个拓扑不变量<br>一般用法：<br>若$\mu$为一个拓扑不变量，$X, Y$满足$\mu(X)\neq\mu(Y)$, 则$X$与$Y$不同胚<br>例子：$v-e+f$为欧拉示性数</p>
+<h3 id="拓扑不变量"><a href="#拓扑不变量" class="headerlink" title="拓扑不变量"></a>拓扑不变量</h3><p>设对$\forall$空间$X$定义了一个量$\mu(x)$，若$\mu$满足：$X$与$Y$同胚，则$\mu(x)&#x3D;\mu(y)$，则称$\mu$为一个拓扑不变量<br>一般用法：<br>若$\mu$为一个拓扑不变量，$X, Y$满足$\mu(X)\neq\mu(Y)$, 则$X$与$Y$不同胚<br>例子：$v-e+f$为欧拉示性数</p>
 <h2 id="拓扑空间"><a href="#拓扑空间" class="headerlink" title="拓扑空间"></a>拓扑空间</h2><h3 id="开集"><a href="#开集" class="headerlink" title="开集"></a>开集</h3><p>定义$U\subset X$称为一个开集，若  </p>
 <ol>
-<li>$U=\emptyset $</li>
-<li>$U\neq \emptyset,\forall \delta&gt;0, 使得 p\in B(p,\delta)\subset U$  </li>
+<li>$U&#x3D;\emptyset $</li>
+<li>$U\neq \emptyset,\forall \delta&gt;0, 使得 p\in B(p,\delta)\subset U$</li>
 </ol>
 <h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>设$X$为一个集合，F为X集中某些子集构成的集族，把F中的元素称为X中的开集，需要满足下列条件：  </p>
 <ol>
 <li>$\emptyset\in F$, $X\in F$  </li>
-<li>$U, V$是开集，$U\cap V$开集。注：有限个开集的交为开集<script type="math/tex; mode=display">
-\begin{array}{l}
-\forall p\in U\cap V\Rightarrow
-\left\{
-\begin{array}{}
-p\in U \Rightarrow \exist \delta_1>0, p \in B(p, \delta_1)\subset U\\
-p\in V\Rightarrow \exists\delta_2>0, p \in B(p, \delta_2) \subset V
-\end{array}
-\right.\\
-\begin{aligned}
-&取\delta=min{\delta_1, \delta_2}\\
-&\Rightarrow B(p, \delta)\subset U, B(p, 1·\delta_2)\subset V\\
-&\Rightarrow B(p, \delta)\subset U\cap V\\
-&\Rightarrow U\cup V为开集
-\end{aligned}
-\end{array}</script></li>
-<li>$\cup_\alpha, \alpha\in I$都是开集，$\underset{\alpha\in I}{\bigcup} \cup_\alpha$为开集  <script type="math/tex; mode=display">
-\begin{array}{l}
-\begin{aligned}
-&\forall p\in \underset{\alpha \in I}{\bigcup}U_\alpha\\
-&\Rightarrow\exist \alpha_0\in I, p\subset U_\alpha\\
-&\Rightarrow \exist \delta >0, 使得p\in B(p, \delta)\subset U_\alpha\subset\underset{\alpha \in I}{\bigcup}\\
-&\Rightarrow \underset{\alpha in I}{\bigcup}U_\alpha 为开集
-\end{aligned}
-\end{array}</script></li>
+<li>$U, V$是开集，$U\cap V$开集。注：有限个开集的交为开集<br>$$<br>\begin{array}{l}<br>\forall p\in U\cap V\Rightarrow<br>\left{<br>\begin{array}{}<br>p\in U \Rightarrow \exist \delta_1&gt;0, p \in B(p, \delta_1)\subset U\<br>p\in V\Rightarrow \exists\delta_2&gt;0, p \in B(p, \delta_2) \subset V<br>\end{array}<br>\right.\<br>\begin{aligned}<br>&amp;取\delta&#x3D;min{\delta_1, \delta_2}\<br>&amp;\Rightarrow B(p, \delta)\subset U, B(p, 1·\delta_2)\subset V\<br>&amp;\Rightarrow B(p, \delta)\subset U\cap V\<br>&amp;\Rightarrow U\cup V为开集<br>\end{aligned}<br>\end{array}<br>$$  </li>
+<li>$\cup_\alpha, \alpha\in I$都是开集，$\underset{\alpha\in I}{\bigcup} \cup_\alpha$为开集<br>$$<br>\begin{array}{l}<br>\begin{aligned}<br>&amp;\forall p\in \underset{\alpha \in I}{\bigcup}U_\alpha\<br>&amp;\Rightarrow\exist \alpha_0\in I, p\subset U_\alpha\<br>&amp;\Rightarrow \exist \delta &gt;0, 使得p\in B(p, \delta)\subset U_\alpha\subset\underset{\alpha \in I}{\bigcup}\<br>&amp;\Rightarrow \underset{\alpha in I}{\bigcup}U_\alpha 为开集<br>\end{aligned}<br>\end{array}<br>$$</li>
 </ol>
 <p>则称X为拓扑空间<br>有时候这样写：设X为拓扑空间$\Leftrightarrow X$为一个集合，且规定了$X$上的一个拓扑$\Leftrightarrow$指定了哪些集合为开集  </p>
-<h3 id="平凡拓扑"><a href="#平凡拓扑" class="headerlink" title="平凡拓扑"></a>平凡拓扑</h3><p>设$X$为一个集合，$F=\{\emptyset, X\}$</p>
-<h3 id="离散拓扑"><a href="#离散拓扑" class="headerlink" title="离散拓扑"></a>离散拓扑</h3><p>设$X$为一个集合，$F=\{U|U\subset X\}$</p>
+<h3 id="平凡拓扑"><a href="#平凡拓扑" class="headerlink" title="平凡拓扑"></a>平凡拓扑</h3><p>设$X$为一个集合，$F&#x3D;{\emptyset, X}$</p>
+<h3 id="离散拓扑"><a href="#离散拓扑" class="headerlink" title="离散拓扑"></a>离散拓扑</h3><p>设$X$为一个集合，$F&#x3D;{U|U\subset X}$</p>
 <p>同一个集合可以赋予不同的拓扑</p>
 <h3 id="度量空间诱导的拓扑"><a href="#度量空间诱导的拓扑" class="headerlink" title="度量空间诱导的拓扑"></a>度量空间诱导的拓扑</h3><p>设$X$为一个集合，$d$为$x, y$的距离。$d: X\times X\rightarrow\R, (x, y)\mapsto d(x, y)$，满足：  </p>
 <ol>
-<li>$d(x, y)\geq0, “=”\Leftrightarrow “x=y”$</li>
-<li>$d(x,y)=d(y,x)$</li>
-<li>$d(x,y)\leq d(x,z)+d(z,y)$  </li>
+<li>$d(x, y)\geq0, “&#x3D;”\Leftrightarrow “x&#x3D;y”$</li>
+<li>$d(x,y)&#x3D;d(y,x)$</li>
+<li>$d(x,y)\leq d(x,z)+d(z,y)$</li>
 </ol>
-<p>则$(X, d)$称为一个度量空间，诱导一个拓扑<br>$B(x_0, \delta)=\{x\in X|d(x, x_0)&lt;\delta\}$</p>
-<p>则$\{U|U\underset{open}{\subset}X\}$定义了$X$上的一个拓扑（证明见定义），该拓扑称为$(X, d)所诱导的拓扑$</p>
-<p>例子：$X=C[a, b]$, $X$是区间$[a, b]$上的连续函数全体，定义$d(f, g)=max|f(x)-g(x)|, x\in [a, b]$，则$(C[a, b], d)$为一个度量空间。<br>证明：  </p>
+<p>则$(X, d)$称为一个度量空间，诱导一个拓扑<br>$B(x_0, \delta)&#x3D;{x\in X|d(x, x_0)&lt;\delta}$</p>
+<p>则${U|U\underset{open}{\subset}X}$定义了$X$上的一个拓扑（证明见定义），该拓扑称为$(X, d)所诱导的拓扑$</p>
+<p>例子：$X&#x3D;C[a, b]$, $X$是区间$[a, b]$上的连续函数全体，定义$d(f, g)&#x3D;max|f(x)-g(x)|, x\in [a, b]$，则$(C[a, b], d)$为一个度量空间。<br>证明：  </p>
 <ol>
-<li>$d(f,g)\geq 0,”=”\Leftrightarrow max|f(x)-g(x)|=0\Leftrightarrow f=g$</li>
-<li>$d(f,g) = d(g,f)$</li>
+<li>$d(f,g)\geq 0,”&#x3D;”\Leftrightarrow max|f(x)-g(x)|&#x3D;0\Leftrightarrow f&#x3D;g$</li>
+<li>$d(f,g) &#x3D; d(g,f)$</li>
 <li>$d(f,g) \leq d(f,h)+d(h,g)$</li>
 </ol>
-<h3 id="子空间拓扑"><a href="#子空间拓扑" class="headerlink" title="子空间拓扑"></a>子空间拓扑</h3><p>设$X$为一个拓扑空间，$Y\subset X$<br>$F:=\{U\cap Y|U\underset{open}{\subset}X\}$<br>则$F$给出了$Y$上的一个拓扑，称为$X$在$Y$上诱导的拓扑，又称为子空间拓扑，$(Y, F)$称为$X$的拓扑子空间</p>
+<h3 id="子空间拓扑"><a href="#子空间拓扑" class="headerlink" title="子空间拓扑"></a>子空间拓扑</h3><p>设$X$为一个拓扑空间，$Y\subset X$<br>$F:&#x3D;{U\cap Y|U\underset{open}{\subset}X}$<br>则$F$给出了$Y$上的一个拓扑，称为$X$在$Y$上诱导的拓扑，又称为子空间拓扑，$(Y, F)$称为$X$的拓扑子空间</p>
 
       </div>
       <div class="post-tags-categories">
