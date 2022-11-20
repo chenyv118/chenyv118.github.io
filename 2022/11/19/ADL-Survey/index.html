@@ -669,7 +669,26 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        
+        <h2 id="概述">概述</h2>
+<p>背景：深度学习的蓬勃发展 问题：数据集太大，label样本工作量太大 目标：标记高质量样本 实质：与用户交互等方式，为新的数据点标记上期望输出，在统计学中叫做优化实验设计(ODE)，同时也是处理样本不足问题的一种实践方式</p>
+<h2 id="概述-1">概述</h2>
+<h3 id="符号定义">符号定义</h3>
+<p><span class="math display">\[
+\begin{array}{l}
+\begin{array}{ll}
+\hline \text {Variables} &amp; \text { Definition }\\
+\hline D^{tr} &amp; \text { training data set } \\
+\hline D^{ts} &amp; \text { testing data set }\\
+\hline D^{\text {cdd }} &amp; \text { candidate data set }  \\
+\hline B_{n} &amp; \text { selected data set in the } n \text {-the iteration }\\
+\hline F_{\theta}(\cdot) &amp; \text { predictor with parameter } \theta   \\
+\hline S_{\psi}(\cdot) &amp; \text { selector with parameter } \psi\\
+\hline \left(\mathbf{x}_{i}, y_{i}\right) &amp; \text { the } i \text {-th sample } \mathbf{x}_{i} \text { with label } y_{i} \\
+\hline
+\end{array}
+\end{array}
+\]</span> <img src="/2022/11/19/ADL-Survey/AL训练过程.png" class="lazyload placeholder" data-srcset="/2022/11/19/ADL-Survey/AL训练过程.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp"> 在任意第n次迭代中，AL使用其选择器从候选数据集<span class="math inline">\(D^{cdd}\)</span>中来选择一些未标记样例作为集合<span class="math inline">\(B_n\)</span>对其进行标记。然后通过新的训练集<span class="math inline">\(D^{tr}_n\)</span>重新训练<span class="math inline">\(F_\theta(\cdot)\)</span>，其中<span class="math inline">\(D_n^{tr}=D^{tr}_{n-1}+B_n\)</span>。 如果没有选择器<span class="math inline">\(S_{\psi}({\cdot})\)</span>,预测器<span class="math inline">\(F_{\theta}(\cdot)\)</span>只是个普通的分类器。当<span class="math inline">\(S_{\psi}({\cdot})\)</span>与<span class="math inline">\(F_{\theta}(\cdot)\)</span>无关时，AL工作将会十分简单。然而普遍情况下它们相互影响。当新增样例只有一个的时候，可以如下表示： <span class="math display">\[\hat{\mathbf{x}}=\arg \max_{\mathbf{x}_{k} \in D^{c d d}} S_{\psi}\left(\mathbf{x}_{k}, D^{c d d}, D^{t r}, \theta\right)\]</span></p>
+
       </div>
       <div class="post-tags-categories">
         
@@ -706,7 +725,7 @@
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/./FourierTransform/%E6%80%BB%E8%A7%88" class="lazyload placeholder" data-srcset="/./FourierTransform/%E6%80%BB%E8%A7%88" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="https://s1.ax1x.com/2022/11/19/zucXb8.png" class="lazyload placeholder" data-srcset="https://s1.ax1x.com/2022/11/19/zucXb8.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
     </div>
     <a href="/2022/11/15/FourierTransform/" class="post-nav-link">
       <div class="title">
@@ -714,9 +733,10 @@
         <div class="title-text">傅立叶变换</div>
       </div>
       <!-- <div class="content">
-         变换
-举个栗子，在直角坐标系上定义单位向量e⃗x,e⃗y\vec{e}_x,\vec{e}_yex​,ey​内积
-e⃗
+        
+变换
+举个栗子，在直角坐标系上定义单位向量\(\vec{e}_x,\vec{e}_y\)内积 \[
+\vec{e
       </div> -->
     </a>
   </div>
