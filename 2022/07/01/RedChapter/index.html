@@ -13,7 +13,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>基础拓扑笔记 | YuZai&#39;s Blog</title>
+  <title>RedChapter | YuZai&#39;s Blog</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -631,33 +631,24 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/medias/11.jpg')">
+  background-position: center center;position: relative;background-image:url('https://s1.ax1x.com/2022/12/01/z0awz6.png')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        基础拓扑笔记
+        RedChapter
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2022-09-20 |
+          <i class="fas fa-calendar"></i> 发表于：2022-07-01 |
         </span>
       
 
-      
-        <span class="post-detail-header_categories">
-          <i class="iconfont iconbookmark1"></i> 分类：
-          
-            <a href="/categories/%E6%95%B0%E5%AD%A6/" class="post-detail-header_category">
-              数学
-            </a>
-          
-        </span>
       
 
       
@@ -678,104 +669,28 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h2 id="预备知识">预备知识</h2>
-<p>交、并、补、差、乘积、；单射双射满射；原像，像<br>
-连续函数<br>
-一点点抽象代数（拓扑群往后）：群的定义，同态，商群</p>
-<h2 id="介绍">介绍</h2>
-<h3 id="拓扑">拓扑</h3>
-<p>忘掉具体的形状信息，研究其更本质的空间结构</p>
-<h3 id="多面体">多面体</h3>
-<p>由若干个多边形沿着边粘起来的一个封闭曲面所包围的立体</p>
-<h3 id="欧拉定理弱版本">欧拉定理（弱版本）</h3>
-<p>对于凸多面体<span class="math inline">\(X\)</span>，记 <span class="math display">\[\begin{aligned}
-v&amp;=X的点数(vertex)\\
-e&amp;=X的棱数(edge)\\
-f&amp;=X的面数(face)
-\end{aligned}\]</span> 则有<span class="math inline">\(v-e+f=2\)</span></p>
-<h3 id="亏格">亏格</h3>
-<p>设多面体<span class="math inline">\(X\)</span>的表面可连续的变化为 则该多面体称为<span class="math inline">\(g\)</span>亏格曲面</p>
-<h3 id="单连通">单连通</h3>
-<p>设<span class="math inline">\(X\)</span>是拓扑空间，如果<span class="math inline">\(X\)</span>中任何一个点的回路都可以连续地收缩成这个点，那么就称<span class="math inline">\(X\)</span>为单连通的。一个连通表面的亏格为0时，它才是单连通的</p>
-<h3 id="欧拉定理">欧拉定理</h3>
-<p>对于<span class="math inline">\(g\)</span>亏格曲面<span class="math inline">\(X\)</span>，有<span class="math inline">\(v-e+f=2-2g\)</span></p>
-<h3 id="同胚">同胚</h3>
-<p>存在连续双射<span class="math inline">\(\varphi\)</span>使得<span class="math inline">\(S\rightarrow E\)</span>, 且<span class="math inline">\(\varphi\)</span> 和<span class="math inline">\(\varphi^{-1}\)</span>都连续，则称曲面<span class="math inline">\(S\)</span>与曲面<span class="math inline">\(E\)</span>同胚</p>
-<p>拓扑学的终极目标是分类互不同胚的空间，其中一个重要的方法就是拓扑不变量，其形式可以是一个数，一个群，一个环等</p>
-<h3 id="拓扑不变量">拓扑不变量</h3>
-<p>设对<span class="math inline">\(\forall\)</span>空间<span class="math inline">\(X\)</span>定义了一个量<span class="math inline">\(\mu(x)\)</span>，若<span class="math inline">\(\mu\)</span>满足：<span class="math inline">\(X\)</span>与<span class="math inline">\(Y\)</span>同胚，则<span class="math inline">\(\mu(x)=\mu(y)\)</span>，则称<span class="math inline">\(\mu\)</span>为一个拓扑不变量<br>
-一般用法：<br>
-若<span class="math inline">\(\mu\)</span>为一个拓扑不变量，<span class="math inline">\(X, Y\)</span>满足<span class="math inline">\(\mu(X)\neq\mu(Y)\)</span>, 则<span class="math inline">\(X\)</span>与<span class="math inline">\(Y\)</span>不同胚<br>
-例子：<span class="math inline">\(v-e+f\)</span>为欧拉示性数</p>
-<h2 id="拓扑空间">拓扑空间</h2>
-<h3 id="开集">开集</h3>
-<p>定义<span class="math inline">\(U\subset X\)</span>称为一个开集，若</p>
-<ol type="1">
-<li>$U=$</li>
-<li><span class="math inline">\(U\neq \emptyset,\forall \delta&gt;0, 使得 p\in B(p,\delta)\subset U\)</span></li>
-</ol>
-<h3 id="定义">定义</h3>
-<p>设<span class="math inline">\(X\)</span>为一个集合，F为X集中某些子集构成的集族，把F中的元素称为X中的开集，需要满足下列条件：</p>
-<ol type="1">
-<li><span class="math inline">\(\emptyset\in F\)</span>, <span class="math inline">\(X\in F\)</span><br>
-</li>
-<li><span class="math inline">\(U, V\)</span>是开集，<span class="math inline">\(U\cap V\)</span>开集。注：有限个开集的交为开集 <span class="math display">\[
-\begin{array}{l}
-\forall p\in U\cap V\Rightarrow
-\left\{
-\begin{array}{}
-p\in U \Rightarrow \exists \delta_1&gt;0, p \in B(p, \delta_1)\subset U\\
-p\in V\Rightarrow \exists\delta_2&gt;0, p \in B(p, \delta_2) \subset V
-\end{array}
-\right.\\
-\begin{aligned}
-&amp;取\delta=min{\delta_1, \delta_2}\\
-&amp;\Rightarrow B(p, \delta)\subset U, B(p, 1·\delta_2)\subset V\\
-&amp;\Rightarrow B(p, \delta)\subset U\cap V\\
-&amp;\Rightarrow U\cup V为开集
-\end{aligned}
-\end{array}
-\]</span><br>
-</li>
-<li><span class="math inline">\(\cup_\alpha, \alpha\in I\)</span>都是开集，<span class="math inline">\(\underset{\alpha\in I}{\bigcup} \cup_\alpha\)</span>为开集<br>
-<span class="math display">\[
-\begin{array}{l}
-\begin{aligned}
-&amp;\forall p\in \underset{\alpha \in I}{\bigcup}U_\alpha\\
-&amp;\Rightarrow\exists \alpha_0\in I, p\subset U_\alpha\\
-&amp;\Rightarrow \exists \delta &gt;0, 使得p\in B(p, \delta)\subset U_\alpha\subset\underset{\alpha \in I}{\bigcup}\\
-&amp;\Rightarrow \underset{\alpha in I}{\bigcup}U_\alpha 为开集
-\end{aligned}
-\end{array}
-\]</span></li>
-</ol>
-<p>则称X为拓扑空间<br>
-有时候这样写：设X为拓扑空间<span class="math inline">\(\Leftrightarrow X\)</span>为一个集合，且规定了<span class="math inline">\(X\)</span>上的一个拓扑<span class="math inline">\(\Leftrightarrow\)</span>指定了哪些集合为开集</p>
-<h3 id="平凡拓扑">平凡拓扑</h3>
-<p>设<span class="math inline">\(X\)</span>为一个集合，<span class="math inline">\(F=\{\emptyset, X\}\)</span></p>
-<h3 id="离散拓扑">离散拓扑</h3>
-<p>设<span class="math inline">\(X\)</span>为一个集合，<span class="math inline">\(F=\{U|U\subset X\}\)</span></p>
-<p>同一个集合可以赋予不同的拓扑</p>
-<h3 id="度量空间诱导的拓扑">度量空间诱导的拓扑</h3>
-<p>设<span class="math inline">\(X\)</span>为一个集合，<span class="math inline">\(d\)</span>为<span class="math inline">\(x, y\)</span>的距离。<span class="math inline">\(d: X\times X\rightarrow\R, (x, y)\mapsto d(x, y)\)</span>，满足：</p>
-<ol type="1">
-<li><span class="math inline">\(d(x, y)\geq0, “=”\Leftrightarrow &quot;x=y&quot;\)</span></li>
-<li><span class="math inline">\(d(x,y)=d(y,x)\)</span></li>
-<li><span class="math inline">\(d(x,y)\leq d(x,z)+d(z,y)\)</span></li>
-</ol>
-<p>则<span class="math inline">\((X, d)\)</span>称为一个度量空间，诱导一个拓扑<br>
-<span class="math inline">\(B(x_0, \delta)=\{x\in X|d(x, x_0)&lt;\delta\}\)</span></p>
-<p>则<span class="math inline">\(\{U|U\underset{open}{\subset}X\}\)</span>定义了<span class="math inline">\(X\)</span>上的一个拓扑（证明见定义），该拓扑称为<span class="math inline">\((X, d)所诱导的拓扑\)</span></p>
-<p>例子：<span class="math inline">\(X=C[a, b]\)</span>, <span class="math inline">\(X\)</span>是区间<span class="math inline">\([a, b]\)</span>上的连续函数全体，定义<span class="math inline">\(d(f, g)=max|f(x)-g(x)|, x\in [a, b]\)</span>，则<span class="math inline">\((C[a, b], d)\)</span>为一个度量空间。 证明：</p>
-<ol type="1">
-<li><span class="math inline">\(d(f,g)\geq 0,&quot;=&quot;\Leftrightarrow max|f(x)-g(x)|=0\Leftrightarrow f=g\)</span></li>
-<li><span class="math inline">\(d(f,g) = d(g,f)\)</span></li>
-<li><span class="math inline">\(d(f,g) \leq d(f,h)+d(h,g)\)</span></li>
-</ol>
-<h3 id="子空间拓扑">子空间拓扑</h3>
-<p>设<span class="math inline">\(X\)</span>为一个拓扑空间，<span class="math inline">\(Y\subset X\)</span><br>
-<span class="math inline">\(F:=\{U\cap Y|U\underset{open}{\subset}X\}\)</span><br>
-则<span class="math inline">\(F\)</span>给出了<span class="math inline">\(Y\)</span>上的一个拓扑，称为<span class="math inline">\(X\)</span>在<span class="math inline">\(Y\)</span>上诱导的拓扑，又称为子空间拓扑，<span class="math inline">\((Y, F)\)</span>称为<span class="math inline">\(X\)</span>的拓扑子空间</p>
+        <h2 id="石英联盟">石英联盟</h2>
+<p>粉：喂！前面那位训练师！<br>
+赤：呃？！！<br>
+粉：我也来自真新镇，我叫樱粉红<br>
+赤：我叫赤红，让我们开始吧<br>
+粉：啊？什么？<br>
+赤：当然是训练师对战，这应该是最后一场吧</p>
+<p>粉：啊呜呜...<br>
+赤：啊，抱歉，我并没有想惹哭你<br>
+粉：我被正棕和阿辉一路保护才能走到最后，结果这么轻易就被打败了吗<br>
+赤：怎么会，我也是打起十二分精神才能侥幸取胜的，正棕和阿辉是洞窟里那两个家伙吧<br>
+粉：是的，他们提前被打败了<br>
+赤：其实是跟我交手的啦，你们都是实力非常强劲的对手，你能走到这里不是因为他们两人的保护，而是你们三人一起努力的结果！<br>
+粉：噗，真的吗<br>
+赤：（她好像相信了...）<br>
+赤：当然啦！我还会骗你不成，我可是即将登上冠军宝座的人，冠军是不会说谎的！<br>
+粉：原来你都快获得冠军了吗！加油！小赤！你一定可以的！<br>
+赤：（她真的相信了...）<br>
+赤：放心吧，我一定会的<br>
+粉：等你好消息！再见！<br>
+赤：再见！</p>
+<h2 id="section"></h2>
 
       </div>
       <div class="post-tags-categories">
@@ -789,7 +704,7 @@ p\in V\Rightarrow \exists\delta_2&gt;0, p \in B(p, \delta_2) \subset V
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2022/09/20/BaseTopology/" target="_blank" title="基础拓扑笔记">http://chenyv118.github.io/2022/09/20/BaseTopology/</a>
+    <a href="/2022/07/01/RedChapter/" target="_blank" title="RedChapter">http://chenyv118.github.io/2022/07/01/RedChapter/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -811,41 +726,21 @@ p\in V\Rightarrow \exists\delta_2&gt;0, p \in B(p, \delta_2) \subset V
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/12.jpg" class="lazyload placeholder" data-srcset="/medias/12.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/7.jpg" class="lazyload placeholder" data-srcset="/medias/7.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
-    <a href="/2022/09/21/PR-BackPropagating/" class="post-nav-link">
+    <a href="/2022/09/19/hello-world/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">Learning representations by back-propagating errors</div>
+        <div class="title-text">Hello World</div>
       </div>
       
       <!-- <div class="content">
-        引言
-在神经网络中描述一个算法，通过反复调整权重，最小化网络输出向量与目标输出向量之间的误差。非输入输出的隐变量"hi
+        Welcome to Hexo! This is your very first post. Check documen
       </div> -->
     </a>
   </div>
 
 
-
-  
-  <div class="post-nav-next post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/12.jpg" class="lazyload placeholder" data-srcset="/medias/12.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
-    </div>
-    <a href="/2022/09/19/study-route/" class="post-nav-link">
-      <div class="title">
-        下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">几何优化培训</div>
-      </div>
-      <!-- <div class="content">
-        学习过程
-第一步：看完书籍 Optimization Algorithms on Matrix Manifolds
-
-      </div> -->
-    </a>
-  </div>
 
 </div>
 

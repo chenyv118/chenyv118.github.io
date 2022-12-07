@@ -13,7 +13,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>基础拓扑笔记 | YuZai&#39;s Blog</title>
+  <title>ModernControlThory | YuZai&#39;s Blog</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -631,33 +631,24 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/medias/11.jpg')">
+  background-position: center center;position: relative;background-image:url('/medias/14.jpg')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        基础拓扑笔记
+        ModernControlThory
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2022-09-20 |
+          <i class="fas fa-calendar"></i> 发表于：2022-12-07 |
         </span>
       
 
-      
-        <span class="post-detail-header_categories">
-          <i class="iconfont iconbookmark1"></i> 分类：
-          
-            <a href="/categories/%E6%95%B0%E5%AD%A6/" class="post-detail-header_category">
-              数学
-            </a>
-          
-        </span>
       
 
       
@@ -678,104 +669,120 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h2 id="预备知识">预备知识</h2>
-<p>交、并、补、差、乘积、；单射双射满射；原像，像<br>
-连续函数<br>
-一点点抽象代数（拓扑群往后）：群的定义，同态，商群</p>
-<h2 id="介绍">介绍</h2>
-<h3 id="拓扑">拓扑</h3>
-<p>忘掉具体的形状信息，研究其更本质的空间结构</p>
-<h3 id="多面体">多面体</h3>
-<p>由若干个多边形沿着边粘起来的一个封闭曲面所包围的立体</p>
-<h3 id="欧拉定理弱版本">欧拉定理（弱版本）</h3>
-<p>对于凸多面体<span class="math inline">\(X\)</span>，记 <span class="math display">\[\begin{aligned}
-v&amp;=X的点数(vertex)\\
-e&amp;=X的棱数(edge)\\
-f&amp;=X的面数(face)
-\end{aligned}\]</span> 则有<span class="math inline">\(v-e+f=2\)</span></p>
-<h3 id="亏格">亏格</h3>
-<p>设多面体<span class="math inline">\(X\)</span>的表面可连续的变化为 则该多面体称为<span class="math inline">\(g\)</span>亏格曲面</p>
-<h3 id="单连通">单连通</h3>
-<p>设<span class="math inline">\(X\)</span>是拓扑空间，如果<span class="math inline">\(X\)</span>中任何一个点的回路都可以连续地收缩成这个点，那么就称<span class="math inline">\(X\)</span>为单连通的。一个连通表面的亏格为0时，它才是单连通的</p>
-<h3 id="欧拉定理">欧拉定理</h3>
-<p>对于<span class="math inline">\(g\)</span>亏格曲面<span class="math inline">\(X\)</span>，有<span class="math inline">\(v-e+f=2-2g\)</span></p>
-<h3 id="同胚">同胚</h3>
-<p>存在连续双射<span class="math inline">\(\varphi\)</span>使得<span class="math inline">\(S\rightarrow E\)</span>, 且<span class="math inline">\(\varphi\)</span> 和<span class="math inline">\(\varphi^{-1}\)</span>都连续，则称曲面<span class="math inline">\(S\)</span>与曲面<span class="math inline">\(E\)</span>同胚</p>
-<p>拓扑学的终极目标是分类互不同胚的空间，其中一个重要的方法就是拓扑不变量，其形式可以是一个数，一个群，一个环等</p>
-<h3 id="拓扑不变量">拓扑不变量</h3>
-<p>设对<span class="math inline">\(\forall\)</span>空间<span class="math inline">\(X\)</span>定义了一个量<span class="math inline">\(\mu(x)\)</span>，若<span class="math inline">\(\mu\)</span>满足：<span class="math inline">\(X\)</span>与<span class="math inline">\(Y\)</span>同胚，则<span class="math inline">\(\mu(x)=\mu(y)\)</span>，则称<span class="math inline">\(\mu\)</span>为一个拓扑不变量<br>
-一般用法：<br>
-若<span class="math inline">\(\mu\)</span>为一个拓扑不变量，<span class="math inline">\(X, Y\)</span>满足<span class="math inline">\(\mu(X)\neq\mu(Y)\)</span>, 则<span class="math inline">\(X\)</span>与<span class="math inline">\(Y\)</span>不同胚<br>
-例子：<span class="math inline">\(v-e+f\)</span>为欧拉示性数</p>
-<h2 id="拓扑空间">拓扑空间</h2>
-<h3 id="开集">开集</h3>
-<p>定义<span class="math inline">\(U\subset X\)</span>称为一个开集，若</p>
+        <h2 id="基本概念">基本概念</h2>
+<h3 id="状态变量">状态变量</h3>
+<p>定义；足以完全确定系统运动状态的个数最小的一组变量。<br>
+性质： 已知<span class="math inline">\(t=t_0\)</span>时刻的值，在给定<span class="math inline">\(t&gt;t_0\)</span>时刻的输入<span class="math inline">\(I_t\)</span>的作用下，便能完全确定系统在任何<span class="math inline">\(t&gt;t_0\)</span>时刻的行为。<br>
+函数表示：<span class="math inline">\(x_t=f(x_{t_0},I_t)\)</span></p>
+<h3 id="状态矢量">状态矢量</h3>
+<p>将一组数量为<span class="math inline">\(n\)</span>的状态变量用<span class="math inline">\(x_1(t),x_2(t),...,x_n(t)\)</span>表示，则可用一个状态矢量<span class="math inline">\(x(t)=\begin{pmatrix}  x_1(t)\\x_2(t)\\\vdots\\x_n(t) \end{pmatrix}\)</span>表示这一组状态变量</p>
+<h3 id="状态空间">状态空间</h3>
+<p>以一组数量为<span class="math inline">\(n\)</span>的状态变量<span class="math inline">\(x_1(t),x_2(t),...,x_n(t)\)</span>作为坐标轴表示的<span class="math inline">\(n\)</span>维空间称为状态空间。</p>
+<h3 id="状态方程">状态方程</h3>
+<p>由系统的状态变量构成的一阶微分方程组称为系统的状态方程。</p>
+<h3 id="输出方程">输出方程</h3>
+<p>在指定系统输出的情况下，该输出与状态变量间的函数关系式称为系统的输出方程。</p>
+<h3 id="状态空间表达式">状态空间表达式</h3>
+<p>在经典控制理论中，用指定某个输出量的高阶微分方程来描述系统的动态过程。</p>
+<p>对于一个单输入单输出定常系统，其状态变量为<span class="math inline">\(x_1,x_2,...,x_n\)</span>，则状态的一般方程的一般形式为： <span class="math display">\[
+\dot{x_1}=a_{11}x_1+a_{12}x_2+...+a_{1n}x_n+b_1u\\
+\dot{x_2}=a_{21}x_1+a_{22}x_2+...+a_{2n}x_n+b_2u\\
+\vdots\\
+\dot{x_n}=a_{n1}x_1+a_{n2}x_2+...+a_{nn}x_n+b_nu\\
+\]</span> 输出方程如下：<span class="math inline">\(y=c_1x_1+c_2x_2+...+c_nx_n\)</span> 矩阵表示为： <span class="math display">\[\begin{align}
+\dot x&amp;=Ax+bu\nonumber\\
+y&amp;=cx\nonumber
+\end{align}
+\]</span></p>
+<p>多输入多输出的系统空间表达式为 <span class="math display">\[\begin{align}
+\dot x&amp;=Ax+Bu\nonumber\\
+y&amp;=Cx+Du\nonumber
+\end{align}
+\]</span> 其中<span class="math inline">\(x\)</span>为<span class="math inline">\(n\)</span>维状态矢量，<span class="math inline">\(A\)</span>为<span class="math inline">\(n\times n\)</span>的系统矩阵，<span class="math inline">\(u=\begin{bmatrix}  u_1\\u_2\\\vdots\\u_r \end{bmatrix}\)</span>为<span class="math inline">\(r\)</span>维输入矢量，<span class="math inline">\(y=\begin{bmatrix}  y_1\\y_2\\\vdots\\y_m \end{bmatrix}\)</span>为<span class="math inline">\(m\)</span>维输出矢量。<br>
+<span class="math inline">\(B\)</span>为输入矩阵，<span class="math inline">\(C\)</span>为输出矩阵，<span class="math inline">\(D\)</span>为直接传递矩阵。<br>
+除了将多输入向量化为<span class="math inline">\(B\)</span>外，还需要考虑输入矢量<span class="math inline">\(U\)</span>的直接传递和状态变量的组合，因此会额外多一个<span class="math inline">\(D\)</span>矩阵。</p>
+<h2 id="状态结构图">状态结构图</h2>
+<span id="fig1"></span>
+<center>
+<img src="/2022/12/07/ModernControlTheory/状态结构图.png" class="lazyload placeholder" data-srcset="/2022/12/07/ModernControlTheory/状态结构图.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp"> 图一
+</center>
+<p><a href="#fig1">图1</a>的上半部分是单变量单输入系统<span class="math inline">\(\left\{\begin{array}{l}  \dot x=Ax+bu\\  y=cx \end{array}\right.\)</span>的状态结构图，下半部分是多输入多输出系统<span class="math inline">\(\left\{\begin{array}{l}  \dot x=Ax+Bu\\  y=Cx+Du \end{array}\right.\)</span>的状态结构图。</p>
+<h3 id="绘制步骤">绘制步骤</h3>
 <ol type="1">
-<li>$U=$</li>
-<li><span class="math inline">\(U\neq \emptyset,\forall \delta&gt;0, 使得 p\in B(p,\delta)\subset U\)</span></li>
+<li>用积分器的输出表示相应的某个状态变量。</li>
+<li>根据所给的状态方程和输出方程，画出相应的加法器和比例器。</li>
+<li>最后用箭头连接所有的元件。</li>
 </ol>
-<h3 id="定义">定义</h3>
-<p>设<span class="math inline">\(X\)</span>为一个集合，F为X集中某些子集构成的集族，把F中的元素称为X中的开集，需要满足下列条件：</p>
+<h3 id="举例">举例</h3>
+现有一个单输入单输出系统，其状态空间表达式为 <span class="math display">\[\left\{\begin{array}{l}
+    \dot x_1=x_2\\
+    \dot x_2=x_3\\
+    \dot x_3=-6x_1-3x_2-2x_3+u\\
+    y=x_1+x_2
+\end{array}\right.
+\]</span> 其模拟结构图如<a href="#fig2">图2</a>所示。 <span id="fig2"></span>
+<center>
+<img src="/2022/12/07/ModernControlTheory/单输入单输出.png" class="lazyload placeholder" data-srcset="/2022/12/07/ModernControlTheory/单输入单输出.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp"> 图二
+</center>
+对于一个多输入多输出变量系统，其状态空间表达式为 <span class="math display">\[\left\{\begin{array}{l}
+    \dot x_1=a_{11}x_1+a_{12}x_2+b_{11}u_1+b_{12}u_2\\
+    \dot x_2=a_{21}x_1+a_{22}x_2+b_{21}u_1+b_{22}u_2\\
+    y_1=c_{11}x_1+c_{12}x_2\\
+    y_2=c_{21}x_1+c_{22}x_2
+\end{array}\right.
+\]</span> 其模拟结构图如<a href="#fig3">图3</a>所示。 <span id="fig3"></span>
+<center>
+<img src="/2022/12/07/ModernControlTheory/多输入多输出.png" class="lazyload placeholder" data-srcset="/2022/12/07/ModernControlTheory/多输入多输出.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp"> 图三
+</center>
+<h2 id="系统能控性">系统能控性</h2>
+<h3 id="系统能控性的判别">系统能控性的判别</h3>
+<h2 id="系统能观性">系统能观性</h2>
+<h3 id="什么是能观性">什么是能观性？</h3>
 <ol type="1">
-<li><span class="math inline">\(\emptyset\in F\)</span>, <span class="math inline">\(X\in F\)</span><br>
-</li>
-<li><span class="math inline">\(U, V\)</span>是开集，<span class="math inline">\(U\cap V\)</span>开集。注：有限个开集的交为开集 <span class="math display">\[
-\begin{array}{l}
-\forall p\in U\cap V\Rightarrow
-\left\{
-\begin{array}{}
-p\in U \Rightarrow \exists \delta_1&gt;0, p \in B(p, \delta_1)\subset U\\
-p\in V\Rightarrow \exists\delta_2&gt;0, p \in B(p, \delta_2) \subset V
-\end{array}
-\right.\\
-\begin{aligned}
-&amp;取\delta=min{\delta_1, \delta_2}\\
-&amp;\Rightarrow B(p, \delta)\subset U, B(p, 1·\delta_2)\subset V\\
-&amp;\Rightarrow B(p, \delta)\subset U\cap V\\
-&amp;\Rightarrow U\cup V为开集
-\end{aligned}
-\end{array}
-\]</span><br>
-</li>
-<li><span class="math inline">\(\cup_\alpha, \alpha\in I\)</span>都是开集，<span class="math inline">\(\underset{\alpha\in I}{\bigcup} \cup_\alpha\)</span>为开集<br>
-<span class="math display">\[
-\begin{array}{l}
-\begin{aligned}
-&amp;\forall p\in \underset{\alpha \in I}{\bigcup}U_\alpha\\
-&amp;\Rightarrow\exists \alpha_0\in I, p\subset U_\alpha\\
-&amp;\Rightarrow \exists \delta &gt;0, 使得p\in B(p, \delta)\subset U_\alpha\subset\underset{\alpha \in I}{\bigcup}\\
-&amp;\Rightarrow \underset{\alpha in I}{\bigcup}U_\alpha 为开集
-\end{aligned}
-\end{array}
-\]</span></li>
+<li>控制系统大多采用<strong>反馈控制</strong>的形式。</li>
+<li>在现代控制理论中，反馈信息是由<strong>系统的状态变量</strong>组合而成的。</li>
+<li>难题：并非所有的系统的状态变量在物理上都能测取到。</li>
+<li>提问：能否通过对输出的测量获得全部状态变量的信息？这就是系统的能观性。</li>
+<li>能观性所表示的是输出<span class="math inline">\(y(t)\)</span>反映状态矢量<span class="math inline">\(x(t)\)</span>的能力，与控制作用没有直接关系。所以分析能观性问题，只需要从<strong>齐次状态方程</strong>和<strong>输出方程</strong>出发。</li>
 </ol>
-<p>则称X为拓扑空间<br>
-有时候这样写：设X为拓扑空间<span class="math inline">\(\Leftrightarrow X\)</span>为一个集合，且规定了<span class="math inline">\(X\)</span>上的一个拓扑<span class="math inline">\(\Leftrightarrow\)</span>指定了哪些集合为开集</p>
-<h3 id="平凡拓扑">平凡拓扑</h3>
-<p>设<span class="math inline">\(X\)</span>为一个集合，<span class="math inline">\(F=\{\emptyset, X\}\)</span></p>
-<h3 id="离散拓扑">离散拓扑</h3>
-<p>设<span class="math inline">\(X\)</span>为一个集合，<span class="math inline">\(F=\{U|U\subset X\}\)</span></p>
-<p>同一个集合可以赋予不同的拓扑</p>
-<h3 id="度量空间诱导的拓扑">度量空间诱导的拓扑</h3>
-<p>设<span class="math inline">\(X\)</span>为一个集合，<span class="math inline">\(d\)</span>为<span class="math inline">\(x, y\)</span>的距离。<span class="math inline">\(d: X\times X\rightarrow\R, (x, y)\mapsto d(x, y)\)</span>，满足：</p>
+<h3 id="能观性判别">能观性判别</h3>
+<h4 id="通过约旦标准型判别系统的能观性">通过约旦标准型判别系统的能观性</h4>
+<p>系统有如下形式： <span class="math display">\[
+\dot{x}=Ax\\
+y=Cx
+\]</span> 其中<span class="math inline">\(x(t_0)=x_0\)</span>。</p>
 <ol type="1">
-<li><span class="math inline">\(d(x, y)\geq0, “=”\Leftrightarrow &quot;x=y&quot;\)</span></li>
-<li><span class="math inline">\(d(x,y)=d(y,x)\)</span></li>
-<li><span class="math inline">\(d(x,y)\leq d(x,z)+d(z,y)\)</span></li>
+<li><span class="math inline">\(A\)</span>为对角矩阵 <span class="math display">\[
+\boldsymbol{A}=\boldsymbol{\Lambda}=\left[\begin{array}{llll}
+ \lambda_{1} &amp; &amp; &amp; 0 \\
+ &amp; \lambda_{2} &amp; &amp; \\
+ &amp; &amp; \ddots &amp; \\
+ 0 &amp; &amp; &amp; \lambda_{n}
+ \end{array}\right],
+ C=\begin{bmatrix}
+     c_{11}&amp;c_{12}&amp;\cdots&amp;c_{1n}\\
+     c_{21}&amp;c_{22}&amp;\cdots&amp;c_{2n}\\
+     \vdots&amp;\vdots&amp;\ddots&amp;\vdots\\
+     c_{m1}&amp;c_{m2}&amp;\cdots&amp;c_{mn}
+ \end{bmatrix}
+\]</span> 在系统矩阵<span class="math inline">\(A\)</span>为对角型的情况下，系统能观的充要条件时输出矩阵<span class="math inline">\(C\)</span>中没有全为零的列。如果第<span class="math inline">\(i\)</span>列全为零，则与之相对应的<span class="math inline">\(x_i\)</span>是不能观的。</li>
+<li><span class="math inline">\(A\)</span>为约旦标准型矩阵，以三阶为例 <span class="math display">\[
+A=J=\begin{bmatrix}
+ \lambda_1&amp;1&amp;0\\
+ 0&amp;\lambda_1&amp;1\\
+ 0&amp;0&amp;\lambda_1
+\end{bmatrix},
+C=\begin{bmatrix}
+c_{11}&amp;c_{12}&amp;c_{13}\\
+c_{21}&amp;c_{22}&amp;c_{23}\\
+c_{31}&amp;c_{32}&amp;c_{33}
+\end{bmatrix}
+\]</span> 充要条件是矩阵<span class="math inline">\(C\)</span>中，对应每个约旦块开头的一列的元素不全为零。</li>
+<li><span class="math inline">\(A\)</span>为任意矩阵 将矩阵<span class="math inline">\(A\)</span>经过<span class="math inline">\(T^{-1}AT\)</span>变换得到对角型或约旦型，再判别对应<span class="math inline">\(CT\)</span>的列是否为零来确定系统的能观性。</li>
 </ol>
-<p>则<span class="math inline">\((X, d)\)</span>称为一个度量空间，诱导一个拓扑<br>
-<span class="math inline">\(B(x_0, \delta)=\{x\in X|d(x, x_0)&lt;\delta\}\)</span></p>
-<p>则<span class="math inline">\(\{U|U\underset{open}{\subset}X\}\)</span>定义了<span class="math inline">\(X\)</span>上的一个拓扑（证明见定义），该拓扑称为<span class="math inline">\((X, d)所诱导的拓扑\)</span></p>
-<p>例子：<span class="math inline">\(X=C[a, b]\)</span>, <span class="math inline">\(X\)</span>是区间<span class="math inline">\([a, b]\)</span>上的连续函数全体，定义<span class="math inline">\(d(f, g)=max|f(x)-g(x)|, x\in [a, b]\)</span>，则<span class="math inline">\((C[a, b], d)\)</span>为一个度量空间。 证明：</p>
-<ol type="1">
-<li><span class="math inline">\(d(f,g)\geq 0,&quot;=&quot;\Leftrightarrow max|f(x)-g(x)|=0\Leftrightarrow f=g\)</span></li>
-<li><span class="math inline">\(d(f,g) = d(g,f)\)</span></li>
-<li><span class="math inline">\(d(f,g) \leq d(f,h)+d(h,g)\)</span></li>
-</ol>
-<h3 id="子空间拓扑">子空间拓扑</h3>
-<p>设<span class="math inline">\(X\)</span>为一个拓扑空间，<span class="math inline">\(Y\subset X\)</span><br>
-<span class="math inline">\(F:=\{U\cap Y|U\underset{open}{\subset}X\}\)</span><br>
-则<span class="math inline">\(F\)</span>给出了<span class="math inline">\(Y\)</span>上的一个拓扑，称为<span class="math inline">\(X\)</span>在<span class="math inline">\(Y\)</span>上诱导的拓扑，又称为子空间拓扑，<span class="math inline">\((Y, F)\)</span>称为<span class="math inline">\(X\)</span>的拓扑子空间</p>
+<h4 id="通过ac判断系统的能观性">通过<span class="math inline">\(A、C\)</span>判断系统的能观性</h4>
+<p>完全能观的充要条件是矩阵<span class="math inline">\(N=\begin{bmatrix}  C\\CA\\\vdots\\CA^{n-1} \end{bmatrix}\)</span>的秩为<span class="math inline">\(n\)</span></p>
+<h2 id="能控与能观的对偶关系">能控与能观的对偶关系</h2>
 
       </div>
       <div class="post-tags-categories">
@@ -789,7 +796,7 @@ p\in V\Rightarrow \exists\delta_2&gt;0, p \in B(p, \delta_2) \subset V
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2022/09/20/BaseTopology/" target="_blank" title="基础拓扑笔记">http://chenyv118.github.io/2022/09/20/BaseTopology/</a>
+    <a href="/2022/12/07/ModernControlTheory/" target="_blank" title="ModernControlThory">http://chenyv118.github.io/2022/12/07/ModernControlTheory/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -807,42 +814,22 @@ p\in V\Rightarrow \exists\delta_2&gt;0, p \in B(p, \delta_2) \subset V
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/12.jpg" class="lazyload placeholder" data-srcset="/medias/12.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-    </div>
-    <a href="/2022/09/21/PR-BackPropagating/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">Learning representations by back-propagating errors</div>
-      </div>
-      
-      <!-- <div class="content">
-        引言
-在神经网络中描述一个算法，通过反复调整权重，最小化网络输出向量与目标输出向量之间的误差。非输入输出的隐变量"hi
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="/medias/12.jpg" class="lazyload placeholder" data-srcset="/medias/12.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="/medias/11.jpg" class="lazyload placeholder" data-srcset="/medias/11.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
     </div>
-    <a href="/2022/09/19/study-route/" class="post-nav-link">
+    <a href="/2022/11/22/Gaussian-Process-Regression/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">几何优化培训</div>
+        <div class="title-text">Gaussian-Process-Regression</div>
       </div>
       <!-- <div class="content">
-        学习过程
-第一步：看完书籍 Optimization Algorithms on Matrix Manifolds
-
+        线性回归
+对于有\(n\)个点的数据集\(D=\{(x_1,y_1),(x_2,y_2),...(x_n,y_n)\}
       </div> -->
     </a>
   </div>
