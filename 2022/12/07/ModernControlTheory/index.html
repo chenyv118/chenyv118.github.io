@@ -974,6 +974,85 @@ T &amp;=\left[p_1\quad p_2\quad p_3\quad p_q\quad \cdots\quad p_n\right]\\
 &amp;=\left[{p}_{1}\quad\frac{d {p}_{1}}{d \lambda_{1}} \quad \frac{1}{2 !} \frac{d^{2} {p}_{1}}{d \lambda_{1}^{2}} \quad \cdots \quad \frac{1}{(q-1) !} \frac{d^{q-1} {p}_{1}}{d \lambda_{1}^{q-1}} \quad {p}_{q+1} \quad \cdots \quad {p}_{n}\right]
 \end{aligned}
 \]</span></p>
+<h2 id="线性定常齐次状态方程">线性定常齐次状态方程</h2>
+<h3 id="线性定常其次状态方程的自由解">线性定常其次状态方程的自由解</h3>
+<p>自由解：即线性定常齐次状态方程的解，指的是当控制系统的输入为零时，由初始状态引起的震动。</p>
+<p>系统的状态空间表达式一般为线性定常齐次状态方程<span class="math inline">\(\dot x=Ax+Bu\)</span>，令输入为零即<span class="math inline">\(u=0\)</span>，则有<span class="math inline">\(\dot x=Ax\)</span>。若系统初始即<span class="math inline">\(t=t_0\)</span>时，<span class="math inline">\(x(t_0)=x_0\)</span>，则方程有唯一的确定解<span class="math inline">\(x(t)=e^{A(t-t_0)}x_0,\quad t\geq t_0\)</span>。</p>
+<p>令<span class="math inline">\(\dot x=Ax\)</span>的解为<span class="math inline">\(t\)</span>的矢量幂级形式，即： <span class="math display">\[x(t)=b_0+b_1t+b_2t^2+\cdots+b_kt_k+\cdots\]</span> 则有<span class="math inline">\(\dot x(t)=b_1+2b_2t+3b_3t^2+\cdots+kb_kt^{k-1}+\cdots\)</span><br>
+代入原方程，有 <span class="math display">\[
+\begin{aligned}
+&amp;b_1+2b_2t+3b_3t^2+\cdots+kb_kt^{k-1}+\cdots\\
+=&amp;A(b_0+b_1t+b_2t^2+\cdots+b_kt_k+\cdots)
+\end{aligned}
+\]</span> 等式两边指数项相同则系数项相同，因此有<br>
+<span class="math display">\[
+\begin{aligned}
+b_1&amp;=Ab_0\\
+b_2&amp;=\frac12Ab_1=\frac{1}{2!}A^2b_0\\
+b_3&amp;=\frac13Ab_2=\frac{1}{3!}A^3b_0\\
+&amp;\cdots\cdots\\
+b_k&amp;=\frac1kAb_{k-1}=\frac{1}{k!}A^kb_0\\
+&amp;\cdots\cdots\\
+\end{aligned}
+\]</span></p>
+<p>令<span class="math inline">\(t=0\)</span>，则有<span class="math inline">\(x(t)=b_0+b_1t+b_2t^2+\cdots+b_kt_k+\cdots=b_0\)</span>。代入<span class="math inline">\(x(t)\)</span>的矢量幂级解，得 <span class="math display">\[x(t)=(1+At+\frac1{2!}A^2t^2+\cdots+\frac{1}{k!}A^kt_k+\cdots)x_0\]</span> 刚好为<span class="math inline">\(e^{At}\)</span>的泰勒展开，<span class="math inline">\(e^{At}\)</span>也称状态转移矩阵。</p>
+<h3 id="状态转移矩阵">状态转移矩阵</h3>
+<p>可将齐次矩阵微分方程表示为<span class="math inline">\(x(t)=\Phi(t)x(0)\)</span>。</p>
+<p>性质1：组合型。<br>
+<span class="math display">\[
+\left\{
+    \begin{aligned}
+        \Phi(t)\Phi(\tau)=\Phi(t+\tau)\\
+        e^{At}e^{A\tau}=e{A(t+\tau)}
+    \end{aligned}
+\right.
+\]</span> 有<span class="math inline">\(x(t_2)=\Phi(t_2-t_1)x(t_1)=\Phi(t_2-t_1)\Phi(t_1)x(0)\)</span>，矩阵表示为<span class="math inline">\(e^{At_2}=e^{A(t_2-t_1)}e^{At_1}\)</span></p>
+<p>性质2:状态矢量由<span class="math inline">\(t\)</span>时刻转移到<span class="math inline">\(t\)</span>时刻时状态矢量不变。<br>
+<span class="math display">\[
+\left\{
+    \begin{aligned}
+        \Phi(t-t)=I\\
+        e^{A(t-t)}=I
+    \end{aligned}
+\right.
+\]</span></p>
+<p>性质3：状态转移矩阵的逆意味着时间的逆转，可以用于求出小于时刻<span class="math inline">\(t\)</span>的状态矢量。<br>
+<span class="math display">\[
+\left\{
+    \begin{aligned}
+        [\Phi(t)]^{-1}=\Phi(-t)\\
+        [e^{A(t-t)}]^{-1}=e^{-At}
+    \end{aligned}
+\right.
+\]</span></p>
+<p>性质4：矩阵与<span class="math inline">\(A\)</span>矩阵是可交换的。<br>
+<span class="math display">\[
+\left\{
+    \begin{aligned}
+        \dot\Phi(t)=A\Phi(t)=\Phi(t)A\\
+        \frac{d}{dt}e^{At}=Ae^{At}=e^{At}A
+    \end{aligned}
+\right.
+\]</span></p>
+<p>性质5：<br>
+<span class="math inline">\(A,B\)</span>为<span class="math inline">\(n\)</span>阶方阵，当且仅当<span class="math inline">\(AB=BA\)</span>时，<span class="math inline">\(e^{At}e^{Bt}=e^{(A+B)t}\)</span><br>
+当<span class="math inline">\(AB\ngeq BA\)</span>时，<span class="math inline">\(e^{At}e^{Bt}\ngeq e^{(A+B)t}\)</span></p>
+<h2 id="线性定常非齐次状态方程">线性定常非齐次状态方程</h2>
+<p>此时讨论的是线性定常系统在控制<span class="math inline">\(u(t)\)</span>作用下的强制运动，状态方程为<span class="math inline">\(\dot x=Ax+Bu\)</span>。<br>
+令初始状态为<span class="math inline">\(t_0\)</span>，其解为： <span class="math display">\[
+x(t)=\underbrace{\Phi(t-t_0)x(t_0)}_{初始状态引起的振动}+\underbrace{\int_{t_0}^{t}\Phi(t-\tau)Bu(\tau)d\tau}_{控制激励引起的强制振动}
+\]</span> 以下为求解过程： <span class="math display">\[
+\begin{aligned}
+\dot x-Ax&amp;=Bu\\
+e^{-At}(\dot x-Ax)&amp;=e^{At}Bu\\
+\frac{d}{dt}[e^{-At}x(t)]&amp;=e^{-At}Bu\\
+[e^{-Atx(t)}]|_{t_0}^{t}&amp;=\int_{t_0}^{t}e^{-A\tau}Bud\tau\\
+e^{-At}x(t)-e^{-At_0}x(t_0)&amp;=\int_{t_0}^te^{-A\tau}Bud\tau\\
+e^{-At}x(t)=e^{-At_0}x(t_0)&amp;+\int_{t_0}^te^{-A\tau}Bud\tau\\
+x(t)=e^{A(t-t_0)x(t_0)}&amp;+\int_{t_0}^t e^{A(t-\tau)}Bud\tau
+\end{aligned}
+\]</span></p>
+<h3 id="线性定常非齐次状态方程的解">线性定常非齐次状态方程的解</h3>
 <h2 id="系统能控性">系统能控性</h2>
 <h3 id="系统能控性的判别">系统能控性的判别</h3>
 <h2 id="系统能观性">系统能观性</h2>
