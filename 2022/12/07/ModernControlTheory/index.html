@@ -854,11 +854,11 @@ B_{1} \\
 0
 \end{array}\right]
 \]</span></p>
-<h2 id="传递函数的实现">传递函数的实现</h2>
+<h3 id="传递函数的实现">传递函数的实现</h3>
 <p>实现问题指的是由输入到输出的动态关系的运动方程式或传递函数直接建立状态空间表达式的过程。从传递函数求得的状态空间表达式并不是唯一的，其中<span class="math inline">\(A,b,c,d\)</span>可以取无穷多种形式，这是实现的非唯一性。尽管实现非唯一，但只要原系统中不出现零极对消现象，则n阶系统中必有n个独立状态的变量，必有n个一阶微分方程与之等效，即使系统A的元素取值不同，但由于是同一个系统的实现，因此特征根必然相同。通常我们将没有零极对消的传递函数的实现称为最小实现。</p>
-<h3 id="零极对消">零极对消</h3>
+<h4 id="零极对消">零极对消</h4>
 <p>传递函数的零极点模型为 <span class="math display">\[G(s)=\frac{K(s-z_1)(s-z_2)...(s-z_m)}{(s-p_1)(s-p_2)...(s-p_n)}\]</span> 当分子的解<span class="math inline">\(z_1,z_2...,z_m\)</span>各不相等且分母的解<span class="math inline">\(p_1,p_2...p_n\)</span>各不相同，就不会出现零极点对消。</p>
-<h3 id="传递函数中没有零点的实现">传递函数中没有零点的实现</h3>
+<h4 id="传递函数中没有零点的实现">传递函数中没有零点的实现</h4>
 <p>这种情况下，系统的微分方程为：<span class="math display">\[y^{(n)}+a_{n-1}y^{(n-1)}+...+a_1\dot y+a_0y=b_0u(t)\]</span></p>
 <p>对系统微分方程进行处理，将每个积分器的输出取作状态变量，或称为相变量，它是输出<span class="math inline">\(y\)</span>或<span class="math inline">\(y/b_0\)</span>的各阶导数。</p>
 <p><span class="math display">\[
@@ -904,12 +904,12 @@ x_{n}
 \end{array}\right] u}
 \end{array}
 \]</span> <span class="math inline">\(y=\begin{bmatrix}  b_0&amp;0&amp;0&amp;\cdots&amp;0 \end{bmatrix}x\)</span></p>
-系统结构模拟图如<a href="#fig5">图5</a>所示。 <span id="fig5"></span>
+系统结构模拟图如<a href="#fig7">图7</a>所示。 <span id="fig7"></span>
 <center>
-<img src="/2022/12/07/ModernControlTheory/传递函数无零点实现系统结构模拟图.png" class="lazyload placeholder" data-srcset="/2022/12/07/ModernControlTheory/传递函数无零点实现系统结构模拟图.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp"> 图5
+<img src="/2022/12/07/ModernControlTheory/传递函数无零点实现系统结构模拟图.png" class="lazyload placeholder" data-srcset="/2022/12/07/ModernControlTheory/传递函数无零点实现系统结构模拟图.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp"> 图7
 </center>
 <p>其传递函数为 <span class="math display">\[W(s)=\frac{Y(s)}{U(s)}=\frac{b_0}{s^{(n)}+a_{n-1}s^{(n-1)}+...+a_1s+a_0},\quad m&lt;n\]</span></p>
-<h3 id="传递函数中有零点的实现">传递函数中有零点的实现</h3>
+<h4 id="传递函数中有零点的实现">传递函数中有零点的实现</h4>
 <p>这种情况下，系统的微分方程为： <span class="math display">\[
 y^{(n)}+a_{n-1} y^{(n-1)}+\cdots+a_{1} \dot{y}+a_{0} y=b_{m} u^{(m)}+b_{m-1} u^{(m-1)}+\cdots+b_{1} \dot{u}+b_{0} u
 \]</span></p>
@@ -1038,6 +1038,7 @@ b_k&amp;=\frac1kAb_{k-1}=\frac{1}{k!}A^kb_0\\
 <span class="math inline">\(A,B\)</span>为<span class="math inline">\(n\)</span>阶方阵，当且仅当<span class="math inline">\(AB=BA\)</span>时，<span class="math inline">\(e^{At}e^{Bt}=e^{(A+B)t}\)</span><br>
 当<span class="math inline">\(AB\ngeq BA\)</span>时，<span class="math inline">\(e^{At}e^{Bt}\ngeq e^{(A+B)t}\)</span></p>
 <h2 id="线性定常非齐次状态方程">线性定常非齐次状态方程</h2>
+<h3 id="线性定常非齐次状态方程的解">线性定常非齐次状态方程的解</h3>
 <p>此时讨论的是线性定常系统在控制<span class="math inline">\(u(t)\)</span>作用下的强制运动，状态方程为<span class="math inline">\(\dot x=Ax+Bu\)</span>。<br>
 令初始状态为<span class="math inline">\(t_0\)</span>，其解为： <span class="math display">\[
 x(t)=\underbrace{\Phi(t-t_0)x(t_0)}_{初始状态引起的振动}+\underbrace{\int_{t_0}^{t}\Phi(t-\tau)Bu(\tau)d\tau}_{控制激励引起的强制振动}
@@ -1052,11 +1053,45 @@ e^{-At}x(t)=e^{-At_0}x(t_0)&amp;+\int_{t_0}^te^{-A\tau}Bud\tau\\
 x(t)=e^{A(t-t_0)x(t_0)}&amp;+\int_{t_0}^t e^{A(t-\tau)}Bud\tau
 \end{aligned}
 \]</span></p>
-<h3 id="线性定常非齐次状态方程的解">线性定常非齐次状态方程的解</h3>
-<h2 id="系统能控性">系统能控性</h2>
-<h3 id="系统能控性的判别">系统能控性的判别</h3>
-<h2 id="系统能观性">系统能观性</h2>
-<h3 id="什么是能观性">什么是能观性？</h3>
+<h2 id="系统的能控性和能观性">系统的能控性和能观性</h2>
+<p>1960年，卡尔曼提出了能控型和能观性的概念。能控性和能观性是最优控制和最优估计的基础，现代控制理论建立的基础是用状态空间描述，其中状态方程用来描述输入<span class="math inline">\(u(t)\)</span>引起状态<span class="math inline">\(x(t)\)</span>的变化过程，输出方程用来描述由状态变化引起的输出<span class="math inline">\(y(t)\)</span>的变化。因此能控型表示了分析输入<span class="math inline">\(u(t)\)</span>对状态<span class="math inline">\(x(t)\)</span>的控制能力，能观性表示了输出<span class="math inline">\(y(t)\)</span>对状态<span class="math inline">\(x(t)\)</span>的反映能力。</p>
+<h3 id="能控性定义">能控性定义</h3>
+<p>能控型研究的是系统在<span class="math inline">\(u(t)\)</span>的控制下，<span class="math inline">\(x(t)\)</span>的转移情况，与输出无关，因此只研究状态方程。<br>
+定义：如果存在一个分段连续的输入<span class="math inline">\(u(t)\)</span>，能在有限时间区间<span class="math inline">\([t-0,t_f]\)</span>内，使系统由某一初始状态<span class="math inline">\(x(t_0)\)</span>转移到指定的任意终端状态<span class="math inline">\(x(t_f)\)</span>，则称此状态是能控的。若所有状态都能控，则系统是状态完全能控的，或简称系统是能控的。<br>
+点系统能控的条件：<span class="math inline">\(n\)</span>维空间中的点系统中的点<span class="math inline">\(P \in \mathbb{R}^n\)</span>能在输入的作用下驱动到任意指定的状态<span class="math inline">\(P_1,P_2,P_3...P_n\)</span><br>
+状态完全能控的条件：能控状态充满整个状态空间,即对于任意初始状态都能找到相应的控制输入<span class="math inline">\(u(T)\)</span>，使得在有限的时间区间<span class="math inline">\([t_0,t_f]\)</span>内,将状态转移到状态空间内的任意指定状态，则称系统完全能控，即系统任意点都能控。从结构图看，对于状态的能控型，只需要观察是否有与<span class="math inline">\(u(t)\)</span>无关的鼓励方块。</p>
+<h3 id="能控性的判别">能控性的判别</h3>
+<h4 id="约旦标准型判别能控性">约旦标准型判别能控性</h4>
+<p>对于一个单输入系统，若特征值互异，即没有重根，此时的特征矩阵为对角阵，状态方程为<span class="math inline">\(\dot x=\Lambda x+bu\)</span>，若有重根，则特征矩阵为约旦块，状态方程为<span class="math inline">\(\dot x =Jx+bu\)</span>。<br>
+系统的能控型取决于<span class="math inline">\(A\)</span>和<span class="math inline">\(b\)</span>，<span class="math inline">\(A\)</span>由系统的结构和内部参数决定，<span class="math inline">\(b\)</span>与控制作用的施加点相关。对于约旦标准型矩阵：</p>
+<ol type="1">
+<li>若<span class="math inline">\(A\)</span>为对角矩阵时，如果<span class="math inline">\(b\)</span>中有元素为0，则对应状态不能控，此时状态是不完全能控的。<br>
+</li>
+<li>若<span class="math inline">\(A\)</span>为约旦标准矩阵，前一个状态总是受下一状态的控制，如果<span class="math inline">\(b\)</span>中相应于约旦块中的最后一个元素为0，则状态不完全能控。</li>
+</ol>
+<p>对于具有一般系统矩阵的多输入系统，即<span class="math inline">\(\dot x=Ax+Bu\)</span>，令变换矩阵<span class="math inline">\(T\)</span>使得<span class="math inline">\(x=Tz\)</span>，可变为约旦标准型<span class="math inline">\(\dot z=\Lambda z+T^{-1}Bu\)</span>或<span class="math inline">\(\dot z=Jz+T^{-1}Bu\)</span>。系统的线性变换不会改变系统的能控性条件，证明如下： <span class="math display">\[
+\left\{
+\begin{array}{l}
+某第i个状态x_i不能控\\
+x^i(0)e^{\lambda_i t}的自由分量不能控\\
+相应特征值的自然模式e^{\lambda_i t}不能控\\
+线性变换不改变系统的特征值
+\end{array}\right.\Rightarrow线性变换不改变能控性
+\]</span></p>
+<p>线性变换后，判别依据如下：</p>
+<ol type="1">
+<li>若<span class="math inline">\(A\)</span>的特征值互异，则<span class="math inline">\(\dot z=\Lambda z+T^{-1}Bu\)</span>，系统能控的充要条件为<span class="math inline">\(T^{-1}B\)</span>中的各行元素都不为全零。</li>
+<li>若<span class="math inline">\(A\)</span>的特征值有相同，则<span class="math inline">\(\dot z=Jz+T^{-1}Bu\)</span>，系统能控的充要条件为
+<ul>
+<li>对于<span class="math inline">\(T^{-1}B\)</span>中特征值互异的部分，它的各行元素没有全零的。</li>
+<li>对于<span class="math inline">\(T^{-1}B\)</span>中特征值相同的部分，每个约旦块最后一行相对应的元素没有全为0的。</li>
+</ul></li>
+</ol>
+<h4 id="通过ab矩阵判别系统的能控性">通过<span class="math inline">\(A\)</span>、<span class="math inline">\(B\)</span>矩阵判别系统的能控性</h4>
+<p>状态完全能控的充要条件是矩阵<span class="math inline">\(M=\begin{bmatrix}  B&amp;AB&amp;A^2B\cdots&amp;A^{n-1}B \end{bmatrix}\)</span>的秩为<span class="math inline">\(n\)</span>。</p>
+<h3 id="通过传递方程判别系统的能控型">通过传递方程判别系统的能控型</h3>
+<p>状态完全能控的充要条件是<span class="math inline">\(W_{ux}(s)=(sI-A)^{-1}b\)</span>没有零点和极点重合现象，否则被相消的极点就是不能控的模式，系统为不能控系统。</p>
+<h3 id="能观性定义">能观性定义</h3>
 <ol type="1">
 <li>控制系统大多采用反馈控制的形式。</li>
 <li>在现代控制理论中，反馈信息是由系统的状态变量组合而成的。</li>
@@ -1065,7 +1100,7 @@ x(t)=e^{A(t-t_0)x(t_0)}&amp;+\int_{t_0}^t e^{A(t-\tau)}Bud\tau
 <li>能观性所表示的是输出<span class="math inline">\(y(t)\)</span>反映状态矢量<span class="math inline">\(x(t)\)</span>的能力，与控制作用没有直接关系。所以分析能观性问题，只需要从齐次状态方程和输出方程出发。</li>
 </ol>
 <h3 id="能观性判别">能观性判别</h3>
-<h4 id="通过约旦标准型判别系统的能观性">通过约旦标准型判别系统的能观性</h4>
+<h4 id="约旦标准型判别能观性">约旦标准型判别能观性</h4>
 <p>系统有如下形式： <span class="math display">\[
 \dot{x}=Ax\\
 y=Cx
@@ -1084,7 +1119,7 @@ A=\Lambda=\left[\begin{array}{llll}
      \vdots&amp;\vdots&amp;\ddots&amp;\vdots\\
      c_{m1}&amp;c_{m2}&amp;\cdots&amp;c_{mn}
  \end{bmatrix}
-\]</span> 在系统矩阵<span class="math inline">\(A\)</span>为对角型的情况下，系统能观的充要条件时输出矩阵<span class="math inline">\(C\)</span>中没有全为零的列。如果第<span class="math inline">\(i\)</span>列全为零，则与之相对应的<span class="math inline">\(x_i\)</span>是不能观的。</li>
+\]</span> 在系统矩阵<span class="math inline">\(A\)</span>为对角型的情况下，系统能观的充要条件是输出矩阵<span class="math inline">\(C\)</span>中没有全为零的列。如果第<span class="math inline">\(i\)</span>列全为零，则与之相对应的<span class="math inline">\(x_i\)</span>是不能观的。</li>
 <li><span class="math inline">\(A\)</span>为约旦标准型矩阵，以三阶为例 <span class="math display">\[
 A=J=\begin{bmatrix}
  \lambda_1&amp;1&amp;0\\
@@ -1100,8 +1135,175 @@ c_{31}&amp;c_{32}&amp;c_{33}
 <li><span class="math inline">\(A\)</span>为任意矩阵 将矩阵<span class="math inline">\(A\)</span>经过<span class="math inline">\(T^{-1}AT\)</span>变换得到对角型或约旦型，再判别对应<span class="math inline">\(CT\)</span>的列是否为零来确定系统的能观性。</li>
 </ol>
 <h4 id="通过ac判断系统的能观性">通过<span class="math inline">\(A、C\)</span>判断系统的能观性</h4>
-<p>完全能观的充要条件是矩阵<span class="math inline">\(N=\begin{bmatrix}  C\\CA\\\vdots\\CA^{n-1} \end{bmatrix}\)</span>的秩为<span class="math inline">\(n\)</span></p>
-<h2 id="能控与能观的对偶关系">能控与能观的对偶关系</h2>
+<p>完全能观的充要条件是矩阵<span class="math inline">\(N=\begin{bmatrix}  C\\CA\\\vdots\\CA^{n-1} \end{bmatrix}\)</span>的秩为<span class="math inline">\(n\)</span>。</p>
+<h3 id="能控与能观的对偶关系">能控与能观的对偶关系</h3>
+<h4 id="从矩阵结构了解对偶系统">从矩阵结构了解对偶系统</h4>
+<p>由卡尔曼对偶原理可以确定能控型和能观性之间存在内在的对偶关系。系统能控性分析可以利用对偶关系转化为其对偶系统能观性的分析，因此能控性与能观性的对偶关系也是沟通最优控制问题和最优估计问题的内在关系。<br>
+现存在两个系统<span class="math inline">\(\Sigma_1=\left\{\begin{aligned}  \dot x_1&amp;=A_1B_1u_1\\  y_1&amp;=C_1x_1 \end{aligned}\right.\)</span>和<span class="math inline">\(\Sigma_2=\left\{\begin{aligned}  \dot x_2&amp;=A_2x_2+B_2u_2\\  y_2&amp;=C_2x_2 \end{aligned}\right.\)</span><br>
+其中： <span class="math inline">\(x_1,x_2\)</span>为<span class="math inline">\(n\)</span>维状态矢量<br>
+<span class="math inline">\(u_1,u_2\)</span>分别为<span class="math inline">\(r\)</span>维与<span class="math inline">\(m\)</span>维控制矢量<br>
+<span class="math inline">\(y_1,y_2\)</span>分别为<span class="math inline">\(m\)</span>维与<span class="math inline">\(r\)</span>维输出矢量<br>
+<span class="math inline">\(A_1,A_2\)</span>为<span class="math inline">\(n\times n\)</span>系统矩阵 <span class="math inline">\(B_1,B_2\)</span>分别为<span class="math inline">\(n\times r\)</span>与<span class="math inline">\(n\times m\)</span>控制矩阵<br>
+<span class="math inline">\(C_1,C_2\)</span>分别为<span class="math inline">\(m\times n\)</span>与<span class="math inline">\(r\times n\)</span>输出矩阵 若满足<span class="math inline">\(A_2=A_1^T,B_2=C_1^T,C_2=B_1^T\)</span>，则<span class="math inline">\(\Sigma_1\)</span>与<span class="math inline">\(\Sigma_2\)</span>互为对偶。显然，<span class="math inline">\(\Sigma_1\)</span>是一个<span class="math inline">\(r\)</span>维输入<span class="math inline">\(m\)</span>维输出的<span class="math inline">\(n\)</span>阶系统，其对偶系统<span class="math inline">\(\Sigma_2\)</span>是一个<span class="math inline">\(m\)</span>维输入<span class="math inline">\(r\)</span>维输出的<span class="math inline">\(n\)</span>阶系统。</p>
+<h4 id="从结构图了解对偶系统">从结构图了解对偶系统</h4>
+<span class="math inline">\(\Sigma_1\)</span>和<span class="math inline">\(\Sigma_2\)</span>的方块结构图如<a href="#fig8">图8</a>所示 <span id="fig8"></span>
+<center>
+<img src="/2022/12/07/ModernControlTheory/对偶系统.png" class="lazyload placeholder" data-srcset="/2022/12/07/ModernControlTheory/对偶系统.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp"> 图8
+</center>
+<p>我们可以看到，互为对偶的两系统有如下性质：</p>
+<ol type="1">
+<li>输入端与输出端互换</li>
+<li>信号传递方向相反</li>
+<li>信号引出点和综合点互换</li>
+<li>对应矩阵转置</li>
+</ol>
+<h4 id="从传递函数矩阵来看对偶系统的关系">从传递函数矩阵来看对偶系统的关系</h4>
+<p>传递函数矩阵<span class="math inline">\(W_1(s)\)</span>为<span class="math inline">\(m\times r\)</span>矩阵 <span class="math display">\[
+    W_1(s)=C_1(sI-A_1)^{-1}B_1
+\]</span> 传递函数矩阵<span class="math inline">\(W_2(s)\)</span>为<span class="math inline">\(r\times m\)</span>矩阵 <span class="math display">\[
+\begin{aligned}
+    &amp;W_2(s)\\
+    =&amp;C_2(sI-A_2)^{-1}B_2\\
+    =&amp;B_1^T(sI-A_1^T)^{-1}C_1^T\\
+    =&amp;B_1^T[(sI-A_1)^{-1}]^TC_1^T
+\end{aligned}
+\]</span> 我们可以得到<span class="math inline">\(W_2^T(s)=W_1(s)\)</span>，对偶系统的传递函数矩阵互为转置。</p>
+<h4 id="对偶系统的性质">对偶系统的性质</h4>
+若系统<span class="math inline">\(\Sigma_1\)</span>与系统<span class="math inline">\(\Sigma_2\)</span>互为对偶，则有${
+<span class="math display">\[\begin{aligned}
+    \Sigma_1 完全能控\Leftrightarrow \Sigma_2 完全能观\\
+    \Sigma_1 完全能观\Leftrightarrow \Sigma_2 完全能控
+\end{aligned}\]</span>
+<p>. $<br>
+证明：<br>
+对于系统<span class="math inline">\(\Sigma_2\)</span>而言，能控性判别矩阵<span class="math inline">\((n\times m)\)</span><br>
+<span class="math display">\[M_2=\begin{bmatrix}
+   B_2&amp;A_2B_2\cdots A_2^{n-1}B_2
+\end{bmatrix}
+\]</span>的秩为<span class="math inline">\(n\)</span>，此时系统状态为完全能控的。<br>
+又<span class="math inline">\(A_2=A_1^T,B_2=C_1^T,C_2=B_1^T\)</span>，则有<br>
+<span class="math display">\[M_2=\begin{bmatrix}
+    C_1^T&amp;A_1^TC_1^T&amp;\cdots&amp;(A_1^T)^{n-1}C_1^T
+\end{bmatrix}=N_1^T\]</span><br>
+说明当<span class="math inline">\(\Sigma_2\)</span>能控时，系统<span class="math inline">\(\Sigma_1\)</span>是能观的。同理，有 <span class="math display">\[
+\begin{aligned}
+&amp;N_2^T\\
+=&amp;\begin{bmatrix}
+    C_2^T&amp;A_2^TC_2^T&amp;\cdots&amp;(A_2^T)^{n-1}C_2^T
+\end{bmatrix}\\
+=&amp;\begin{bmatrix}
+    B_1&amp;A_1B_1&amp;\cdots&amp;A_1^{n-1}B_1
+\end{bmatrix}\\
+=&amp;M_1
+\end{aligned}
+\]</span> 因此，<span class="math inline">\(\Sigma_2\)</span>能观时<span class="math inline">\(\Sigma_1\)</span>是能控的</p>
+<h3 id="能控能观标准型">能控能观标准型</h3>
+<p>由于状态变量的选择非唯一，因此状态空间的表达式也不唯一，根据研究需要，我们可以将状态空间表达式化成三种标准形式：</p>
+<ol type="1">
+<li>约旦标准型。约旦标准型主要用于求状态转移矩阵<span class="math inline">\(\Phi(t)=e^{At}\)</span>，还可以用来分析可控性和可观性。</li>
+<li>能观标准型。能观标准型主要用于研究系统的状态反馈。</li>
+<li>能观标准型。能观标准型主要用于状态观测器的设计和系统辨识。</li>
+</ol>
+<p>状态空间表达式能够转换成能控标准型和能观标准型的理论依据是非奇异变换不改变系统的能控型和能观性。但是转换成能控标准型需要系统本身状态完全能控，同理转换成能观标准型需要系统本身状态完全能观。</p>
+<h4 id="单输入系统的能控标准型">单输入系统的能控标准型</h4>
+<p>转换成能控标准型，首先需要判断系统的系统能控性。对于一般<span class="math inline">\(n\)</span>维定常系统<span class="math inline">\(\left\{\begin{aligned}  \dot x&amp;=Ax+Bu\\  y&amp;=Cx \end{aligned}\right.\)</span>,系统能控的要求为<span class="math inline">\(rank\begin{bmatrix}  B&amp;AB&amp;A^{n-1}B \end{bmatrix}=n\)</span> 对于多输入多输出系统，我们可以在<span class="math inline">\(M\)</span>中<span class="math inline">\(nr\)</span>个列矢量中选取一组<span class="math inline">\(n\)</span>个线性无关的列矢量，此时能控标准型不唯一。<br>
+对于单输入单输出系统，判别矩阵<span class="math inline">\(M\)</span>只有<span class="math inline">\(n\)</span>个列矢量，因此当系统能控时线性无关矢量的组合是唯一的，此时能控标准型的形式是唯一的。</p>
+<p>我们主要研究单输入单输出系统的两种能控标准型。</p>
+<h5 id="能控标准mathrmi型">能控标准<span class="math inline">\(\mathrm{I}\)</span>型</h5>
+<p>若线性定常系统<span class="math inline">\(\left\{\begin{aligned}  \dot x&amp;=Ax+bu\\  y&amp;=cx \end{aligned}\right.\)</span>是能控的，则存在线性奇异变换<span class="math inline">\(x=T_{c1}\bar x\)</span>，其中 <span class="math display">\[
+T_{c1}
+=\begin{bmatrix}
+A^{n-1} b &amp; A^{n-2} b &amp; \cdots &amp; b
+\end{bmatrix} \cdot\left[\begin{array}{ccccc}
+1 &amp; &amp; &amp; &amp; 0 \\
+\alpha_{n-1} &amp; 1 &amp; &amp; &amp; \\
+\vdots &amp; &amp; \ddots &amp; &amp; \\
+\alpha_2 &amp; \alpha_3 &amp; &amp; \ddots &amp; \\
+\alpha_1 &amp; \alpha_2 &amp; \cdots &amp; \alpha_{n-1} &amp; 1
+\end{array}\right]
+\]</span> 其中<span class="math inline">\(\alpha_i\)</span>为特征多项式的各项系数，特征多项式为 <span class="math display">\[|\lambda I-A|=\lambda^n+\alpha_{n-1}\lambda^{n-1}+\cdots+\alpha_1\lambda+\alpha_0\]</span> 此时，状态空间表达式化成<span class="math inline">\(\left\{\begin{aligned}  \dot{\bar{x}}&amp;=\bar A\bar x+b\bar u\\  y&amp;=\bar{cx} \end{aligned}\right.\)</span>其中： 线性系统中的状态矩阵 <span class="math display">\[
+\bar{A}=T_{c 1}^{-1} A T_{c 1}=
+\left[\begin{array}{ccccc}
+0 &amp; 1 &amp; \cdots &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\
+\vdots&amp;\vdots &amp; \cdots &amp; \ddots &amp; \vdots\\
+0 &amp; 0 &amp; \cdots &amp; 0 &amp; 1 \\
+-\alpha_0 &amp; -\alpha_1 &amp; \cdots &amp; -\alpha_{n-2} &amp; -\alpha_{n-1}
+\end{array}\right],\]</span> 控制矩阵$ {b}=T_{c 1}^{-1} b=, $<br>
+输出矩阵${c}=c T_{c 1}=$</p>
+<p>此时系统的传递函数为: <span class="math display">\[
+W(s)=\bar c(sI-A)^{-1}\bar b=\frac{\beta_{n-1}s^{n-1}+\beta_{n-2}s^{n-2}+\cdots +\beta_1 s+\beta_0}{s^nn+\alpha_{n-1}s^{n-1}+\cdots+\alpha_1s+\alpha_0}
+\]</span></p>
+<p>其中分子的系数为<span class="math inline">\(\bar c中的元素\)</span>，分母中的元素为<span class="math inline">\(\bar A\)</span>中最后一行的元素的负值。</p>
+<h5 id="能控标准mathrmii型">能控标准<span class="math inline">\(\mathrm{II}\)</span>型</h5>
+<p>若线性定常系统<span class="math inline">\(\left\{\begin{aligned}  \dot x&amp;=Ax+bu\\  y&amp;=cx \end{aligned}\right.\)</span>是能控的，则存在线性奇异变换 <span class="math display">\[
+x=T_{c2}\bar x
+=\begin{bmatrix}
+b &amp; Ab &amp; \cdots  &amp; A^{n-1} b
+\end{bmatrix} \cdot \bar{x}
+\]</span> 相应的状态表达式为<span class="math inline">\(\left\{\begin{aligned}  \bar{\dot x}&amp;=\bar A\bar x+\bar bu\\  y&amp;=\bar{cx} \end{aligned}\right.\)</span></p>
+<p>其中： 线性变换后的状态矩阵 <span class="math display">\[
+\bar{A}=T_{c 2}^{-1} A T_{c 2}=\left[\begin{array}{ccccc}
+0 &amp; 0 &amp; \cdots &amp; 0 &amp; -\alpha_0 \\
+1 &amp; 0 &amp; \cdots &amp; 0 &amp; -\alpha_1 \\
+0 &amp; 1 &amp; \cdots &amp; 0 &amp; -\alpha_2 \\
+\vdots &amp; \vdots &amp; \cdots &amp; \vdots &amp; \vdots \\
+0 &amp; 0 &amp; \cdots &amp; 1 &amp; -\alpha_{n-1}
+\end{array}\right],\\
+\]</span> 控制矩阵$ {b}=T_{c 2}^{-1} b=,$<br>
+输出矩阵${c}=c T_{c 2}=$</p>
+<h4 id="单输出系统的能观标准型">单输出系统的能观标准型</h4>
+<h5 id="能观标准mathrmi型">能观标准<span class="math inline">\(\mathrm{I}\)</span>型</h5>
+<p>若线性定常系统<span class="math inline">\(\left\{\begin{aligned}  \dot x&amp;=Ax+bu\\  y&amp;=cx \end{aligned}\right.\)</span>是能观的，则存在非奇异变换<span class="math inline">\(x=T_{01}\tilde{x}\)</span>使得状态空间表达式转换为<span class="math inline">\(\left\{\begin{aligned}  \dot{\tilde x}&amp;=A\tilde x+\tilde bu\\  y&amp;=\tilde c\tilde x \end{aligned}\right.\)</span>，其中： 线性系统中的状态矩阵 <span class="math display">\[
+\tilde{A}=T_{01}^{-1} A T_{01}=\left[\begin{array}{ccccc}
+0 &amp; 1 &amp; 0 &amp; \cdots &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; \cdots &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 \\
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots \\
+-\alpha_0 &amp; -\alpha_1 &amp; -\alpha_2 &amp; \cdots &amp; -\alpha_{n-1}
+\end{array}\right],\\\]</span> 控制矩阵<span class="math inline">\(\tilde { b } = T _{ 01 } ^ { - 1 } b = \left[ \begin{array} { c } { \beta _ { 0 } } \\ { \beta _ { 1 } } \\ { \vdots } \\ { \beta _ { n \cdot 1 } } \end{array} \right],\)</span><br>
+输出矩阵$ = c T_ { 01 } = $</p>
+<h5 id="能观标准mathrmii型">能观标准<span class="math inline">\(\mathrm{II}\)</span>型</h5>
+若线性定常系统<span class="math inline">\(\left\{\begin{aligned}  \dot x&amp;=Ax+bu\\  y&amp;=cx \end{aligned}\right.\)</span>是能观的，则存在非奇异变换<span class="math inline">\(x=T_{02}\tilde{x}\)</span>使得状态空间表达式转换为<span class="math inline">\(\left\{\begin{aligned}  \dot{\tilde x}&amp;=A\tilde x+\tilde bu\\  y&amp;=\tilde c\tilde x \end{aligned}\right.\)</span>，其中： 线性变换后的状态矩阵 <span class="math display">\[
+A= \left[ \begin{array} { c c c c c } { 0 } &amp; { 0 } &amp; { \cdots } &amp; { 0 } &amp; { - \alpha _ { 0 } } \\ { 1 } &amp; { 0 } &amp; { \cdots } &amp; { 0 } &amp; { - \alpha _ { 1 } } \\ { 0 } &amp; { 1 } &amp; { \cdots } &amp; { 0 } &amp; { - \alpha _ { 2 } } \\ { \vdots } &amp; { \vdots } &amp; { \cdots } &amp; { \vdots } &amp; { \vdots } \\ { 0 } &amp; { 0 } &amp; { \cdots } &amp; { 1 } &amp; { - \alpha _ { n - 1 } } \end{array} \right],\\
+\]</span> 变换矩阵 <span class="math display">\[
+T_ { 02 } ^ { - 1 } = \left[ \begin{array} { c c c c c } { 1 } &amp; { \alpha _ { n - 1 } } &amp; { \cdots } &amp; { \alpha _ { 2 } } &amp; { \alpha _ { 1 } } \\ { 0 } &amp; { 1 } &amp; { \cdots } &amp; { \alpha _ { 3 } } &amp; { \alpha _ { 2 } } \\ { \vdots } &amp; { \vdots } &amp; { \cdots } &amp; { \vdots } &amp; { \vdots } \\ { 0 } &amp; { 0 } &amp; { \cdots } &amp; { 1 } &amp; { \alpha _ { n - 1 } } \\ { 0 } &amp; { 0 } &amp; { \cdots } &amp; { 0 } &amp; { 1 } \end{array} \right] \cdot \left[ \begin{array} { c } { c A ^ { n - 1 } } \\ { c A ^ { n - 2 } } \\ { \vdots } \\ { c A } \\ { c } \end{array} \right],\\
+\]</span> 控制矩阵$  = T <em>{ 02 } ^ { - 1 } b = ,$<br>
+输出矩阵$c=cT</em>{02}=
+<span class="math display">\[\begin{bmatrix}
+    0&amp;0&amp;0&amp;\cdots&amp;1
+\end{bmatrix}\]</span>
+<p>$</p>
+<h2 id="李雅普诺夫稳定">李雅普诺夫稳定</h2>
+<p>设所研究系统的非齐次方程为<span class="math inline">\(\dot x=f(x,t)\)</span>一般为时变非线性函数，当方程中不显含<span class="math inline">\(x\)</span>时，则为定常非线性系统。<br>
+设该方程在给定初始条件<span class="math inline">\((x_0,t_0)\)</span>下有唯一解：<span class="math inline">\(x=\Phi(t;x_0,t_0)\)</span>。其中<span class="math inline">\(x_0=\Phi(t_0;x_0,t_0)\)</span>为<span class="math inline">\(x_0\)</span>在初始时刻<span class="math inline">\(t_0\)</span>时的状态，而<span class="math inline">\(t\)</span>是从<span class="math inline">\(t_0\)</span>开始观察的时间变量，由此我们可以描述从初始条件<span class="math inline">\((t_0,x_0)\)</span>出发的一条状态运动的轨迹。</p>
+<h3 id="平衡状态">平衡状态</h3>
+<p>若存在矢量<span class="math inline">\(x_e\)</span>，使得<span class="math inline">\(\forall t,f(x_e,t)=0\)</span>，则称<span class="math inline">\(x_e\)</span>为平衡状态。而由于平衡状态的各分量不随时间变化，若已知状态方程，则令<span class="math inline">\(\dot x=0\)</span>,求得解<span class="math inline">\(x\)</span>即为平衡状态。<br>
+值得注意的是，对于任意一个系统而言，不一定存在平衡点，即使存在，也不一定是唯一的。并且由于任意一个已知的平衡状态，都可以通过坐标变换将其移动到坐标原点，因此我们在讨论平衡点或稳定性时，可以仅讨论系统在坐标原点的平衡点。</p>
+<h3 id="稳定性">稳定性</h3>
+<h4 id="相关的基本概念">相关的基本概念</h4>
+<p>欧几里得范数：在<span class="math inline">\(n\)</span>维状态空间中，欧几里得范数可表示为<span class="math inline">\(||x-x_e||=[(x_1-x_{1e})^2+(x_2-x_{2e})^2+\cdots+(x_n+x){ne}^2]^{\frac12}\)</span></p>
+<p>距离：若用<span class="math inline">\(||x-x_e||\)</span>表示状态矢量<span class="math inline">\(x\)</span>与平衡状态<span class="math inline">\(x_e\)</span>的距离，用点集<span class="math inline">\(s(\varepsilon)\)</span>表示以<span class="math inline">\(x_e\)</span>为中心<span class="math inline">\(\varepsilon\)</span>为半径的超球体，那么<span class="math inline">\(x\in \varepsilon\)</span>可以表示为<span class="math inline">\(||x-x_e||&lt;&lt;\varepsilon\)</span>。</p>
+<p>领域：当<span class="math inline">\(\varepsilon\)</span>足够小，即可称<span class="math inline">\(s(\varepsilon)\)</span>为<span class="math inline">\(x_e\)</span>的领域。因此若有<span class="math inline">\(x_0\in s(\delta)\)</span>，则意味着初始偏差<span class="math inline">\(||x_0-x_e||&lt;&lt;\delta\)</span>。同理，若状态空间方程的解<span class="math inline">\(\Phi(t;x_0,t_0)\)</span>位于球形领域<span class="math inline">\(s(\varepsilon)\)</span>内，便有平衡状态偏差<span class="math inline">\(||\Phi(t;x_0,t_0)-x_e||&lt;&lt;\varepsilon,t\geq t_0\)</span>。因此在系统中初态<span class="math inline">\(x_0\)</span>或短暂扰动引起的自由响应应是有界的。</p>
+<h4 id="稳定性的定义">稳定性的定义</h4>
+<p>系统的稳定性可以分为以下几类：李雅普诺夫意义下的稳定、渐近稳定、大范围渐近稳定以及不稳定。</p>
+<ol type="1">
+<li>李雅普诺夫稳定</li>
+</ol>
+<p>如果系统对任意选定的实数<span class="math inline">\(\varepsilon&gt;0\)</span>都对应存在另一个实数<span class="math inline">\(\delta(\varepsilon,t_0)&gt;0\)</span>时，从任意初始状态<span class="math inline">\(x_0\)</span>出发的解都满足<span class="math inline">\(||x(t)-x_e||\leq \varepsilon,t_0&lt;t&lt;\inf\)</span>，则称平衡装填<span class="math inline">\(x_e\)</span>为李雅普诺夫意义下的稳定。<br>
+实数<span class="math inline">\(\delta\)</span>与<span class="math inline">\(\varepsilon\)</span>有关，一般情况下也与<span class="math inline">\(t_0\)</span>有关。当实数<span class="math inline">\(\delta\)</span>与<span class="math inline">\(\varepsilon\)</span>有关而与<span class="math inline">\(t_0\)</span>无关时，我们称平衡状态<span class="math inline">\(x_e\)</span>为一致稳定。</p>
+<ol start="2" type="1">
+<li>渐近稳定</li>
+</ol>
+<p>当平衡状态<span class="math inline">\(x_e\)</span>稳定，且当<span class="math inline">\(t\)</span>无限增长时，轨线不仅不超出<span class="math inline">\(s(\varepsilon)\)</span>，最终还收敛于<span class="math inline">\(x_e\)</span>，则称平衡状态<span class="math inline">\(x_e\)</span>是渐近稳定的。</p>
+<ol start="3" type="1">
+<li>大范围渐近稳定</li>
+</ol>
+<p>当平衡状态<span class="math inline">\(x_e\)</span>是稳定的,且状态空间中所有初始状态出发的轨线都具有渐近稳定性,就可以称平衡状态<span class="math inline">\(x_e\)</span>是大范围渐近稳定的</p>
+<ol start="4" type="1">
+<li>不稳定</li>
+</ol>
+<p>若<span class="math inline">\(\varepsilon&gt;0,\delta&gt;0\)</span>,不管<span class="math inline">\(\delta\)</span>多么小,只要<span class="math inline">\(s(\delta)\)</span>内出发的状态轨线至少有一个轨线越过<span class="math inline">\(s(\varepsilon)\)</span>，则称平衡状态<span class="math inline">\(x_e\)</span>不稳定。</p>
 
       </div>
       <div class="post-tags-categories">
