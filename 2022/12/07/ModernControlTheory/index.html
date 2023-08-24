@@ -1,0 +1,1460 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>现代控制理论 | YuZai‘s Blog</title><meta name="author" content="剑仁宇仔"><meta name="copyright" content="剑仁宇仔"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="引言 现代控制理论是一门广泛的学科，旨在研究如何通过控制系统来满足特定目标。它包括许多不同的方法和技术，用于设计、分析和实现控制系统。现代控制理论涉及到许多不同的领域，包括自动化、机械工程、电气工程、航空航天工程、生物医学工程等。本文关于现代控制理论课程的知识点进行综述，主要介绍了现代控制的基本概念，并对现代控制中的重要理论进行了推导与总结。本文分为七个章节，具体工作如下：  在第一章里首先普及了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="现代控制理论">
+<meta property="og:url" content="http://chenyv118.github.io/2022/12/07/ModernControlTheory/index.html">
+<meta property="og:site_name" content="YuZai‘s Blog">
+<meta property="og:description" content="引言 现代控制理论是一门广泛的学科，旨在研究如何通过控制系统来满足特定目标。它包括许多不同的方法和技术，用于设计、分析和实现控制系统。现代控制理论涉及到许多不同的领域，包括自动化、机械工程、电气工程、航空航天工程、生物医学工程等。本文关于现代控制理论课程的知识点进行综述，主要介绍了现代控制的基本概念，并对现代控制中的重要理论进行了推导与总结。本文分为七个章节，具体工作如下：  在第一章里首先普及了">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:published_time" content="2022-12-07T08:43:54.000Z">
+<meta property="article:modified_time" content="2023-08-21T09:11:27.695Z">
+<meta property="article:author" content="剑仁宇仔">
+<meta property="article:tag" content="博客， 剑仁">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://chenyv118.github.io/2022/12/07/ModernControlTheory/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '现代控制理论',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-08-21 17:11:27'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">23</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="YuZai‘s Blog"><span class="site-name">YuZai‘s Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">现代控制理论</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-12-07T08:43:54.000Z" title="发表于 2022-12-07 16:43:54">2022-12-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-08-21T09:11:27.695Z" title="更新于 2023-08-21 17:11:27">2023-08-21</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="现代控制理论"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="center-引言-center"><center>引言</center></h2>
+<p>现代控制理论是一门广泛的学科，旨在研究如何通过控制系统来满足特定目标。它包括许多不同的方法和技术，用于设计、分析和实现控制系统。现代控制理论涉及到许多不同的领域，包括自动化、机械工程、电气工程、航空航天工程、生物医学工程等。本文关于现代控制理论课程的知识点进行综述，主要介绍了现代控制的基本概念，并对现代控制中的重要理论进行了推导与总结。本文分为七个章节，具体工作如下：</p>
+<ol>
+<li>在第一章里首先普及了现代控制理论中相关的基本概念。</li>
+<li>在第二章里介绍了传递函数，这对后面系统的辨识具有重要的意义。</li>
+<li>在第三章里介绍了约旦标准型矩阵，对于系统的计算优化提供了便利。</li>
+<li>在第四章里我们对线性定常系统的状态方程求解，以便于有效地分析和控制系统。</li>
+<li>在第五章里我们研究系统的能控型和能观性，并且在第六章里我们研究了李雅普诺夫的稳定性的判别，为系统的设计和控制提供理论依据，帮助我们了解系统的性能限制和潜在问题。</li>
+<li>第七章我们介绍了线性反馈控制系统，这对系统的优化具有指导意义。</li>
+</ol>
+<h2 id="center-目录-center"><center>目录</center></h2>
+<p><a href="#1-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5">第一章 基本概念</a></p>
+<p><a href="#2-%E4%BC%A0%E9%80%92%E5%87%BD%E6%95%B0">第二章 传递函数</a></p>
+<p><a href="#3-%E7%BA%A6%E6%97%A6%E6%A0%87%E5%87%86%E5%9E%8B%E7%9F%A9%E9%98%B5">第三章 约旦标准型矩阵</a></p>
+<p><a href="#4-%E7%BA%BF%E6%80%A7%E5%AE%9A%E5%B8%B8%E7%B3%BB%E7%BB%9F">第四章 线性定常系统</a></p>
+<p><a href="#5-%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%83%BD%E6%8E%A7%E6%80%A7%E5%92%8C%E8%83%BD%E8%A7%82%E6%80%A7">第五章 系统的能控性和能观性</a></p>
+<p><a href="#6-%E6%9D%8E%E9%9B%85%E6%99%AE%E8%AF%BA%E5%A4%AB%E7%9A%84%E7%A8%B3%E5%AE%9A%E6%80%A7%E5%88%A4%E5%88%AB">第六章 李雅普诺夫的稳定性判别</a></p>
+<p><a href="#7-%E7%BA%BF%E6%80%A7%E5%8F%8D%E9%A6%88%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F">第七章 线性反馈控制系统</a></p>
+<h2 id="1-基本概念">1 基本概念</h2>
+<h3 id="1-1-系统表达">1.1 系统表达</h3>
+<h4 id="1-1-1-状态变量">1.1.1 状态变量</h4>
+<p>定义；足以完全确定系统运动状态的个数最小的一组变量。<br>
+性质： 已知$t=t_0$时刻的值，在给定$t&gt;t_0$时刻的输入$I_t$的作用下，便能完全确定系统在任何$t&gt;t_0$时刻的行为。<br>
+函数表示：$x_t=f(x_{t_0},I_t)$</p>
+<h4 id="1-1-2-状态矢量">1.1.2 状态矢量</h4>
+<p>将一组数量为$n$的状态变量用$x_1(t),x_2(t),…,x_n(t)$表示，则可用一个状态矢量$x(t)=\begin{pmatrix}<br>
+x_1(t)\x_2(t)\\vdots\x_n(t)<br>
+\end{pmatrix}$表示这一组状态变量</p>
+<h4 id="1-1-3-状态空间">1.1.3 状态空间</h4>
+<p>以一组数量为$n$的状态变量$x_1(t),x_2(t),…,x_n(t)$作为坐标轴表示的$n$维空间称为状态空间。</p>
+<h4 id="1-1-4-状态方程">1.1.4 状态方程</h4>
+<p>由系统的状态变量构成的一阶微分方程组称为系统的状态方程。</p>
+<h4 id="1-1-5-输出方程">1.1.5 输出方程</h4>
+<p>在指定系统输出的情况下，该输出与状态变量间的函数关系式称为系统的输出方程。</p>
+<h4 id="1-1-6-状态空间表达式">1.1.6 状态空间表达式</h4>
+<p>系统的状态空间表达式是一种表示系统动态行为的数学方法，它是用来描述系统的状态变化的一组方程。通常，状态空间表达式由三个部分组成：状态方程、输出方程和输入方程。状态方程描述系统的内部状态变化，输出方程描述系统的输出，输入方程描述系统的输入。</p>
+<p>对于一个单输入单输出定常系统，其状态变量为$x_1,x_2,…,x_n$，则状态的一般方程的一般形式为：<br>
+$$<br>
+\dot{x_1}=a_{11}x_1+a_{12}x_2+…+a_{1n}x_n+b_1u\<br>
+\dot{x_2}=a_{21}x_1+a_{22}x_2+…+a_{2n}x_n+b_2u\<br>
+\vdots\<br>
+\dot{x_n}=a_{n1}x_1+a_{n2}x_2+…+a_{nn}x_n+b_nu\<br>
+$$<br>
+输出方程如下：$y=c_1x_1+c_2x_2+…+c_nx_n$<br>
+矩阵表示为：<br>
+$$\left{\begin{aligned}<br>
+\dot x&amp;=Ax+bu\<br>
+y&amp;=cx<br>
+\end{aligned}\right.<br>
+$$</p>
+<p>多输入多输出的系统空间表达式为<br>
+$$\left{\begin{aligned}<br>
+\dot x&amp;=Ax+Bu\<br>
+y&amp;=Cx+Du<br>
+\end{aligned}\right.<br>
+$$<br>
+其中$x$为$n$维状态矢量，$A$为$n\times n$的系统矩阵，$u=\begin{bmatrix}<br>
+u_1\u_2\\vdots\u_r<br>
+\end{bmatrix}$为$r$维输入矢量，$y=\begin{bmatrix}<br>
+y_1\y_2\\vdots\y_m<br>
+\end{bmatrix}$为$m$维输出矢量。<br>
+$B$为输入矩阵，$C$为输出矩阵，$D$为直接传递矩阵。<br>
+除了将多输入向量化为$B$外，还需要考虑输入矢量$U$的直接传递和状态变量的组合，因此会额外多一个$D$矩阵。</p>
+<h4 id="1-1-7-状态结构图">1.1.7 状态结构图</h4>
+<p><span id="fig1"></span></p>
+<center>
+<img src="./ModernControlTheory/状态结构图.png">
+图1
+</center>
+<p><a href="#fig1">图1</a>的上半部分是单变量单输入系统$\left{\begin{array}{l}<br>
+\dot x=Ax+bu\<br>
+y=cx<br>
+\end{array}\right.$的状态结构图，下半部分是多输入多输出系统$\left{\begin{array}{l}<br>
+\dot x=Ax+Bu\<br>
+y=Cx+Du<br>
+\end{array}\right.$的状态结构图。</p>
+<h5 id="绘制步骤">绘制步骤</h5>
+<ol>
+<li>用积分器的输出表示相应的某个状态变量。</li>
+<li>根据所给的状态方程和输出方程，画出相应的加法器和比例器。</li>
+<li>最后用箭头连接所有的元件。</li>
+</ol>
+<h5 id="举例">举例</h5>
+<p>现有一个单输入单输出系统，其状态空间表达式为<br>
+$$\left{\begin{array}{l}<br>
+\dot x_1=x_2\<br>
+\dot x_2=x_3\<br>
+\dot x_3=-6x_1-3x_2-2x_3+u\<br>
+y=x_1+x_2<br>
+\end{array}\right.<br>
+$$<br>
+其模拟结构图如<a href="#fig2">图2</a>所示。<br>
+<span id="fig2"></span></p>
+<center>
+<img src="./ModernControlTheory/单输入单输出.png">
+图2
+</center>
+<p>对于一个多输入多输出变量系统，其状态空间表达式为<br>
+$$\left{\begin{array}{l}<br>
+\dot x_1=a_{11}x_1+a_{12}x_2+b_{11}u_1+b_{12}u_2\<br>
+\dot x_2=a_{21}x_1+a_{22}x_2+b_{21}u_1+b_{22}u_2\<br>
+y_1=c_{11}x_1+c_{12}x_2\<br>
+y_2=c_{21}x_1+c_{22}x_2<br>
+\end{array}\right.<br>
+$$<br>
+其模拟结构图如<a href="#fig3">图3</a>所示。<br>
+<span id="fig3"></span></p>
+<center>
+<img src="./ModernControlTheory/多输入多输出.png">
+图3
+</center>
+<h3 id="1-2-非唯一性">1.2 非唯一性</h3>
+<p>对于一个给定的定常系统，可以选取许多种状态变量，相应地有许多种状态空间表达式描述同一系统。因此，系统的结构可以有多种形式，并且取到的各种状态矢量在本质上是一种矢量的线性变换。</p>
+<p>对于系统$\left{\begin{array}{l}<br>
+\dot x=Ax+Bu,\quad x(0)=x_0\<br>
+y=Cx+Du<br>
+\end{array}\right.$<br>
+我们总能找到任意一个非奇异矩阵$T$将原状态矢量$x$做线性变换，得到另一个状态矢量$z$，其中变换关系为$x=Tz$，相应的$z=T^{-1}x$。带入原系统，可得新的状态空间表达式<br>
+$$<br>
+\left{<br>
+\begin{array}{l}<br>
+\dot z=T^{-1}ATz+T^{-1}Bu,\quad z(0)=T^{-1}x(0)=T^{-1}x_0\<br>
+y=cTz+Du<br>
+\end{array}<br>
+\right.<br>
+$$<br>
+我们将$T$称为变换矩阵。</p>
+<h3 id="1-3-系统不变量">1.3 系统不变量</h3>
+<h4 id="1-3-1-特征值">1.3.1 特征值</h4>
+<p>系统的特征值就是系统矩阵$A$的特征值，即特征方程$|\lambda I-A|=0$的根。实际的物理系统中，系统矩阵$A$为方阵，对于一个$n$阶方阵$A$有$n$个特征值，其特征值为实数或共轭复数。额外的，如果$A$为实对称方阵，那么$A$的特征值都是实数。<br>
+对于$n$维矢量$p_i$，若其经过以$A$作为变换阵的变换得到一个新的矢量$\tilde{p}<em>{i}=\lambda</em>{i} p_{i}$，若变换后矢量$p_i$方向不变，仅长度变化$\lambda_i$倍，则称$p_i$为对应于特征值$\lambda_i$的特征向量。此时有$Ap_i=\lambda_ip_i$。</p>
+<h4 id="1-3-2-系统不变量">1.3.2 系统不变量</h4>
+<p>同一系统经过非奇异变换后，得$<br>
+\left{<br>
+\begin{array}{l}<br>
+\dot z=T^{-1}ATz+T^{-1}Bu\<br>
+y=cTz+Du<br>
+\end{array}<br>
+\right.<br>
+$<br>
+其对应特征方程为$|\lambda I-T^{-1}AT|=0$。我们可以证明：<br>
+$$<br>
+\begin{aligned}<br>
+\left|\lambda I-T^{-1} A T\right| &amp; =\left|\lambda T^{-1} T-T^{-1} A T\right|=\left|T^{-1} \lambda T-T^{-1} A T\right| \<br>
+&amp; =\left|T^{-1}(\lambda I-A) T\right|=\left|T^{-1}\right| \lambda I-A|T| \<br>
+&amp; =\left|T^{-1} T\right| \lambda I-A|=| \lambda I-A \mid<br>
+\end{aligned}<br>
+$$<br>
+虽然系统经过非奇异变换，特征方程形式不同，但是其特征值依然是不变的。将$|\lambda I-A|$展开，得到一个关于$\lambda$的多项式$$\lambda^n+a_{n-1}\lambda^{n-1}+…+a_1\lambda+a_0=0$$<br>
+特征值由多项式系数$a_{n-1}，a_{n-2},…,a_0$确定，特征值是不变的，因此这些系数也是不变的，因此特征多项式的系数$a_{n-1}，a_{n-2},…,a_0$称为系统的不变量。</p>
+<h2 id="2-传递函数">2 传递函数</h2>
+<p>传递函数是一种用于表示系统动态行为的数学模型。它描述了一个系统输入信号与输出信号之间的关系，并能够用来分析系统的频率响应特性。传递函数在控制工程、信号处理和电子工程等领域中都有广泛的应用。</p>
+<h3 id="2-1-单输入单输出中的传递函数">2.1 单输入单输出中的传递函数</h3>
+<p>空间状态表达式$\left{\begin{array}{}<br>
+\dot x=Ax+bu\<br>
+y=cx+du<br>
+\end{array}\right.$，进行拉氏变换，并且假设初始为零，可以得到<br>
+$$\left{\begin{array}{l}<br>
+X(s)=(sI-A)^{-1}bU(s)\Y(s)=cX(s)+dU(s)<br>
+\end{array}\right.\Rightarrow<br>
+\begin{aligned}<br>
+Y(s)&amp;=c(sI-A)^{-1}bU(s)+dU(s)\<br>
+&amp;=[c(sI-A)^{-1}+d]U(s)<br>
+\end{aligned}<br>
+$$<br>
+$U$-$X$之间的传递函数阵为$W_{ux}(s)=\frac{X(s)}{U(s)}=(s I-A)^{-1} b$<br>
+$U$-$Y$之间的传递函数阵为$W(s)=\frac{Y(s)}{U(s)}=c(s I-A)^{-1} b+d$</p>
+<h3 id="2-2-多输入多输出中的传递函数">2.2 多输入多输出中的传递函数</h3>
+<p>空间状态表达式$\left{\begin{array}{}<br>
+\dot x=Ax+Bu\<br>
+y=Cx+Du<br>
+\end{array}\right.$，进行拉氏变换，并且假设初始为零，可以得到<br>
+$$\left{\begin{array}{l}<br>
+X(s)=(sI-A)^{-1}BU(s)\Y(s)=CX(s)+DU(s)<br>
+\end{array}\right.\Rightarrow<br>
+\begin{aligned}<br>
+Y(s)&amp;=C(sI-A)^{-1}BU(s)+dU(s)\<br>
+&amp;=[C(sI-A)^{-1}+D]U(s)<br>
+\end{aligned}<br>
+$$<br>
+$U$-$X$之间的传递函数阵为$W_{ux}(s)=\frac{X(s)}{U(s)}=(sI-A)^{-1} B$<br>
+$U$-$Y$之间的传递函数阵为$W(s)=\frac{Y(s)}{U(s)}=C(s I-A)^{-1} B+D$</p>
+<p>值得注意的是，同一系统中尽管状态空间表达式可以作各种非奇异变换以至于状态空间表达式不唯一，但是它的传递函数是不变的。</p>
+<h3 id="2-3-子系统连结的传递函数阵">2.3 子系统连结的传递函数阵</h3>
+<p>令子系统1为$\left{\begin{array}{}<br>
+\dot x=A_1x_1+B_1u_1\<br>
+y=C_1x_1+D_1u_1<br>
+\end{array}\right.$，记为$\Sigma_1$<br>
+令子系统2为$\left{\begin{array}{}<br>
+\dot x=A_2x_2+B_2u_2\<br>
+y=C_2x_2+D_2u_2<br>
+\end{array}\right.$，记为$\Sigma_2$</p>
+<h4 id="2-3-1-并联">2.3.1 并联</h4>
+<p>系统结构如<a href="#fig4">图4</a>所示。<br>
+<span id="fig4"></span></p>
+<center>
+<img src="./ModernControlTheory/并联.png"/>
+<br>
+图4
+</center>
+<p>将子系统的输入结合，得到其矩阵形式：<br>
+$$<br>
+\left{\begin{array}{l}<br>
+\dot{x}<em>{1}=A</em>{1} x_{1}+B_{1} u_{1} \<br>
+\dot{x}<em>{2}=A</em>{2} x_{2}+B_{2} u_{2}<br>
+\end{array} \Rightarrow\left[\begin{array}{l}<br>
+\dot{x}<em>{1} \<br>
+\dot{x}</em>{2}<br>
+\end{array}\right]=\left[\begin{array}{cc}<br>
+A_{1} &amp; 0 \<br>
+0 &amp; A_{2}<br>
+\end{array}\right] \cdot\left[\begin{array}{l}<br>
+x_{1} \<br>
+x_{2}<br>
+\end{array}\right]+\left[\begin{array}{l}<br>
+B_{1} \<br>
+B_{2}<br>
+\end{array}\right] u\right.<br>
+$$<br>
+对子系统的输出进行同样的操作：<br>
+$$<br>
+\left{\begin{array}{l}<br>
+y_{1}=C_{1} x_{1}+D_{1} u_{1} \<br>
+y_{2}=C_{2} x_{2}+D_{2} u_{2}<br>
+\end{array}\right. \Rightarrow y=\left[\begin{array}{ll}<br>
+C_{1} &amp; C_{2}<br>
+\end{array}\right] \cdot\left[\begin{array}{l}<br>
+x_{1} \<br>
+x_{2}<br>
+\end{array}\right]+(D_{1} D_{2}) u<br>
+$$<br>
+整理并联系统的传递函数矩阵为：<br>
+$$<br>
+\begin{aligned}<br>
+W(s) &amp;=C(sI-A)^{-1}B+D\<br>
+&amp; =\left[\begin{array}{ll}<br>
+C_{1} &amp; C_{2}<br>
+\end{array}\right] \cdot\left[\begin{array}{cc}<br>
+(s I-A_{1})^{-1} &amp; 0 \<br>
+0 &amp; (s I-A_{2})^{-1}<br>
+\end{array}\right] \cdot\left[\begin{array}{l}<br>
+B_{1} \<br>
+B_{2}<br>
+\end{array}\right]+(D_{1}  D_{2}) \<br>
+&amp; =\left[C_{1}(s I-A_{1})^{-1} B_{1}+D_{1}\right] \pm\left[C_{2}(s I-A_{2})^{-1} B_{2}+D_{2}\right]\<br>
+&amp;=W_1(s)+W_2(s)<br>
+\end{aligned}<br>
+$$<br>
+各子系统存在相同输入$u_1=u_2=u$，组合后的系统的输出是各子系统输出的代数和$y=y_1+y_2$。</p>
+<h4 id="2-3-2-串联">2.3.2 串联</h4>
+<p>系统结构如<a href="#fig5">图5</a>所示<br>
+<span id="fig5"></span></p>
+<center>
+<img src="./ModernControlTheory/串联.png">
+图5
+</center>
+<p>传递函数阵为$W(s)=W_2(s)W_1(s)$，系统传递函数等于子系统传递函数阵之积。</p>
+<h4 id="2-3-3-反馈">2.3.3 反馈</h4>
+<p>系统状态表达式如下：<br>
+$$<br>
+\left{<br>
+s\begin{array}{l}<br>
+\dot{x}<em>{1}=A</em>{1} x_{1}+B_{1}\left(u-C_{2} x_{2}\right) \<br>
+\dot{x}<em>{2}=A</em>{2} x_{2}+B_{2} C_{1} x_{1} \<br>
+y=y_{1}=C_{1} x_{1}<br>
+\end{array}<br>
+\right.<br>
+$$<br>
+矩阵形式为：<br>
+$$<br>
+\begin{bmatrix}<br>
+\dot x_1\\dot x_2<br>
+\end{bmatrix}=\begin{bmatrix}<br>
+A_1&amp;-B_1C_2\<br>
+B_2C_1&amp;A_2<br>
+\end{bmatrix}\cdot \begin{bmatrix}<br>
+x_1\x_2<br>
+\end{bmatrix}+\begin{bmatrix}<br>
+B_1\0<br>
+\end{bmatrix}u\<br>
+y=\begin{bmatrix}<br>
+C_1&amp;0<br>
+\end{bmatrix}\cdot\begin{bmatrix}<br>
+x_1\x_2<br>
+\end{bmatrix}<br>
+$$</p>
+<p>系统结构如<a href="#fig6">图6</a>所示<br>
+<span id="fig6"></span></p>
+<center>
+<img src="./ModernControlTheory/反馈.png">
+图6
+</center>
+<p>系统的传递函数阵为；<br>
+$$<br>
+W(s)=\begin{bmatrix}<br>
+C_1&amp;0<br>
+\end{bmatrix}\cdot\left[\begin{array}{cc}<br>
+s I-A_{1} &amp; B_{1} C_{2} \<br>
+-B_{2} C_{1} &amp; s I-A_{2}<br>
+\end{array}\right]^{-1} \cdot\left[\begin{array}{c}<br>
+B_{1} \<br>
+0<br>
+\end{array}\right]<br>
+$$</p>
+<h3 id="2-4-传递函数的实现">2.4 传递函数的实现</h3>
+<p>实现问题指的是由输入到输出的动态关系的运动方程式或传递函数直接建立状态空间表达式的过程。从传递函数求得的状态空间表达式并不是唯一的，其中$A,b,c,d$可以取无穷多种形式，这是实现的非唯一性。尽管实现非唯一，但只要原系统中不出现零极对消现象，则n阶系统中必有n个独立状态的变量，必有n个一阶微分方程与之等效，即使系统A的元素取值不同，但由于是同一个系统的实现，因此特征根必然相同。通常我们将没有零极对消的传递函数的实现称为最小实现。</p>
+<h4 id="2-4-1-零极对消">2.4.1 零极对消</h4>
+<p>传递函数的零极点模型为<br>
+$$G(s)=\frac{K(s-z_1)(s-z_2)…(s-z_m)}{(s-p_1)(s-p_2)…(s-p_n)}$$<br>
+当分子为零的解即零点$z_1,z_2…,z_m$各不相等，且分母为零的解即极点$p_1,p_2…p_n$各不相同，就不会出现零极点对消。</p>
+<h4 id="2-4-2-传递函数中没有零点的实现">2.4.2 传递函数中没有零点的实现</h4>
+<p>这种情况下，系统的微分方程为：$$y^{(n)}+a_{n-1}y^{(n-1)}+…+a_1\dot y+a_0y=b_0u(t)$$</p>
+<p>对系统微分方程进行处理，将每个积分器的输出取作状态变量，或称为相变量，它是输出$y$或$y/b_0$的各阶导数。</p>
+<p>$$<br>
+\begin{aligned}<br>
+&amp;y^{(n)}+a_{n-1} y^{(n-1)}+\cdots+a_{1} \dot{y}+a_{0} y=b_{0} u(t) \<br>
+&amp;\frac{y^{(n)}}{b_{0}}+\frac{a_{n-1} y^{(n-1)}}{b_{0}}+\cdots+\frac{a_{1} \dot{y}}{b_{0}}+\frac{a_{0} y}{b_{0}}=u(t) \<br>
+&amp;\frac{y^{(n)}}{b_{0}}=-a_{n-1} \underbrace{\frac{y^{(n-1)}}{b_{0}}}<em>{x_n}-\cdots-a</em>{1} \underbrace{\frac{\dot{y}}{b_{0}}}<em>{x_2}-a</em>{0}\underbrace{\frac{y}{b_{0}}}<em>{x_1}+u(t)<br>
+\end{aligned}<br>
+$$<br>
+此时系统的状态方程为：<br>
+$$<br>
+\left{\begin{array}{l}<br>
+\dot{x}</em>{1}=x_{2} \<br>
+\dot{x}<em>{2}=x</em>{3} \<br>
+\vdots \<br>
+\dot{x}<em>{n-1}=x</em>{n} \<br>
+\dot{x}<em>{n}=-a</em>{0} x_{1}-a_{1} x_{2}-\cdots-a_{n-2} x_{n-1}-a_{n-1} x_{n}+u<br>
+\end{array}\right.<br>
+$$<br>
+输出方程为：$y=b_0x_1$。<br>
+表示成矩阵形式如下：<br>
+$$<br>
+\begin{array}{l}<br>
+{\left[\begin{array}{c}<br>
+\dot{x}<em>{1} \<br>
+\dot{x}</em>{2} \<br>
+\vdots \<br>
+\dot{x}<em>{n- 1} \<br>
+\dot{x}</em>{n}<br>
+\end{array}\right]=\left[\begin{array}{ccccc}<br>
+0 &amp; 1 &amp; 0 &amp; \cdots &amp; 0 \<br>
+0 &amp; 0 &amp; 1 &amp; \cdots &amp; 0 \<br>
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \<br>
+0 &amp; 0 &amp; 0 &amp; \cdots &amp; 1 \<br>
+-a_{0} &amp; -a_{1} &amp; -a_{2} &amp; \cdots &amp; -a_{n-1}<br>
+\end{array}\right] \cdot\left[\begin{array}{c}<br>
+x_{1} \<br>
+x_{2} \<br>
+\vdots \<br>
+x_{n- 1} \<br>
+x_{n}<br>
+\end{array}\right]+\left[\begin{array}{c}<br>
+0 \<br>
+0 \<br>
+\vdots \<br>
+0\<br>
+1<br>
+\end{array}\right] u}<br>
+\end{array}<br>
+$$<br>
+$y=\begin{bmatrix}<br>
+b_0&amp;0&amp;0&amp;\cdots&amp;0<br>
+\end{bmatrix}x$</p>
+<p>系统结构模拟图如<a href="#fig7">图7</a>所示。<br>
+<span id="fig7"></span></p>
+<center>
+<img src="./ModernControlTheory/传递函数无零点实现系统结构模拟图.png">
+图7
+</center>
+<p>其传递函数为<br>
+$$W(s)=\frac{Y(s)}{U(s)}=\frac{b_0}{s^{(n)}+a_{n-1}s^{(n-1)}+…+a_1s+a_0},\quad m&lt;n$$</p>
+<h4 id="2-4-3-传递函数中有零点的实现">2.4.3 传递函数中有零点的实现</h4>
+<p>这种情况下，系统的微分方程为：<br>
+$$<br>
+y^{(n)}+a_{n-1} y^{(n-1)}+\cdots+a_{1} \dot{y}+a_{0} y=b_{m} u^{(m)}+b_{m-1} u^{(m-1)}+\cdots+b_{1} \dot{u}+b_{0} u<br>
+$$</p>
+<p>传递函数为：<br>
+$$<br>
+W(s)=\frac{b_{m} s^{(m)}+b_{m-1} s^{(m-1)}+\cdots+b_{1} s+b_{0}}{s^{(n)}+a_{n-1} s^{(n-1)}+\cdots+a_{1} s+a_{0}}, \quad m \leq n<br>
+$$</p>
+<p>对于传递函数中有零点的实现这种包含有输入函数导数的情况，关键在于需要选取合适的结构是的状态方程中不包含输入函数的导数项，否则将给求解和物理实现带来麻烦。</p>
+<h2 id="3-约旦标准型矩阵">3 约旦标准型矩阵</h2>
+<p>将系统矩阵变换为约旦标准型矩阵，即为将$\left{\begin{array}{l}<br>
+\dot x=Ax+Bu\<br>
+y=Cx<br>
+\end{array}\right.$变换为$\left{<br>
+\begin{array}{l}<br>
+\dot z=Jz+T^{-1}Bu\<br>
+y=cTz<br>
+\end{array}<br>
+\right.$<br>
+其中$J=T^{-1}AT$。</p>
+<h3 id="3-1-A-为任意型">3.1 $A$为任意型</h3>
+<p>当$A$的特征值无重根时，可直接构造变换矩阵$T=\begin{bmatrix}<br>
+p_1&amp;p_2&amp;\cdots&amp;p_n<br>
+\end{bmatrix}$，则$T^{-1}AT=\Lambda$。此时$J=\Lambda$。<br>
+当$A$的特征值有$q$个值为$\lambda_1$的重根，其余$(n-q)$个根互异时，令变换矩阵$T=\begin{bmatrix}<br>
+p1&amp;p2&amp;\cdots&amp;p_q&amp;p_{q+1}&amp;\cdots&amp;p_n<br>
+\end{bmatrix}$，其中$p_{q+1},…p_n$同无重根情况，对于$q$个$\lambda_1$重根的各特征矢量$p_1,…p_q$,$p_1$为$\lambda_1$对应的特征矢量，其余所有特征矢量称为其广义特征矢量。此时<br>
+$$<br>
+J=\left[\begin{array}{cccccccc}<br>
+\lambda_{1} &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; &amp; &amp; \<br>
+0 &amp; \lambda_{1} &amp; \ddots &amp; \ddots &amp; 0 &amp; &amp; &amp; \<br>
+\vdots &amp; \ddots &amp; \ddots &amp; \ddots &amp; 0 &amp; &amp; 0 &amp; \<br>
+0 &amp; \ddots &amp; \ddots &amp; \lambda_{1} &amp; 1 &amp; &amp; &amp; \<br>
+0 &amp; 0 &amp; \cdots &amp; 0 &amp; \lambda_{1} &amp; &amp; &amp; \<br>
+&amp; &amp; &amp; &amp; &amp; \lambda_{q+1} &amp; 0 &amp; 0 \<br>
+&amp; &amp; 0 &amp; &amp; &amp; 0 &amp; \ddots &amp; 0 \<br>
+&amp; &amp; &amp; &amp; &amp; 0 &amp; 0 &amp; \lambda_{n}<br>
+\end{array}\right]$$</p>
+<h3 id="3-2-A-为标准型">3.2 $A$为标准型</h3>
+<p>此时$<br>
+A=\left[\begin{array}{ccccc}<br>
+0 &amp; 1 &amp; 0 &amp; \cdots &amp; 0 \<br>
+0 &amp; 0 &amp; 1 &amp; \cdots &amp; 0 \<br>
+\vdots &amp; \vdots &amp; \vdots &amp; &amp; \vdots \<br>
+0 &amp; 0 &amp; 0 &amp; \cdots &amp; 1 \<br>
+-a_{0} &amp; -a_{1} &amp; -a_{2} &amp; \cdots &amp; -a_{n-1}<br>
+\end{array}\right]<br>
+$<br>
+特征值无重根时，其变换是一个范德蒙德矩阵<br>
+$${T}=\left[\begin{array}{cccc}<br>
+1 &amp; 1 &amp; \cdots &amp; 1 \<br>
+\lambda_{1} &amp; \lambda_{2} &amp; \cdots &amp; \lambda_{n} \<br>
+\lambda_{1}^{2} &amp; \lambda_{2}^{2} &amp; \cdots &amp; \lambda_{n}^{2} \<br>
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots \<br>
+\lambda_{1}^{n-1} &amp; \lambda_{2}^{n-1} &amp; \cdots &amp; \lambda_{n}^{n-1}<br>
+\end{array}\right]$$<br>
+特征值有重根时<br>
+$$<br>
+\begin{aligned}<br>
+T &amp;=\left[p_1\quad p_2\quad p_3\quad p_q\quad \cdots\quad p_n\right]\<br>
+&amp;=\left[{p}<em>{1}\quad\frac{d {p}</em>{1}}{d \lambda_{1}} \quad \frac{1}{2 !} \frac{d^{2} {p}<em>{1}}{d \lambda</em>{1}^{2}} \quad \cdots \quad \frac{1}{(q-1) !} \frac{d^{q-1} {p}<em>{1}}{d \lambda</em>{1}^{q-1}} \quad {p}<em>{q+1} \quad \cdots \quad {p}</em>{n}\right]<br>
+\end{aligned}<br>
+$$</p>
+<h2 id="4-线性定常状态方程">4 线性定常状态方程</h2>
+<p>一般的问题中我们讨论的都是线性定常状态方程，其中包括线性定常齐次状态方程和线性定常其次状态方程。本节中我们分别讨论这两种状态方程的求法。</p>
+<h3 id="4-1-线性定常齐次状态方程">4.1 线性定常齐次状态方程</h3>
+<h4 id="4-1-1-线性定常其次状态方程的自由解">4.1.1 线性定常其次状态方程的自由解</h4>
+<p>自由解：即线性定常齐次状态方程的解，指的是当控制系统的输入为零时，由初始状态引起的震动。</p>
+<p>系统的状态空间表达式一般为线性定常齐次状态方程$\dot x=Ax+Bu$，令输入为零即$u=0$，则有$\dot x=Ax$。若系统初始即$t=t_0$时，$x(t_0)=x_0$，则方程有唯一的确定解$x(t)=e^{A(t-t_0)}x_0,\quad t\geq t_0$。</p>
+<p>令$\dot x=Ax$的解为$t$的矢量幂级形式，即：<br>
+$$x(t)=b_0+b_1t+b_2t^2+\cdots+b_kt_k+\cdots$$<br>
+则有$\dot x(t)=b_1+2b_2t+3b_3t^2+\cdots+kb_kt^{k-1}+\cdots$<br>
+代入原方程，有<br>
+$$<br>
+\begin{aligned}<br>
+&amp;b_1+2b_2t+3b_3t^2+\cdots+kb_kt^{k-1}+\cdots\<br>
+=&amp;A(b_0+b_1t+b_2t^2+\cdots+b_kt_k+\cdots)<br>
+\end{aligned}<br>
+$$<br>
+等式两边指数项相同则系数项相同，因此有<br>
+$$<br>
+\begin{aligned}<br>
+b_1&amp;=Ab_0\<br>
+b_2&amp;=\frac12Ab_1=\frac{1}{2!}A^2b_0\<br>
+b_3&amp;=\frac13Ab_2=\frac{1}{3!}A^3b_0\<br>
+&amp;\cdots\cdots\<br>
+b_k&amp;=\frac1kAb_{k-1}=\frac{1}{k!}A^kb_0\<br>
+&amp;\cdots\cdots\<br>
+\end{aligned}<br>
+$$</p>
+<p>令$t=0$，则有$x(t)=b_0+b_1t+b_2t^2+\cdots+b_kt_k+\cdots=b_0$。代入$x(t)$的矢量幂级解，得<br>
+$$x(t)=(1+At+\frac1{2!}A^2t^2+\cdots+\frac{1}{k!}A^kt_k+\cdots)x_0$$<br>
+刚好为$e^{At}$的泰勒展开，$e^{At}$也称状态转移矩阵。</p>
+<h4 id="4-1-2-状态转移矩阵">4.1.2 状态转移矩阵</h4>
+<p>可将齐次矩阵微分方程表示为$x(t)=\Phi(t)x(0)$。</p>
+<p>性质1：组合型。<br>
+$$<br>
+\left{<br>
+\begin{aligned}<br>
+\Phi(t)\Phi(\tau)=\Phi(t+\tau)\<br>
+e^{At}e^{A\tau}=e{A(t+\tau)}<br>
+\end{aligned}<br>
+\right.<br>
+$$<br>
+有$x(t_2)=\Phi(t_2-t_1)x(t_1)=\Phi(t_2-t_1)\Phi(t_1)x(0)$，矩阵表示为$e^{At_2}=e^{A(t_2-t_1)}e^{At_1}$</p>
+<p>性质2:状态矢量由$t$时刻转移到$t$时刻时状态矢量不变。<br>
+$$<br>
+\left{<br>
+\begin{aligned}<br>
+\Phi(t-t)=I\<br>
+e^{A(t-t)}=I<br>
+\end{aligned}<br>
+\right.<br>
+$$</p>
+<p>性质3：状态转移矩阵的逆意味着时间的逆转，可以用于求出小于时刻$t$的状态矢量。<br>
+$$<br>
+\left{<br>
+\begin{aligned}<br>
+[\Phi(t)]^{-1}=\Phi(-t)\<br>
+[e^{A(t-t)}]^{-1}=e^{-At}<br>
+\end{aligned}<br>
+\right.<br>
+$$</p>
+<p>性质4：矩阵与$A$矩阵是可交换的。<br>
+$$<br>
+\left{<br>
+\begin{aligned}<br>
+\dot\Phi(t)=A\Phi(t)=\Phi(t)A\<br>
+\frac{d}{dt}e^{At}=Ae^{At}=e^{At}A<br>
+\end{aligned}<br>
+\right.<br>
+$$</p>
+<p>性质5：<br>
+$A,B$为$n$阶方阵，当且仅当$AB=BA$时，$e^{At}e^{Bt}=e^{(A+B)t}$<br>
+当$AB\ngeq BA$时，$e^{At}e^{Bt}\ngeq e^{(A+B)t}$</p>
+<h3 id="4-2-线性定常非齐次状态方程">4.2 线性定常非齐次状态方程</h3>
+<p>在线性定常非齐次状态方程中讨论的是线性定常系统在控制$u(t)$作用下的强制运动，状态方程为$\dot x=Ax+Bu$。<br>
+令初始状态为$t_0$，其解为：<br>
+$$<br>
+x(t)=\underbrace{\Phi(t-t_0)x(t_0)}<em>{初始状态引起的振动}+\underbrace{\int</em>{t_0}^{t}\Phi(t-\tau)Bu(\tau)d\tau}<em>{控制激励引起的强制振动}<br>
+$$<br>
+以下为求解过程：<br>
+$$<br>
+\begin{aligned}<br>
+\dot x-Ax&amp;=Bu\<br>
+e^{-At}(\dot x-Ax)&amp;=e^{At}Bu\<br>
+\frac{d}{dt}[e^{-At}x(t)]&amp;=e^{-At}Bu\<br>
+[e^{-Atx(t)}]|</em>{t_0}^{t}&amp;=\int_{t_0}^{t}e^{-A\tau}Bud\tau\<br>
+e^{-At}x(t)-e^{-At_0}x(t_0)&amp;=\int_{t_0}^te^{-A\tau}Bud\tau\<br>
+e^{-At}x(t)=e^{-At_0}x(t_0)&amp;+\int_{t_0}^te^{-A\tau}Bud\tau\<br>
+x(t)=e^{A(t-t_0)x(t_0)}&amp;+\int_{t_0}^t e^{A(t-\tau)}Bud\tau<br>
+\end{aligned}<br>
+$$</p>
+<h2 id="5-系统的能控性和能观性">5 系统的能控性和能观性</h2>
+<p>1960年，卡尔曼提出了能控型和能观性的概念。能控性和能观性是最优控制和最优估计的基础，现代控制理论建立的基础是用状态空间描述，其中状态方程用来描述输入$u(t)$引起状态$x(t)$的变化过程，输出方程用来描述由状态变化引起的输出$y(t)$的变化。因此能控型表示了分析输入$u(t)$对状态$x(t)$的控制能力，能观性表示了输出$y(t)$对状态$x(t)$的反映能力。</p>
+<h3 id="5-1-系统能控型">5.1 系统能控型</h3>
+<p>能控型研究的是系统在$u(t)$的控制下，$x(t)$的转移情况，与输出无关，因此只研究状态方程。</p>
+<blockquote>
+<p>定义：在有限时间区间$[t_0,t_f]$内，如果存在一个分段连续的输入$u(t)$，使得系统由某一初始状态$x(t_0)$转移到指定的任意终端状态$x(t_f)$，则称此状态是能控的。若所有状态都能控，则系统是状态完全能控的，或简称系统是能控的。</p>
+</blockquote>
+<p>点系统能控的条件：$n$维空间中的点系统中的点$P \in \mathbb{R}^n$能在输入的作用下驱动到任意指定的状态$P_1,P_2,P_3…P_n$。<br>
+状态完全能控的条件：能控状态充满整个状态空间,即对于任意初始状态都能找到相应的控制输入$u(T)$，使得在有限的时间区间$[t_0,t_f]$内,将状态转移到状态空间内的任意指定状态，则称系统完全能控，即系统任意点都能控。从结构图看，对于状态的能控型，只需要观察是否有与$u(t)$无关的鼓励方块。以下是几种判别能观性的方法。</p>
+<h4 id="5-1-1-约旦标准型判别能控性">5.1.1 约旦标准型判别能控性</h4>
+<p>对于一个单输入系统，若特征值互异，即没有重根，此时的特征矩阵为对角阵，状态方程为$\dot x=\Lambda x+bu$，若有重根，则特征矩阵为约旦块，状态方程为$\dot x =Jx+bu$。<br>
+系统的能控型取决于$A$和$b$，$A$由系统的结构和内部参数决定，$b$与控制作用的施加点相关。对于约旦标准型矩阵：</p>
+<ol>
+<li>若$A$为对角矩阵时，如果$b$中有元素为0，则对应状态不能控，此时状态是不完全能控的。</li>
+<li>若$A$为约旦标准矩阵，前一个状态总是受下一状态的控制，如果$b$中相应于约旦块中的最后一个元素为0，则状态不完全能控。</li>
+</ol>
+<p>对于具有一般系统矩阵的多输入系统，即$\dot x=Ax+Bu$，令变换矩阵$T$使得$x=Tz$，可变为约旦标准型$\dot z=\Lambda z+T^{-1}Bu$或$\dot z=Jz+T^{-1}Bu$。系统的线性变换不会改变系统的能控性条件，证明如下：<br>
+$$<br>
+\left{<br>
+\begin{array}{l}<br>
+某第i个状态x_i不能控\<br>
+x^i(0)e^{\lambda_i t}的自由分量不能控\<br>
+相应特征值的自然模式e^{\lambda_i t}不能控\<br>
+线性变换不改变系统的特征值<br>
+\end{array}\right.\Rightarrow线性变换不改变能控性<br>
+$$</p>
+<p>线性变换后，判别依据如下：</p>
+<ol>
+<li>若$A$的特征值互异，则$\dot z=\Lambda z+T^{-1}Bu$，系统能控的充要条件为$T^{-1}B$中的各行元素都不为全零。</li>
+<li>若$A$的特征值有相同，则$\dot z=Jz+T^{-1}Bu$，系统能控的充要条件为
+<ul>
+<li>对于$T^{-1}B$中特征值互异的部分，它的各行元素没有全零的。</li>
+<li>对于$T^{-1}B$中特征值相同的部分，每个约旦块最后一行相对应的元素没有全为0的。</li>
+</ul>
+</li>
+</ol>
+<h4 id="5-1-2-通过-A-、-B-矩阵判别系统的能控性">5.1.2 通过$A$、$B$矩阵判别系统的能控性</h4>
+<p>状态完全能控的充要条件是矩阵$M=\begin{bmatrix}<br>
+B&amp;AB&amp;A^2B\cdots&amp;A^{n-1}B<br>
+\end{bmatrix}$的秩为$n$。</p>
+<h4 id="5-1-3-通过传递方程判别系统的能控型">5.1.3 通过传递方程判别系统的能控型</h4>
+<p>状态完全能控的充要条件是$W_{ux}(s)=(sI-A)^{-1}b$没有零点和极点重合现象，否则被相消的极点就是不能控的模式，系统为不能控系统。</p>
+<h3 id="5-2-系统能观性">5.2 系统能观性</h3>
+<p>控制系统大多采用反馈控制的形式，在现代控制理论中，反馈信息是由系统的状态变量组合而成的。然而并非所有的系统的状态变量在物理上都能测取到。因此我们考虑能否通过对输出的测量获得全部状态变量的信息，这就是系统的能观性。能观性所表示的是输出$y(t)$反映状态矢量$x(t)$的能力，与控制作用没有直接关系，所以分析能观性问题，只需要从齐次状态方程和输出方程出发。</p>
+<h4 id="5-2-1-约旦标准型判别能观性">5.2.1 约旦标准型判别能观性</h4>
+<p>系统有如下形式：<br>
+$$<br>
+\dot{x}=Ax\<br>
+y=Cx<br>
+$$<br>
+其中$x(t_0)=x_0$。</p>
+<ol>
+<li>$A$为对角矩阵<br>
+$$<br>
+A=\Lambda=\left[\begin{array}{llll}<br>
+\lambda_{1} &amp; &amp; &amp; 0 \<br>
+&amp; \lambda_{2} &amp; &amp; \<br>
+&amp; &amp; \ddots &amp; \<br>
+0 &amp; &amp; &amp; \lambda_{n}<br>
+\end{array}\right],<br>
+C=\begin{bmatrix}<br>
+c_{11}&amp;c_{12}&amp;\cdots&amp;c_{1n}\<br>
+c_{21}&amp;c_{22}&amp;\cdots&amp;c_{2n}\<br>
+\vdots&amp;\vdots&amp;\ddots&amp;\vdots\<br>
+c_{m1}&amp;c_{m2}&amp;\cdots&amp;c_{mn}<br>
+\end{bmatrix}<br>
+$$<br>
+在系统矩阵$A$为对角型的情况下，系统能观的充要条件是输出矩阵$C$中没有全为零的列。如果第$i$列全为零，则与之相对应的$x_i$是不能观的。</li>
+<li>$A$为约旦标准型矩阵，以三阶为例<br>
+$$<br>
+A=J=\begin{bmatrix}<br>
+\lambda_1&amp;1&amp;0\<br>
+0&amp;\lambda_1&amp;1\<br>
+0&amp;0&amp;\lambda_1<br>
+\end{bmatrix},<br>
+C=\begin{bmatrix}<br>
+c_{11}&amp;c_{12}&amp;c_{13}\<br>
+c_{21}&amp;c_{22}&amp;c_{23}\<br>
+c_{31}&amp;c_{32}&amp;c_{33}<br>
+\end{bmatrix}<br>
+$$<br>
+充要条件是矩阵$C$中，对应每个约旦块开头的一列的元素不全为零。</li>
+<li>$A$为任意矩阵<br>
+将矩阵$A$经过$T^{-1}AT$变换得到对角型或约旦型，再判别对应$CT$的列是否为零来确定系统的能观性。</li>
+</ol>
+<h4 id="5-2-2-通过-A、C-判断系统的能观性">5.2.2 通过$A、C$判断系统的能观性</h4>
+<p>完全能观的充要条件是矩阵$N=\begin{bmatrix}<br>
+C\CA\\vdots\CA^{n-1}<br>
+\end{bmatrix}$的秩为$n$。</p>
+<h3 id="5-3-能控与能观的对偶关系">5.3 能控与能观的对偶关系</h3>
+<p>通过卡尔曼对偶原理，可以确定系统能控性和能观性之间存在内在的对偶关系。利用这种对偶关系可以将系统能控性分析转化为能观性分析，从而可以将最优控制问题与最优估计问题联系起来。</p>
+<h4 id="5-3-1-从矩阵结构了解对偶系统">5.3.1 从矩阵结构了解对偶系统</h4>
+<p>现存在两个系统$\Sigma_1=\left{\begin{aligned}<br>
+\dot x_1&amp;=A_1B_1u_1\<br>
+y_1&amp;=C_1x_1<br>
+\end{aligned}\right.$和$\Sigma_2=\left{\begin{aligned}<br>
+\dot x_2&amp;=A_2x_2+B_2u_2\<br>
+y_2&amp;=C_2x_2<br>
+\end{aligned}\right.$<br>
+其中：<br>
+$x_1,x_2$为$n$维状态矢量<br>
+$u_1,u_2$分别为$r$维与$m$维控制矢量<br>
+$y_1,y_2$分别为$m$维与$r$维输出矢量<br>
+$A_1,A_2$为$n\times n$系统矩阵<br>
+$B_1,B_2$分别为$n\times r$与$n\times m$控制矩阵<br>
+$C_1,C_2$分别为$m\times n$与$r\times n$输出矩阵<br>
+若满足$A_2=A_1^T,B_2=C_1^T,C_2=B_1^T$，则$\Sigma_1$与$\Sigma_2$互为对偶。显然，$\Sigma_1$是一个$r$维输入$m$维输出的$n$阶系统，其对偶系统$\Sigma_2$是一个$m$维输入$r$维输出的$n$阶系统。</p>
+<h4 id="5-3-2-从结构图了解对偶系统">5.3.2 从结构图了解对偶系统</h4>
+<p>$\Sigma_1$和$\Sigma_2$的方块结构图如<a href="#fig8">图8</a>所示<br>
+<span id="fig8"></span></p>
+<center>
+<img src="./ModernControlTheory/对偶系统.png">
+图8
+</center>
+我们可以看到，互为对偶的两系统有如下性质：  
+<ol>
+<li>输入端与输出端互换</li>
+<li>信号传递方向相反</li>
+<li>信号引出点和综合点互换</li>
+<li>对应矩阵转置</li>
+</ol>
+<h4 id="5-3-3-从传递函数矩阵来看对偶系统的关系">5.3.3 从传递函数矩阵来看对偶系统的关系</h4>
+<p>传递函数矩阵$W_1(s)$为$m\times r$矩阵<br>
+$$<br>
+W_1(s)=C_1(sI-A_1)^{-1}B_1<br>
+$$<br>
+传递函数矩阵$W_2(s)$为$r\times m$矩阵<br>
+$$<br>
+\begin{aligned}<br>
+&amp;W_2(s)\<br>
+=&amp;C_2(sI-A_2)^{-1}B_2\<br>
+=&amp;B_1^T(sI-A_1^T)^{-1}C_1^T\<br>
+=&amp;B_1^T[(sI-A_1)^{-1}]^TC_1^T<br>
+\end{aligned}<br>
+$$<br>
+我们可以得到$W_2^T(s)=W_1(s)$，对偶系统的传递函数矩阵互为转置。</p>
+<h4 id="5-3-4-对偶系统的性质">5.3.4 对偶系统的性质</h4>
+<p>若系统$\Sigma_1$与系统$\Sigma_2$互为对偶，则有$\left{<br>
+\begin{aligned}<br>
+\Sigma_1 完全能控\Leftrightarrow \Sigma_2 完全能观\<br>
+\Sigma_1 完全能观\Leftrightarrow \Sigma_2 完全能控<br>
+\end{aligned}\right.<br>
+$<br>
+证明：<br>
+对于系统$\Sigma_2$而言，能控性判别矩阵$(n\times m)$<br>
+$$<br>
+M_2=\begin{bmatrix}<br>
+B_2&amp;A_2B_2\cdots A_2^{n-1}B_2<br>
+\end{bmatrix}<br>
+$$<br>
+$M_2$的秩为$n$，此时系统状态为完全能控的。<br>
+又$A_2=A_1^T,B_2=C_1^T,C_2=B_1^T$，则有<br>
+$$M_2=\begin{bmatrix}<br>
+C_1^T&amp;A_1^TC_1^T&amp;\cdots&amp;(A_1^T)^{n-1}C_1^T<br>
+\end{bmatrix}=N_1^T$$<br>
+说明当$\Sigma_2$能控时，系统$\Sigma_1$是能观的。同理，有<br>
+$$<br>
+\begin{aligned}<br>
+&amp;N_2^T\<br>
+=&amp;\begin{bmatrix}<br>
+C_2^T&amp;A_2^TC_2^T&amp;\cdots&amp;(A_2^T)^{n-1}C_2^T<br>
+\end{bmatrix}\<br>
+=&amp;\begin{bmatrix}<br>
+B_1&amp;A_1B_1&amp;\cdots&amp;A_1^{n-1}B_1<br>
+\end{bmatrix}\<br>
+=&amp;M_1<br>
+\end{aligned}<br>
+$$<br>
+因此，$\Sigma_2$能观时$\Sigma_1$是能控的</p>
+<h3 id="5-4-标准型">5.4 标准型</h3>
+<p>由于状态变量的选择非唯一，因此状态空间的表达式也不唯一，根据研究需要，我们可以将状态空间表达式化成三种标准形式：</p>
+<ol>
+<li>约旦标准型。约旦标准型主要用于求状态转移矩阵$\Phi(t)=e^{At}$，还可以用来分析可控性和可观性。</li>
+<li>能控标准型。能控标准型主要用于研究系统的状态反馈。</li>
+<li>能观标准型。能观标准型主要用于状态观测器的设计和系统辨识。</li>
+</ol>
+<p>状态空间表达式能够转换成能控标准型和能观标准型的理论依据是非奇异变换不改变系统的能控型和能观性。但是转换成能控标准型需要系统本身状态完全能控，同理转换成能观标准型需要系统本身状态完全能观。</p>
+<h4 id="5-4-1-单输入系统的能控标准型">5.4.1 单输入系统的能控标准型</h4>
+<p>转换成能控标准型，首先需要判断系统的系统能控性。对于一般$n$维定常系统$\left{\begin{aligned}<br>
+\dot x&amp;=Ax+Bu\<br>
+y&amp;=Cx<br>
+\end{aligned}\right.$,系统能控的要求为rank$\begin{bmatrix}<br>
+B&amp;AB&amp;A^{n-1}B<br>
+\end{bmatrix}=n$<br>
+对于多输入多输出系统，我们可以在$M$中$nr$个列矢量中选取一组$n$个线性无关的列矢量，此时能控标准型不唯一。<br>
+对于单输入单输出系统，判别矩阵$M$只有$n$个列矢量，因此当系统能控时线性无关矢量的组合是唯一的，此时能控标准型的形式是唯一的。</p>
+<p>我们主要研究单输入单输出系统的两种能控标准型。</p>
+<h5 id="能控标准-mathrm-I-型">能控标准$\mathrm{I}$型</h5>
+<p>若线性定常系统$\left{\begin{aligned}<br>
+\dot x&amp;=Ax+bu\<br>
+y&amp;=cx<br>
+\end{aligned}\right.$是能控的，则存在线性奇异变换$x=T_{c1}\bar x$，其中<br>
+$$<br>
+T_{c1}<br>
+=\begin{bmatrix}<br>
+A^{n-1} b &amp; A^{n-2} b &amp; \cdots &amp; b<br>
+\end{bmatrix} \cdot\left[\begin{array}{ccccc}<br>
+1 &amp; &amp; &amp; &amp; 0 \<br>
+\alpha_{n-1} &amp; 1 &amp; &amp; &amp; \<br>
+\vdots &amp; &amp; \ddots &amp; &amp; \<br>
+\alpha_2 &amp; \alpha_3 &amp; &amp; \ddots &amp; \<br>
+\alpha_1 &amp; \alpha_2 &amp; \cdots &amp; \alpha_{n-1} &amp; 1<br>
+\end{array}\right]<br>
+$$<br>
+其中$\alpha_i$为特征多项式的各项系数，特征多项式为<br>
+$$|\lambda I-A|=\lambda^n+\alpha_{n-1}\lambda^{n-1}+\cdots+\alpha_1\lambda+\alpha_0$$<br>
+此时，状态空间表达式化成$\left{\begin{aligned}<br>
+\dot{\bar{x}}&amp;=\bar A\bar x+b\bar u\<br>
+y&amp;=\bar{cx}<br>
+\end{aligned}\right.$其中：<br>
+线性系统中的状态矩阵<br>
+$$<br>
+\bar{A}=T_{c 1}^{-1} A T_{c 1}=<br>
+\left[\begin{array}{ccccc}<br>
+0 &amp; 1 &amp; \cdots &amp; 0 &amp; 0 \<br>
+0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \<br>
+\vdots&amp;\vdots &amp; \cdots &amp; \ddots &amp; \vdots\<br>
+0 &amp; 0 &amp; \cdots &amp; 0 &amp; 1 \<br>
+-\alpha_0 &amp; -\alpha_1 &amp; \cdots &amp; -\alpha_{n-2} &amp; -\alpha_{n-1}<br>
+\end{array}\right],$$<br>
+控制矩阵$<br>
+\bar{b}=T_{c 1}^{-1} b=\left[\begin{array}{c}<br>
+0 \<br>
+0 \<br>
+\vdots \<br>
+0 \<br>
+1<br>
+\end{array}\right],<br>
+$<br>
+输出矩阵$\bar{c}=c T_{c 1}=\left[\begin{array}{llll}<br>
+\beta_0 &amp; \beta_1 &amp; \cdots &amp; \beta_{n-1}<br>
+\end{array}\right]<br>
+$</p>
+<p>此时系统的传递函数为:<br>
+$$<br>
+W(s)=\bar c(sI-A)^{-1}\bar b=\frac{\beta_{n-1}s^{n-1}+\beta_{n-2}s^{n-2}+\cdots +\beta_1 s+\beta_0}{s^nn+\alpha_{n-1}s^{n-1}+\cdots+\alpha_1s+\alpha_0}<br>
+$$</p>
+<p>其中分子的系数为$\bar c中的元素$，分母中的元素为$\bar A$中最后一行的元素的负值。</p>
+<h5 id="能控标准-mathrm-II-型">能控标准$\mathrm{II}$型</h5>
+<p>若线性定常系统$\left{\begin{aligned}<br>
+\dot x&amp;=Ax+bu\<br>
+y&amp;=cx<br>
+\end{aligned}\right.$是能控的，则存在线性奇异变换<br>
+$$<br>
+x=T_{c2}\bar x<br>
+=\begin{bmatrix}<br>
+b &amp; Ab &amp; \cdots  &amp; A^{n-1} b<br>
+\end{bmatrix} \cdot \bar{x}<br>
+$$<br>
+相应的状态表达式为$\left{\begin{aligned}<br>
+\bar{\dot x}&amp;=\bar A\bar x+\bar bu\<br>
+y&amp;=\bar{cx}<br>
+\end{aligned}\right.$</p>
+<p>其中：<br>
+线性变换后的状态矩阵<br>
+$$<br>
+\bar{A}=T_{c 2}^{-1} A T_{c 2}=\left[\begin{array}{ccccc}<br>
+0 &amp; 0 &amp; \cdots &amp; 0 &amp; -\alpha_0 \<br>
+1 &amp; 0 &amp; \cdots &amp; 0 &amp; -\alpha_1 \<br>
+0 &amp; 1 &amp; \cdots &amp; 0 &amp; -\alpha_2 \<br>
+\vdots &amp; \vdots &amp; \cdots &amp; \vdots &amp; \vdots \<br>
+0 &amp; 0 &amp; \cdots &amp; 1 &amp; -\alpha_{n-1}<br>
+\end{array}\right],\<br>
+$$<br>
+控制矩阵$<br>
+\bar{b}=T_{c 2}^{-1} b=\left[\begin{array}{c}<br>
+1 \<br>
+0 \<br>
+\vdots \<br>
+0 \<br>
+0<br>
+\end{array}\right],$<br>
+输出矩阵$\bar{c}=c T_{c 2}=\left[\begin{array}{llll}<br>
+\beta_0 &amp; \beta_1 &amp; \cdots &amp; \beta_{n-1}<br>
+\end{array}\right]<br>
+$</p>
+<h4 id="5-4-2-单输出系统的能观标准型">5.4.2 单输出系统的能观标准型</h4>
+<h5 id="能观标准-mathrm-I-型">能观标准$\mathrm{I}$型</h5>
+<p>若线性定常系统$\left{\begin{aligned}<br>
+\dot x&amp;=Ax+bu\<br>
+y&amp;=cx<br>
+\end{aligned}\right.$是能观的，则存在非奇异变换$x=T_{01}\tilde{x}$使得状态空间表达式转换为$\left{\begin{aligned}<br>
+\dot{\tilde x}&amp;=A\tilde x+\tilde bu\<br>
+y&amp;=\tilde c\tilde x<br>
+\end{aligned}\right.$，其中：<br>
+线性系统中的状态矩阵<br>
+$$<br>
+\tilde{A}=T_{01}^{-1} A T_{01}=\left[\begin{array}{ccccc}<br>
+0 &amp; 1 &amp; 0 &amp; \cdots &amp; 0 \<br>
+0 &amp; 0 &amp; 1 &amp; \cdots &amp; 0 \<br>
+0 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 \<br>
+\vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots \<br>
+-\alpha_0 &amp; -\alpha_1 &amp; -\alpha_2 &amp; \cdots &amp; -\alpha_{n-1}<br>
+\end{array}\right],\$$<br>
+控制矩阵$\tilde { b } = T <em>{ 01 } ^ { - 1 } b = \left[ \begin{array} { c } { \beta _ { 0 } } \ { \beta _ { 1 } } \ { \vdots } \ { \beta _ { n \cdot 1 } } \end{array} \right],$<br>
+输出矩阵$\tilde { c } = c T</em> { 01 } = \left[ \begin{array} { l l l l l } { 1 } &amp; { 0 } &amp; { 0 } &amp; { \cdots } &amp; { 0 } \end{array} \right]<br>
+$</p>
+<h5 id="能观标准-mathrm-II-型">能观标准$\mathrm{II}$型</h5>
+<p>若线性定常系统$\left{\begin{aligned}<br>
+\dot x&amp;=Ax+bu\<br>
+y&amp;=cx<br>
+\end{aligned}\right.$是能观的，则存在非奇异变换$x=T_{02}\tilde{x}$使得状态空间表达式转换为$\left{\begin{aligned}<br>
+\dot{\tilde x}&amp;=A\tilde x+\tilde bu\<br>
+y&amp;=\tilde c\tilde x<br>
+\end{aligned}\right.$，其中：<br>
+线性变换后的状态矩阵<br>
+$$<br>
+A= \left[ \begin{array} { c c c c c } { 0 } &amp; { 0 } &amp; { \cdots } &amp; { 0 } &amp; { - \alpha _ { 0 } } \ { 1 } &amp; { 0 } &amp; { \cdots } &amp; { 0 } &amp; { - \alpha _ { 1 } } \ { 0 } &amp; { 1 } &amp; { \cdots } &amp; { 0 } &amp; { - \alpha _ { 2 } } \ { \vdots } &amp; { \vdots } &amp; { \cdots } &amp; { \vdots } &amp; { \vdots } \ { 0 } &amp; { 0 } &amp; { \cdots } &amp; { 1 } &amp; { - \alpha _ { n - 1 } } \end{array} \right],\<br>
+$$<br>
+变换矩阵<br>
+$$<br>
+T_ { 02 } ^ { - 1 } = \left[ \begin{array} { c c c c c } { 1 } &amp; { \alpha _ { n - 1 } } &amp; { \cdots } &amp; { \alpha _ { 2 } } &amp; { \alpha _ { 1 } } \ { 0 } &amp; { 1 } &amp; { \cdots } &amp; { \alpha _ { 3 } } &amp; { \alpha _ { 2 } } \ { \vdots } &amp; { \vdots } &amp; { \cdots } &amp; { \vdots } &amp; { \vdots } \ { 0 } &amp; { 0 } &amp; { \cdots } &amp; { 1 } &amp; { \alpha _ { n - 1 } } \ { 0 } &amp; { 0 } &amp; { \cdots } &amp; { 0 } &amp; { 1 } \end{array} \right] \cdot \left[ \begin{array} { c } { c A ^ { n - 1 } } \ { c A ^ { n - 2 } } \ { \vdots } \ { c A } \ { c } \end{array} \right],\<br>
+$$<br>
+控制矩阵$<br>
+\tilde { b } = T <em>{ 02 } ^ { - 1 } b = \left[ \begin{array} { c } { \beta _ { 0 } } \ { \beta _ { 1 } } \ { \vdots } \ { \beta _ { n - 1 } } \end{array} \right],$<br>
+输出矩阵$\tilde c=cT</em>{02}=\begin{bmatrix}<br>
+0&amp;0&amp;0&amp;\cdots&amp;1<br>
+\end{bmatrix}$</p>
+<h2 id="6-李雅普诺夫稳定">6 李雅普诺夫稳定</h2>
+<p>设所研究系统的非齐次方程为$\dot x=f(x,t)$一般为时变非线性函数，当方程中不显含$x$时，则为定常非线性系统。<br>
+设该方程在给定初始条件$(x_0,t_0)$下有唯一解：$x=\Phi(t;x_0,t_0)$。其中$x_0=\Phi(t_0;x_0,t_0)$为$x_0$在初始时刻$t_0$时的状态，而$t$是从$t_0$开始观察的时间变量，由此我们可以描述从初始条件$(t_0,x_0)$出发的一条状态运动的轨迹。</p>
+<h3 id="6-1-平衡状态">6.1 平衡状态</h3>
+<p>若存在矢量$x_e$，使得$\forall t,f(x_e,t)=0$，则称$x_e$为平衡状态。而由于平衡状态的各分量不随时间变化，若已知状态方程，则令$\dot x=0$,求得解$x$即为平衡状态。<br>
+值得注意的是，对于任意一个系统而言，不一定存在平衡点，即使存在，也不一定是唯一的。并且由于任意一个已知的平衡状态，都可以通过坐标变换将其移动到坐标原点，因此我们在讨论平衡点或稳定性时，可以仅讨论系统在坐标原点的平衡点。</p>
+<h3 id="6-2-稳定性">6.2 稳定性</h3>
+<h4 id="6-2-1-相关的基本概念">6.2.1 相关的基本概念</h4>
+<p>欧几里得范数：在$n$维状态空间中，欧几里得范数可表示为$||x-x_e||=[(x_1-x_{e1})^2+(x_2-x_{e2})^2+\cdots+(x_n+x){en}^2]^{\frac12}$</p>
+<p>距离：若用$||x-x_e||$表示状态矢量$x$与平衡状态$x_e$的距离，用点集$s(\varepsilon)$表示以$x_e$为中心$\varepsilon$为半径的超球体，那么$x\in \varepsilon$可以表示为$||x-x_e||&lt;&lt;\varepsilon$。</p>
+<p>领域：当$\varepsilon$足够小，即可称$s(\varepsilon)$为$x_e$的领域。因此若有$x_0\in s(\delta)$，则意味着初始偏差$||x_0-x_e||&lt;&lt;\delta$。同理，若状态空间方程的解$\Phi(t;x_0,t_0)$位于球形领域$s(\varepsilon)$内，便有平衡状态偏差$||\Phi(t;x_0,t_0)-x_e||&lt;&lt;\varepsilon,t\geq t_0$。因此在系统中初态$x_0$或短暂扰动引起的自由响应应是有界的。</p>
+<h4 id="6-2-2-稳定性的定义">6.2.2 稳定性的定义</h4>
+<p>系统稳定性是指系统的输出是否在输入变化时保持相对稳定，通常是指系统的本振响应（输入和输出之间的时间关系）是否稳定，如果系统的本振响应稳定，则系统可以通过控制参数来抑制输入变化对输出的影响，从而保持系统的稳定性。<br>
+<a href="#fig9">图9</a>直观地展示了系统的稳定性与范围定义。<br>
+<span id="fig9"></span></p>
+<center>
+<img src="./ModernControlTheory/稳定.png"/>
+图9
+</center>
+<p>系统的稳定性可以分为以下几类：李雅普诺夫意义下的稳定、渐近稳定、大范围渐近稳定以及不稳定。</p>
+<h4 id="6-2-3-李雅普诺夫稳定">6.2.3 李雅普诺夫稳定</h4>
+<p>李亚普诺夫稳定如<a href="#fig10">图10</a>所示<br>
+<span id="fig10"></span></p>
+<center>
+<img src="./ModernControlTheory/李雅普诺夫稳定.png">
+图10
+</center>
+<p>如果系统对任意选定的实数$\varepsilon&gt;0$都对应存在另一个实数$\delta(\varepsilon,t_0)&gt;0$时，从任意初始状态$x_0$出发的解都满足$||x(t)-x_e||\leq \varepsilon,t_0&lt;t&lt;\infin$，则称平衡状态$x_e$为李雅普诺夫意义下的稳定。<br>
+实数$\delta$与$\varepsilon$有关，一般情况下也与$t_0$有关。当实数$\delta$与$\varepsilon$有关而与$t_0$无关时，我们称平衡状态$x_e$为一致稳定。</p>
+<h4 id="6-2-4-渐近稳定">6.2.4 渐近稳定</h4>
+<p>渐近稳定如<a href="#fig11">图11</a>所示。<br>
+<span id="fig11"></span></p>
+<center>
+<img src="./ModernControlTheory/渐近稳定.png">
+图11
+</center>
+<p>当平衡状态$x_e$稳定，且当$t$无限增长时，轨线不仅不超出$s(\varepsilon)$，最终还收敛于$x_e$，则称平衡状态$x_e$是渐近稳定的。</p>
+<h4 id="6-2-5-大范围渐近稳定">6.2.5 大范围渐近稳定</h4>
+<p>大范围渐近稳定相比于渐近稳定的区别如<a href="#fig12">图12</a>所示。<br>
+<span id="fig12"></span></p>
+<center>
+<img src="./ModernControlTheory/大范围渐近稳定.png">
+图12
+</center>
+<p>当平衡状态$x_e$是稳定的,且状态空间中所有初始状态出发的轨线都具有渐近稳定性,就可以称平衡状态$x_e$是大范围渐近稳定的</p>
+<h4 id="6-2-6-不稳定">6.2.6 不稳定</h4>
+<p>不稳定状态如<a href="#fig13">图13</a>所示<br>
+<span id="fig13"></span></p>
+<center>
+<img src="./ModernControlTheory/不稳定.png">
+图13
+</center>
+<p>若$\varepsilon&gt;0,\delta&gt;0$,无论$\delta$多么小,只要$s(\delta)$内出发的状态轨线至少有一个轨线越过$s(\varepsilon)$，则称平衡状态$x_e$不稳定。</p>
+<h3 id="6-3-线性系统的稳定判据">6.3 线性系统的稳定判据</h3>
+<p>有线性定常系统$\Sigma:(A,b,c){\begin{aligned}<br>
+\dot x&amp;=Ax+bu\<br>
+y&amp;=cx<br>
+\end{aligned}$，对于平衡状态$x_e=0$渐近稳定的充要条件为矩阵$A$的所有特征根均具有负实部，此时系统为状态稳定。</p>
+<p>当系统对于有界输入$u$所引起的输出$y$有界时，系统为输出稳定，线性定常系统输出稳定的充要条件是传递函数的极点全部位于$s$的左半平面。</p>
+<p>状态不稳定时，输出不一定不稳定，但是当系统的传递函数不出现零极对消的现象，且$A$的特征值和传递函数的极点相同时，状态稳定与输出稳定是一致的。</p>
+<h3 id="6-4-非线性系统的稳定性判据">6.4 非线性系统的稳定性判据</h3>
+<h4 id="6-4-1-间接法（间接法）判断">6.4.1 间接法（间接法）判断</h4>
+<p>令系统的状态方程为：$\dot x=f(x,t)$，满足：</p>
+<ol>
+<li>$f(x,t)$对$x$具有连续的偏导数</li>
+<li>$f(x,t)$为与$x$同维的矢量函数（函数矩阵）</li>
+<li>$x_e$为平衡状态</li>
+</ol>
+<p>此时我们讨论系统在$x_e$处的稳定性。我们先将线性矢量函数$f(x,t)$在$x_e$领域内进行泰勒展开。<br>
+$$<br>
+\dot x=\dot x_e+\frac{\partial f(x,t)}{\partial x}(x-x_e)+\underbrace{\mathbf{R}(x)}<em>{高阶导数项}<br>
+$$<br>
+令$\Delta x=x-x_e$，则$\dot x-\dot x_e=\frac{\partial f(x,t)}{\partial x}(x-x_e)+\mathbf{R}$，可得$\Delta \dot x=A\Delta x$，其中雅各比矩阵<br>
+$$<br>
+A=\frac{\partial f}{\partial x}|</em>{x=x_e}<br>
+=\left[\begin{array}{cccc}<br>
+\frac{\partial f_{1}}{\partial x_{e1}} &amp; \frac{\partial f_{1}}{\partial x_{e2}} &amp; \cdots &amp; \frac{\partial f_{1}}{\partial x_{en}} \<br>
+\frac{\partial f_{2}}{\partial x_{e1}} &amp; \frac{\partial f_{2}}{\partial x_{e2}} &amp; \cdots &amp; \frac{\partial f_{2}}{\partial x_{en}} \<br>
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \<br>
+\frac{\partial f_{n}}{\partial x_{e1}} &amp; \frac{\partial f_{n}}{\partial x_{e2}} &amp; \cdots &amp; \frac{\partial f_{n}}{\partial x_{en}}<br>
+\end{array}\right]<br>
+$$</p>
+<p>非线性系统的稳定性根据$A$的特征值进行判断：</p>
+<ol>
+<li>$A$的特征值都具有负实部时，系统在平衡状态$x_e$处渐近稳定，其稳定性与$\mathbf{R}(x)$无关。</li>
+<li>$A$的特征值至少有一个具有正实部时，在$x_e$处不稳定。</li>
+<li>$A$的特征值至少有一个的实部为零时，此时处于临界状态，稳定性与$\mathbf{R}(x)$有关。</li>
+</ol>
+<h4 id="6-4-2-第二法（直接法）判断">6.4.2 第二法（直接法）判断</h4>
+<p>从系统的能量角度出发，借助李雅普诺夫函数直接判断系统的平衡状态稳定性。当一个系统被激励后，其存储的能量随着时间的推移逐渐衰减，达到平衡状态时，能量达到最小值，这个平衡状态是渐近稳定的。反之，不断从外界吸收能量，储能越来越大，那么这个平衡状态是不稳定的。</p>
+<p>李雅普诺夫函数是一个正定的标量函数，也是一个虚构的广义能量函数，它通过能量函数对时间的导数的符号来判断稳定性。<br>
+令系统的状态方程为$\dot x=f(x)$，平衡状态为$x_e=0$，满足$f(x_e)=0$，如果存在一个标量函数$V(x)$满足：</p>
+<ol>
+<li>$V(x)$对所有$x$都具有连续的一阶偏导数。</li>
+<li>$V(x)$是正定的，即$\left{\begin{aligned}<br>
+x=0,V(x)=0\<br>
+x\neq 0,V(x)&gt;0<br>
+\end{aligned}\right.$</li>
+</ol>
+<p>就可以根据$\dot V(x)$判断系统的稳定性</p>
+<ol>
+<li>
+<p>$\dot V(x)$为半负定，则$x_e$在李雅普诺夫意义下稳定。（稳定判据）</p>
+</li>
+<li>
+<p>$\dot V(x)$为负定，则$x_e$为渐近稳定<br>
+$<br>
+\left.<br>
+\begin{aligned}<br>
+\left.<br>
+\begin{array}{l}<br>
+\dot{V}(x) \text { 为半负定 } \<br>
+x\left(t_{0}\right) \neq 0 \<br>
+x \neq 0 \Rightarrow \dot{V}(x) \not \equiv 0<br>
+\end{array}\right}\Rightarrow x_e渐近稳定\<br>
+||x||\rightarrow\infty\Rightarrow V(x)\rightarrow\infty<br>
+\end{aligned}<br>
+\right}\Rightarrow大范围渐近稳定<br>
+$</p>
+</li>
+<li>
+<p>$\dot V(x)为正定$，系统不稳定</p>
+</li>
+</ol>
+<p>李雅普诺夫步骤如下：</p>
+<ol>
+<li>构造$V(x)$二次型。</li>
+<li>求$\dot V(x)$，并代入状态方程。</li>
+<li>判断$V(x)$定号性。</li>
+<li>判断非零情况下，$\dot V[x(t;t_0,x_0)]$是否恒为零。</li>
+</ol>
+<p>令$\dot V(x,t)\equiv 0$</p>
+<ol>
+<li>若$x\neq 0,\dot V(x,t)$成立，则在李雅普诺夫意义下稳定。</li>
+<li>若仅$x=0,\dot V(x,t)\equiv0$成立，则为渐近稳定。</li>
+</ol>
+<p>李雅普诺夫函数第二法判断的依据是充分条件，如果能找到李雅普诺夫函数就能对系统做出肯定的判断，但是找不到李雅普诺夫函数无法做出否定的结论。除此之外，在李雅普诺夫函数的细节上我们有如下讨论：</p>
+<ol>
+<li>$V(x)$是正定的标量函数，且对$x$应具有连续的一阶偏导数。</li>
+<li>对于一个给定的系统，$V(x)$是可以找到的，通常非唯一，但不影响结论的一致性。</li>
+<li>$V(x)$的最简单形式是二次型函数，但不一定都是简单的二次型。</li>
+<li>如果$V(x)$的最简单形式可以表示成标准二次型，$V(x)$就表示从远点到$x$的距离。其中$V(x)$表征了系统相对原点的速度。</li>
+<li>$V(x)$函数只是表示系统在平衡点附近某领域内局部运动的稳定情况，丝毫不提供域外运动的任何信息。</li>
+<li>由于构造$V(x)$函数的过程较为复杂，因此一般在用其他方法无效或难以判别的问题时才会考虑李雅普诺夫第二法。</li>
+</ol>
+<h2 id="7-线性反馈控制系统">7 线性反馈控制系统</h2>
+<p>线性反馈控制系统的基本结构是由受控对象和反馈控制器两部分构成的闭环系统，与经典控制理论的区别是在经典控制理论中的反馈是输出反馈，而现代控制理论中的反馈是状态反馈，相对而言能提供更丰富的状态信息和可供选择的自由度，使得系统拥有更优异的性能。</p>
+<h3 id="7-1-状态反馈">7.1 状态反馈</h3>
+<p>状态反馈的框图如<a href="#fig14">图14</a>所示。<br>
+<span id="fig14"></span></p>
+<center>
+<img src="./ModernControlTheory/状态反馈.png"/>
+图14
+</center>
+<p>反馈系统是将系统的每一个状态变量乘以相应的反馈系数并且反馈到输入端，与参考输入相加形成控制律作为受控系统的控制输入。图中受控系统的状态空间表达式为：<br>
+$$<br>
+\left{<br>
+\begin{aligned}<br>
+\dot x=Ax+Bu\quad x\in \mathbf{R}^n;u\in \mathbf{R}^r;y\in \mathbf{R}^m\<br>
+y=Cx+Du\quad A_{n\times n},B_{n\times r},C_{m\times n},D_{m\times r}<br>
+\end{aligned}<br>
+\right.<br>
+$$<br>
+若$D=0$，则受控系统$<br>
+\left{<br>
+\begin{aligned}<br>
+\dot x&amp;=Ax+Bu\y&amp;=Cx<br>
+\end{aligned}<br>
+\right.<br>
+$简记为$\Sigma_0=(A,B,C)$。<br>
+状态控制律为$u=Kx+v$。其中$r\times n$维矩阵$K$为状态反馈矩阵，$r\times 1$维矩阵$v$为参考输入。<br>
+将$U=Kx+v$代入系统方程，整理可得<br>
+$$<br>
+\left{<br>
+\begin{aligned}<br>
+\dot x&amp;=(A+BK)x+Bv\y&amp;=(C+DK)x+Dv<br>
+\end{aligned}<br>
+\right.<br>
+$$<br>
+若$D=0$，则上式为$<br>
+\left{<br>
+\begin{aligned}<br>
+\dot x&amp;=(A+BK)x+Bv\y&amp;=Cx<br>
+\end{aligned}<br>
+\right.<br>
+$<br>
+简记作<br>
+$$<br>
+\Sigma_K=((A+BK),B,C)<br>
+$$<br>
+则闭环系统的传递函数矩阵为<br>
+$$<br>
+W_k(s)=C\left[sI-(A+BK)\right]^{-1}B<br>
+$$</p>
+<p>相比于开环系统，$K$的引入并不增加系统的维数，并且可以通过$K$的选择自由改变闭环系统的特征值，使得系统获得所要求的性能。</p>
+<h3 id="7-2-输出反馈">7.2 输出反馈</h3>
+<p>输出反馈的系统框图如<a href="#fig15">图15</a>所示。<br>
+<span id="fig15"></span></p>
+<center>
+<img src="./ModernControlTheory/输出反馈.png"/>
+图15
+</center>
+<p>采用输出矢量$y$构成线性反馈律，将输出信号$y$乘上相应的反馈系数$H$反馈到输入$u$。<br>
+受控系统$\Sigma_0=(A,B,C,D)\left{\begin{aligned}<br>
+\dot x=Ax+Bu\y=Cx+Du<br>
+\end{aligned}<br>
+\right.$<br>
+则输入<br>
+$$<br>
+\begin{aligned}<br>
+u&amp;=Hy+v\&amp;=H(Cx+Du)+v\&amp;=HCx+HDu+v\&amp;=(I-HD)^{-1}(HCx+v)<br>
+\end{aligned}<br>
+$$<br>
+则得到新的状态空间表达式<br>
+$$<br>
+\left{<br>
+\begin{aligned}<br>
+\dot x&amp;=[A+B(I-HD)^{-1}HC]x+B(I-HD)^{-1}v\<br>
+y&amp;=[C+D(1-HD)^{-1}HC]x+D(1-HD)^{-1}v<br>
+\end{aligned}<br>
+\right.<br>
+$$<br>
+当$D=0$时，上式简化为<br>
+$$<br>
+\left{<br>
+\begin{aligned}<br>
+\dot x&amp;=[A+BHC]x+Bv\<br>
+y&amp;=Cx<br>
+\end{aligned}<br>
+\right.<br>
+$$<br>
+简记为$\Sigma_H=[(A+BHC),B,C]$。<br>
+输出反馈系统的传递函数阵为<br>
+$$<br>
+W_H(s)=C\left[sI-(A+BHC)\right]^{-1}B<br>
+$$<br>
+与开环系统相比，我们引入了反馈增益矩阵$H$，改变了闭环系统的特征值，系统的控制特性也由此发生改变。</p>
+<h3 id="7-3-两种反馈的对比">7.3 两种反馈的对比</h3>
+<ol>
+<li>输出反馈中的$HC$与状态反馈中的$K$相当。</li>
+<li>输出反馈只能相当于一部分状态反馈。$\Leftarrow m&lt;n，H$可供选择的自由度远比$K$小。</li>
+<li>只有当$C=I$时，$HC=K$，才能等同于全状态反馈。</li>
+<li>在不添加补偿器的条件下，输出反馈的效果显然不如状态反馈的系统性能好。</li>
+<li>输出反馈在技术实现上的方便性是其突出优点。</li>
+</ol>
+<h4 id="7-3-1-从输出到状态矢量导数-dot-x-反馈">7.3.1 从输出到状态矢量导数$\dot x$反馈</h4>
+<p>设受控系统$\Sigma_0=(A,B,C,D)\left{\begin{aligned}<br>
+\dot x=Ax+Bu\y=Cx+Du<br>
+\end{aligned}\right.$加入从输出$y$到状态矢量导数$\dot x$的反馈增益矩阵$G$得到<br>
+$$<br>
+\left{<br>
+\begin{aligned}<br>
+\dot x&amp;=Ax+Bu+Gy\<br>
+y&amp;=Cx+Du<br>
+\end{aligned}<br>
+\right.\Rightarrow<br>
+\left{<br>
+\begin{aligned}<br>
+\dot x&amp;=[A+GC]x+[B+GD]y\<br>
+y&amp;=Cx+Du<br>
+\end{aligned}<br>
+\right.<br>
+$$<br>
+若$D=0$，则可以简化为<br>
+$$<br>
+\left{<br>
+\begin{aligned}<br>
+\dot x&amp;=[A+GC]x+Bu\<br>
+y&amp;=Cx<br>
+\end{aligned}<br>
+\right.<br>
+$$<br>
+记作$\Sigma_G=[(A+GC),B,C]$。闭环系统的传递函数阵为<br>
+$$<br>
+W_G(s)=C\left[sI-(A+GC)\right]^{-1}B<br>
+$$<br>
+我们可以通过选择矩阵$G$来改变闭环系统的特征值从而影响系统的特性。</p>
+<h4 id="7-3-2-闭环系统的能控性和能观性">7.3.2 闭环系统的能控性和能观性</h4>
+<p>有如下定理：</p>
+<blockquote>
+<p>对于状态反馈，系统的能控型不变，但是能观性会受到影响。<br>
+对于输出反馈，受控系统的能控型和能观性都不变。</p>
+</blockquote>
+<p>由于对单输入单输出进行状态反馈会改变系统的极点，但是不影响系统的零点，因此可能会导致传递函数出现零极点对消现象，从而破坏系统能观性。</p>
+<p>对比开环系统和闭环系统的传递函数，开环系统的传递函数为<br>
+$$<br>
+W_0(s)=C\left[sI-A\right]^{-1}B=\frac{b_{n-1}s^{n-1}+b_{n-2}s^{n-2}+\cdots+b_0}{s^n+a_{n-1}s^{n-1}+\cdots+a_1s+a_0}<br>
+$$<br>
+闭环系统的传递函数为：<br>
+$$<br>
+\begin{aligned}<br>
+{W}<em>{k}(s)&amp;={c}[s {I}-({A}+{b K})]^{-1} {b}\&amp;=\frac{b</em>{n-1} s^{n-1}+\cdots+b_{1} s+b_{0}}{s^{n}+\left(a_{n-1}-k_{n-1}\right) s^{n-1}+\cdots+\left(a_{1}-k_{1}\right) s+\left(a_{0}-k_{0}\right)}<br>
+\end{aligned}<br>
+$$<br>
+分子多项式不变，分母每一项系数可通过选择$K$而改变，因此可能导致极点相消破坏其能观性。</p>
+<h3 id="7-4-极点配置问题">7.4 极点配置问题</h3>
+<p>对于控制系统而言，极点配置问题是非常重要的。极点在根平面上的分布对控制系统的性能有很大影响。因此，往往需要给定一组期望的极点，或根据时域指标转化成一组等价的期望极点。通过选择反馈控制矩阵，将闭环系统的极点配置在所期望的位置，可以获得所期望的动态性能。本文仅讨论单输入单输出系统中，在指定极点分布的情况下，如何选择反馈增益阵的问题。</p>
+<p>我们可以采用状态反馈和输出反馈来配置极点。对于状态反馈，采用状态反馈对系统$\Sigma_0(A,b,c)$任意配置极点的充要条件是$\Sigma_0$完全能控。对于输出反馈，对于完全能控的单输入单输出系统$\Sigma_0(A,b,c)$不能采用输出线性反馈实现闭环系统极点的任意配置，而对系统$\Sigma_0(A,b,c)$采用从输出到$\dot x$的线性反馈实现闭环极点任意配置的充要条件是$\Sigma_0$完全能观。</p>
+<h3 id="7-5-状态观测器">7.5 状态观测器</h3>
+<p>当确定受控对象是可控的，利用状态反馈配置极点时，需用传感器测量出状态变量以形成反馈，但传感器通常用来测量输出，许多中间状态变量不易测得，于是我们可以构造一个状态观测器（状态估计器、重构器），利用输出量和输入量来重构不可测量的状态。</p>
+<p><span id="fig16"></span></p>
+<center>
+<img src="./ModernControlTheory/状态观测器1.png"/>
+图16
+</center>
+<p><span id="fig17"></span></p>
+<center>
+<img src="./ModernControlTheory/状态观测器2.png"/>
+图17
+</center>
+<p><a href="#fig16">图16</a>$\Sigma_0$为一个可控系统，需要将状态$x$反馈给输入$u$，但是我们无法直接测得$x$，只能测得$y$，因此如<a href="#fig17">图17</a>所示，我们采用状态观测器$\hat\Sigma$，通过输入量$u$和输出量$y$作为其输入量，重构出状态变量$\hat x$，使得$\lim |x-\hat x|=0$，然后将$\hat x$代替$x$反馈给$u$。</p>
+<p>构造观测器应遵循以下原则：</p>
+<ol>
+<li>观测器$\hat \Sigma$的输入量是$\Sigma_0$的输入$u$和输出$y$。</li>
+<li>必须保证$\Sigma_0$广义上能观，即系统整体完全能观，或其子系统中不能观的部分渐近稳定，才能满足$\lim|x-\hat x|=0$。</li>
+<li>$\hat \Sigma$有足够宽的频带才能使得$\hat \Sigma$的输出$\hat x$能够以足够快的速度渐近$x$，但频带过宽也会导致抗干扰性变弱，因此要具体问题具体对待，根据实际情况进行取舍。</li>
+<li>$\hat\Sigma$在结构上的设计以简单为目标，以便于工程实现或物理实现，例如其维数可以尽可能低。</li>
+</ol>
+<p>我们从简单到复杂，从工程上容易实现到不容易实现介绍三种观测器。</p>
+<h4 id="7-5-1-基本观测器">7.5.1 基本观测器</h4>
+<p>若线性定常系统$\Sigma_0=(A,B,C)$完全能观，则其状态矢量$x$可由输入$u$和输出$y$进行重构。证明过程如下：</p>
+<ol>
+<li>将输出方程对$t$逐次求导得到<br>
+$$<br>
+\left{<br>
+\begin{array}{l}<br>
+y=C x \<br>
+\dot{y}-C B u=C A x \<br>
+\ddot{y}-C B \dot{u}-C A B u=C A^{2} x \<br>
+\vdots \<br>
+y^{(n-1)}-C B u^{(n-2)}-C A B u^{(n-3)}-\cdots-C A^{(n-2)} B u=C A^{(n-1)} x \<br>
+\end{array}<br>
+\right.<br>
+$$</li>
+<li>将各式左边用矢量表示，得到：<br>
+$$<br>
+z=\begin{bmatrix}<br>
+z_1 \z_2\ \vdots \z_{n}<br>
+\end{bmatrix}=\begin{bmatrix}<br>
+y\\dot{y}-C B u\\vdots\y^{(n-1)}-C B u^{(n-2)}-\cdots-C A^{(n-2)} B u<br>
+\end{bmatrix}=\begin{bmatrix}<br>
+C\CA\\vdots\CA^{(n-1)}<br>
+\end{bmatrix}\cdot x<br>
+$$<br>
+若系统完全能观，则rank $N=n$，则$x=N^{-1}z$</li>
+<li>由此可以构造新的系统$z$，其输入量为$u$和$y$，输出量为$z$，再根据$z$经过$N^{-1}$变换，求得$x=N^{-1}z$。系统框图如<a href="#fig18">图18</a>所示。<br>
+<span id="fig18"></span></li>
+</ol>
+<center>
+<img src="./ModernControlTheory/状态观测器系统框图.png"/>
+<p>图18</p>
+</center>
+<h4 id="7-5-2-开环观测器">7.5.2 开环观测器</h4>
+<p>这种观测器是有缺点的，系统$z$中包含$0$阶到$n-1$阶的微分器会大大加剧测量噪声对于状态估值的影响，因此这种观测器并没有工程价值。针对以上缺点我们提出如下对策：仿照系统$\Sigma_0=(A,B,C)$的结构设计一个相同的系统来观测状态$x$。</p>
+<p><span id="fig19"></span></p>
+<center>
+<img src="./ModernControlTheory/开环观测器.png"/>
+<p>图19</p>
+</center>
+<p>如<a href="#fig19">图19</a>所示，即为开环观测器，上半部分是原系统$\Sigma_0$，下半部分是一个相同的系统来观测状态$x$。但是这种观测器也存在不足：显然，如果需要使得观测器的输出$\hat x$严格等于系统开环观测器的实际状态$x$，则观测器的初始状态$\hat x_0$必须与系统的初始状态$x_0$完全相同，否则二者从初态就已经不相同，伴随着干扰和系统参数变化的不一致性，差别将会越来越大，预测结果也没有意义，然而想要保证系统初态与观测器初态完全一致是不可能的，因此开环观测器也同样没有工程价值。</p>
+<h4 id="7-5-3-渐近观测器">7.5.3 渐近观测器</h4>
+<p>在开环观测器的基础上，我们利用输出信息对状态误差$|x-\hat x|$进行校正，增加反馈校正通道，从而构成渐近状态观测器。渐近观测器的系统结构图如<a href="#fig20">图20</a>所示，其中蓝色部分为反馈校正通道。<br>
+<span id="fig20"></span></p>
+<center>
+<img src="./ModernControlTheory/渐近观测器.png"/>
+图20
+</center>
+<p>校正过程如下：</p>
+<ol>
+<li>在某一状态中$\hat x\neq x$，存在状态误差</li>
+<li>由于状态误差，观测器的输出$\hat y$与实际状态$y$不同</li>
+<li>由$\hat y=Cx$，得到输出误差$y-\hat y=y-Cx$</li>
+<li>经反馈矩阵$G$反馈送到观测器中的每个积分器的输入端，参与调整观测器的状态$\hat x$，使$x$以一定的精度和速度趋近于系统的真实状态x。</li>
+</ol>
+<p>我们可以根据状态结构图写出状态方程<br>
+$$<br>
+\hat x=A\hat x+Bu+Gy-GC\hat x<br>
+$$<br>
+其中$\hat x$为状态矩阵的观测矢量，使状态$x$的估计值，$\hat y$是状态观测器的输出矢量，$G$是状态观测器的输出误差反馈矩阵。将上式化简可得$\hat x=(A-GC)\hat x+Gy+Bu$，根据化简后的状态空间表达式我们可以得到新的状体空间结构图，如<a href="#fig21">图21</a>所示。<br>
+<span id="fig21"></span></p>
+<center>
+<img src="./ModernControlTheory/渐近观测器简化.png"/>
+图21
+</center>
+<p>新的结构图中有两个输入，即待观测系统的控制作用$u$和待观测系统中的输出$y$，有一个输出即为状态估计值$\hat x$。</p>
+<h3 id="7-6-结合状态观测器的状态反馈">7.6 结合状态观测器的状态反馈</h3>
+<p><span id="fig22"></span></p>
+<center>
+<img src="./ModernControlTheory/状态观测器1.png"/>
+图22 直接反馈系统
+</center>
+<p><span id="fig23"></span></p>
+<center>
+<img src="./ModernControlTheory/状态观测器2.png"/>
+图23 带观测器状态反馈系统
+</center>
+<p>我们先讨论利用真实状态$x$直接反馈和利用观测器估计状态$\hat x$进行反馈的异同。利用真实状态$x$直接反馈的系统结构图如<a href="#fig22">图22</a>所示，利用观测器估计状态$\hat x$进行反馈的系统结构图如<a href="#fig23">图23</a>所示。</p>
+<p>带状态观测器的状态反馈系统如<a href="#fig24">图24</a>所示。<br>
+<span id="fig24"></span></p>
+<center>
+<img src="./ModernControlTheory/带观测器的状态反馈结构图.png"/>
+<p>图24</p>
+</center>
+<p>从系统的结构和状态空间表达式来看，设能控能观的系统$\Sigma_0=\left{\begin{aligned}<br>
+\dot x&amp;=Ax+Bu\y&amp;=Cx<br>
+\end{aligned}\right.$，状态观测器$\Sigma_G=\left{\begin{aligned}<br>
+\dot{\hat x}&amp;=(A-GC)\hat x+Gy+Bu\\hat y&amp;=C\hat x<br>
+\end{aligned}\right.$,反馈控制律为$u=v+K\hat x$。整理可得整个闭环系统的状态空间表达式为<br>
+$$<br>
+\left{\begin{array}{l}<br>
+\dot{x}=A x+B K \hat{x}+B v \<br>
+\dot{\hat{x}}=G C x+(A-G C+B K) \hat{x}+B v \<br>
+y=C x<br>
+\end{array}\right.<br>
+$$<br>
+写作矩阵形式为<br>
+$$<br>
+\left[\begin{array}{c}<br>
+\dot{x} \<br>
+\dot{\hat{x}}<br>
+\end{array}\right]=\left[\begin{array}{cc}<br>
+A &amp; B K \<br>
+G C &amp; A-G C+B K<br>
+\end{array}\right]\left[\begin{array}{l}<br>
+x \<br>
+\hat{x}<br>
+\end{array}\right]+\left[\begin{array}{l}<br>
+B \<br>
+B<br>
+\end{array}\right] v\<br>
+y=\begin{bmatrix}<br>
+C&amp;0<br>
+\end{bmatrix}\cdot \begin{bmatrix}<br>
+x \\hat x<br>
+\end{bmatrix}<br>
+$$</p>
+<p>闭环系统有如下几个特性：</p>
+<ol>
+<li>闭环系统的分离性<br>
+对有观测的系统$\Sigma_K=(A+BK,B,C)$，$\Sigma_0$直接状态反馈系统的极点和观测器$\Sigma_G$的极点相互独立分离，可以进行单独选择。</li>
+<li>传递函数矩阵不变性<br>
+用观测器构成的状态反馈系统和状态直接反馈系统的传递函数相同</li>
+<li>观测器反馈与直接状态反馈的等效性<br>
+用观测器构成的状态方程$\dot {\tilde x}=(A-GC)x$可以通过选择$G$使得$A-GC$的特征根均具有负实部，因此可以得到$\lim \tilde x=0$，因此当$t\rightarrow\infty$时，观测器进入稳态，观测器反馈等效于直接状态反馈，并且可以选择$G$加速$\tilde x\rightarrow 0$，即$\hat x$渐近于真实状态$x$的速度。</li>
+</ol>
+<h2 id="总结">总结</h2>
+<p>本文介绍了现代控制理论中的知识点，包括系统的状态表达方程求解、系统的状态空间表达、系统的传递函数表达、系统的能控型和能观性、系统的状态反馈、系统的状态观测器、系统的状态反馈与观测器的结合等。本文的内容主要来自[1]，并且在此基础上进行了一些补充。</p>
+<h2 id="引用">引用</h2>
+<p>[1] <a target="_blank" rel="noopener" href="https://detail.tmall.com/item.htm?ali_refid=a3_430673_1006:1125575197:N:FfkiwNyLQhEG06QYe83G8g4uJYoGG5IP:ae733d8f84ee5bbdea7de0d5002730fe&amp;ali_trackid=1_ae733d8f84ee5bbdea7de0d5002730fe&amp;id=577893358117&amp;spm=a2e0b.20350158.31919782.1">现代控制理论 第三版；刘豹，唐万生</a></p>
+<h2 id="查重结果">查重结果</h2>
+<p><img src="./ModernControlTheory/%E6%9F%A5%E9%87%8D%E7%BB%93%E6%9E%9C.png" alt="查重结果"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://chenyv118.github.io">剑仁宇仔</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://chenyv118.github.io/2022/12/07/ModernControlTheory/">http://chenyv118.github.io/2022/12/07/ModernControlTheory/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://chenyv118.github.io" target="_blank">YuZai‘s Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/01/30/tips/" title="tips"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">tips</div></div></a></div><div class="next-post pull-right"><a href="/2022/11/22/Gaussian-Process-Regression/" title="高斯过程回归"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">高斯过程回归</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">剑仁宇仔</div><div class="author-info__description">好记性不如烂键盘</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">23</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/chenyv118"><i class="fab fa-github"></i><span>Follow Me!</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/chenyv118" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:3241218997@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#center-%E5%BC%95%E8%A8%80-center"><span class="toc-number">1.</span> <span class="toc-text">引言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#center-%E7%9B%AE%E5%BD%95-center"><span class="toc-number">2.</span> <span class="toc-text">目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">3.</span> <span class="toc-text">1 基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E7%B3%BB%E7%BB%9F%E8%A1%A8%E8%BE%BE"><span class="toc-number">3.1.</span> <span class="toc-text">1.1 系统表达</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-1-%E7%8A%B6%E6%80%81%E5%8F%98%E9%87%8F"><span class="toc-number">3.1.1.</span> <span class="toc-text">1.1.1 状态变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-2-%E7%8A%B6%E6%80%81%E7%9F%A2%E9%87%8F"><span class="toc-number">3.1.2.</span> <span class="toc-text">1.1.2 状态矢量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-3-%E7%8A%B6%E6%80%81%E7%A9%BA%E9%97%B4"><span class="toc-number">3.1.3.</span> <span class="toc-text">1.1.3 状态空间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-4-%E7%8A%B6%E6%80%81%E6%96%B9%E7%A8%8B"><span class="toc-number">3.1.4.</span> <span class="toc-text">1.1.4 状态方程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-5-%E8%BE%93%E5%87%BA%E6%96%B9%E7%A8%8B"><span class="toc-number">3.1.5.</span> <span class="toc-text">1.1.5 输出方程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-6-%E7%8A%B6%E6%80%81%E7%A9%BA%E9%97%B4%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">3.1.6.</span> <span class="toc-text">1.1.6 状态空间表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-7-%E7%8A%B6%E6%80%81%E7%BB%93%E6%9E%84%E5%9B%BE"><span class="toc-number">3.1.7.</span> <span class="toc-text">1.1.7 状态结构图</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%98%E5%88%B6%E6%AD%A5%E9%AA%A4"><span class="toc-number">3.1.7.1.</span> <span class="toc-text">绘制步骤</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%BE%E4%BE%8B"><span class="toc-number">3.1.7.2.</span> <span class="toc-text">举例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E9%9D%9E%E5%94%AF%E4%B8%80%E6%80%A7"><span class="toc-number">3.2.</span> <span class="toc-text">1.2 非唯一性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-%E7%B3%BB%E7%BB%9F%E4%B8%8D%E5%8F%98%E9%87%8F"><span class="toc-number">3.3.</span> <span class="toc-text">1.3 系统不变量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-1-%E7%89%B9%E5%BE%81%E5%80%BC"><span class="toc-number">3.3.1.</span> <span class="toc-text">1.3.1 特征值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-2-%E7%B3%BB%E7%BB%9F%E4%B8%8D%E5%8F%98%E9%87%8F"><span class="toc-number">3.3.2.</span> <span class="toc-text">1.3.2 系统不变量</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BC%A0%E9%80%92%E5%87%BD%E6%95%B0"><span class="toc-number">4.</span> <span class="toc-text">2 传递函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%8D%95%E8%BE%93%E5%85%A5%E5%8D%95%E8%BE%93%E5%87%BA%E4%B8%AD%E7%9A%84%E4%BC%A0%E9%80%92%E5%87%BD%E6%95%B0"><span class="toc-number">4.1.</span> <span class="toc-text">2.1 单输入单输出中的传递函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E5%A4%9A%E8%BE%93%E5%85%A5%E5%A4%9A%E8%BE%93%E5%87%BA%E4%B8%AD%E7%9A%84%E4%BC%A0%E9%80%92%E5%87%BD%E6%95%B0"><span class="toc-number">4.2.</span> <span class="toc-text">2.2 多输入多输出中的传递函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E5%AD%90%E7%B3%BB%E7%BB%9F%E8%BF%9E%E7%BB%93%E7%9A%84%E4%BC%A0%E9%80%92%E5%87%BD%E6%95%B0%E9%98%B5"><span class="toc-number">4.3.</span> <span class="toc-text">2.3 子系统连结的传递函数阵</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-1-%E5%B9%B6%E8%81%94"><span class="toc-number">4.3.1.</span> <span class="toc-text">2.3.1 并联</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-2-%E4%B8%B2%E8%81%94"><span class="toc-number">4.3.2.</span> <span class="toc-text">2.3.2 串联</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-3-%E5%8F%8D%E9%A6%88"><span class="toc-number">4.3.3.</span> <span class="toc-text">2.3.3 反馈</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-%E4%BC%A0%E9%80%92%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-number">4.4.</span> <span class="toc-text">2.4 传递函数的实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-1-%E9%9B%B6%E6%9E%81%E5%AF%B9%E6%B6%88"><span class="toc-number">4.4.1.</span> <span class="toc-text">2.4.1 零极对消</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-2-%E4%BC%A0%E9%80%92%E5%87%BD%E6%95%B0%E4%B8%AD%E6%B2%A1%E6%9C%89%E9%9B%B6%E7%82%B9%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-number">4.4.2.</span> <span class="toc-text">2.4.2 传递函数中没有零点的实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-3-%E4%BC%A0%E9%80%92%E5%87%BD%E6%95%B0%E4%B8%AD%E6%9C%89%E9%9B%B6%E7%82%B9%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-number">4.4.3.</span> <span class="toc-text">2.4.3 传递函数中有零点的实现</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%BA%A6%E6%97%A6%E6%A0%87%E5%87%86%E5%9E%8B%E7%9F%A9%E9%98%B5"><span class="toc-number">5.</span> <span class="toc-text">3 约旦标准型矩阵</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-A-%E4%B8%BA%E4%BB%BB%E6%84%8F%E5%9E%8B"><span class="toc-number">5.1.</span> <span class="toc-text">3.1 $A$为任意型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-A-%E4%B8%BA%E6%A0%87%E5%87%86%E5%9E%8B"><span class="toc-number">5.2.</span> <span class="toc-text">3.2 $A$为标准型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%BA%BF%E6%80%A7%E5%AE%9A%E5%B8%B8%E7%8A%B6%E6%80%81%E6%96%B9%E7%A8%8B"><span class="toc-number">6.</span> <span class="toc-text">4 线性定常状态方程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E7%BA%BF%E6%80%A7%E5%AE%9A%E5%B8%B8%E9%BD%90%E6%AC%A1%E7%8A%B6%E6%80%81%E6%96%B9%E7%A8%8B"><span class="toc-number">6.1.</span> <span class="toc-text">4.1 线性定常齐次状态方程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-1-%E7%BA%BF%E6%80%A7%E5%AE%9A%E5%B8%B8%E5%85%B6%E6%AC%A1%E7%8A%B6%E6%80%81%E6%96%B9%E7%A8%8B%E7%9A%84%E8%87%AA%E7%94%B1%E8%A7%A3"><span class="toc-number">6.1.1.</span> <span class="toc-text">4.1.1 线性定常其次状态方程的自由解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-2-%E7%8A%B6%E6%80%81%E8%BD%AC%E7%A7%BB%E7%9F%A9%E9%98%B5"><span class="toc-number">6.1.2.</span> <span class="toc-text">4.1.2 状态转移矩阵</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E7%BA%BF%E6%80%A7%E5%AE%9A%E5%B8%B8%E9%9D%9E%E9%BD%90%E6%AC%A1%E7%8A%B6%E6%80%81%E6%96%B9%E7%A8%8B"><span class="toc-number">6.2.</span> <span class="toc-text">4.2 线性定常非齐次状态方程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%83%BD%E6%8E%A7%E6%80%A7%E5%92%8C%E8%83%BD%E8%A7%82%E6%80%A7"><span class="toc-number">7.</span> <span class="toc-text">5 系统的能控性和能观性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-%E7%B3%BB%E7%BB%9F%E8%83%BD%E6%8E%A7%E5%9E%8B"><span class="toc-number">7.1.</span> <span class="toc-text">5.1 系统能控型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-1-%E7%BA%A6%E6%97%A6%E6%A0%87%E5%87%86%E5%9E%8B%E5%88%A4%E5%88%AB%E8%83%BD%E6%8E%A7%E6%80%A7"><span class="toc-number">7.1.1.</span> <span class="toc-text">5.1.1 约旦标准型判别能控性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-2-%E9%80%9A%E8%BF%87-A-%E3%80%81-B-%E7%9F%A9%E9%98%B5%E5%88%A4%E5%88%AB%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%83%BD%E6%8E%A7%E6%80%A7"><span class="toc-number">7.1.2.</span> <span class="toc-text">5.1.2 通过$A$、$B$矩阵判别系统的能控性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-3-%E9%80%9A%E8%BF%87%E4%BC%A0%E9%80%92%E6%96%B9%E7%A8%8B%E5%88%A4%E5%88%AB%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%83%BD%E6%8E%A7%E5%9E%8B"><span class="toc-number">7.1.3.</span> <span class="toc-text">5.1.3 通过传递方程判别系统的能控型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-%E7%B3%BB%E7%BB%9F%E8%83%BD%E8%A7%82%E6%80%A7"><span class="toc-number">7.2.</span> <span class="toc-text">5.2 系统能观性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-1-%E7%BA%A6%E6%97%A6%E6%A0%87%E5%87%86%E5%9E%8B%E5%88%A4%E5%88%AB%E8%83%BD%E8%A7%82%E6%80%A7"><span class="toc-number">7.2.1.</span> <span class="toc-text">5.2.1 约旦标准型判别能观性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-2-%E9%80%9A%E8%BF%87-A%E3%80%81C-%E5%88%A4%E6%96%AD%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%83%BD%E8%A7%82%E6%80%A7"><span class="toc-number">7.2.2.</span> <span class="toc-text">5.2.2 通过$A、C$判断系统的能观性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-%E8%83%BD%E6%8E%A7%E4%B8%8E%E8%83%BD%E8%A7%82%E7%9A%84%E5%AF%B9%E5%81%B6%E5%85%B3%E7%B3%BB"><span class="toc-number">7.3.</span> <span class="toc-text">5.3 能控与能观的对偶关系</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-1-%E4%BB%8E%E7%9F%A9%E9%98%B5%E7%BB%93%E6%9E%84%E4%BA%86%E8%A7%A3%E5%AF%B9%E5%81%B6%E7%B3%BB%E7%BB%9F"><span class="toc-number">7.3.1.</span> <span class="toc-text">5.3.1 从矩阵结构了解对偶系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-2-%E4%BB%8E%E7%BB%93%E6%9E%84%E5%9B%BE%E4%BA%86%E8%A7%A3%E5%AF%B9%E5%81%B6%E7%B3%BB%E7%BB%9F"><span class="toc-number">7.3.2.</span> <span class="toc-text">5.3.2 从结构图了解对偶系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-3-%E4%BB%8E%E4%BC%A0%E9%80%92%E5%87%BD%E6%95%B0%E7%9F%A9%E9%98%B5%E6%9D%A5%E7%9C%8B%E5%AF%B9%E5%81%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">7.3.3.</span> <span class="toc-text">5.3.3 从传递函数矩阵来看对偶系统的关系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-4-%E5%AF%B9%E5%81%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-number">7.3.4.</span> <span class="toc-text">5.3.4 对偶系统的性质</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-%E6%A0%87%E5%87%86%E5%9E%8B"><span class="toc-number">7.4.</span> <span class="toc-text">5.4 标准型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-1-%E5%8D%95%E8%BE%93%E5%85%A5%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%83%BD%E6%8E%A7%E6%A0%87%E5%87%86%E5%9E%8B"><span class="toc-number">7.4.1.</span> <span class="toc-text">5.4.1 单输入系统的能控标准型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%83%BD%E6%8E%A7%E6%A0%87%E5%87%86-mathrm-I-%E5%9E%8B"><span class="toc-number">7.4.1.1.</span> <span class="toc-text">能控标准$\mathrm{I}$型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%83%BD%E6%8E%A7%E6%A0%87%E5%87%86-mathrm-II-%E5%9E%8B"><span class="toc-number">7.4.1.2.</span> <span class="toc-text">能控标准$\mathrm{II}$型</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-2-%E5%8D%95%E8%BE%93%E5%87%BA%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%83%BD%E8%A7%82%E6%A0%87%E5%87%86%E5%9E%8B"><span class="toc-number">7.4.2.</span> <span class="toc-text">5.4.2 单输出系统的能观标准型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%83%BD%E8%A7%82%E6%A0%87%E5%87%86-mathrm-I-%E5%9E%8B"><span class="toc-number">7.4.2.1.</span> <span class="toc-text">能观标准$\mathrm{I}$型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%83%BD%E8%A7%82%E6%A0%87%E5%87%86-mathrm-II-%E5%9E%8B"><span class="toc-number">7.4.2.2.</span> <span class="toc-text">能观标准$\mathrm{II}$型</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E6%9D%8E%E9%9B%85%E6%99%AE%E8%AF%BA%E5%A4%AB%E7%A8%B3%E5%AE%9A"><span class="toc-number">8.</span> <span class="toc-text">6 李雅普诺夫稳定</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-%E5%B9%B3%E8%A1%A1%E7%8A%B6%E6%80%81"><span class="toc-number">8.1.</span> <span class="toc-text">6.1 平衡状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-%E7%A8%B3%E5%AE%9A%E6%80%A7"><span class="toc-number">8.2.</span> <span class="toc-text">6.2 稳定性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-1-%E7%9B%B8%E5%85%B3%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">8.2.1.</span> <span class="toc-text">6.2.1 相关的基本概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-2-%E7%A8%B3%E5%AE%9A%E6%80%A7%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-number">8.2.2.</span> <span class="toc-text">6.2.2 稳定性的定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-3-%E6%9D%8E%E9%9B%85%E6%99%AE%E8%AF%BA%E5%A4%AB%E7%A8%B3%E5%AE%9A"><span class="toc-number">8.2.3.</span> <span class="toc-text">6.2.3 李雅普诺夫稳定</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-4-%E6%B8%90%E8%BF%91%E7%A8%B3%E5%AE%9A"><span class="toc-number">8.2.4.</span> <span class="toc-text">6.2.4 渐近稳定</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-5-%E5%A4%A7%E8%8C%83%E5%9B%B4%E6%B8%90%E8%BF%91%E7%A8%B3%E5%AE%9A"><span class="toc-number">8.2.5.</span> <span class="toc-text">6.2.5 大范围渐近稳定</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-6-%E4%B8%8D%E7%A8%B3%E5%AE%9A"><span class="toc-number">8.2.6.</span> <span class="toc-text">6.2.6 不稳定</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-%E7%BA%BF%E6%80%A7%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%A8%B3%E5%AE%9A%E5%88%A4%E6%8D%AE"><span class="toc-number">8.3.</span> <span class="toc-text">6.3 线性系统的稳定判据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%A8%B3%E5%AE%9A%E6%80%A7%E5%88%A4%E6%8D%AE"><span class="toc-number">8.4.</span> <span class="toc-text">6.4 非线性系统的稳定性判据</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-4-1-%E9%97%B4%E6%8E%A5%E6%B3%95%EF%BC%88%E9%97%B4%E6%8E%A5%E6%B3%95%EF%BC%89%E5%88%A4%E6%96%AD"><span class="toc-number">8.4.1.</span> <span class="toc-text">6.4.1 间接法（间接法）判断</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-4-2-%E7%AC%AC%E4%BA%8C%E6%B3%95%EF%BC%88%E7%9B%B4%E6%8E%A5%E6%B3%95%EF%BC%89%E5%88%A4%E6%96%AD"><span class="toc-number">8.4.2.</span> <span class="toc-text">6.4.2 第二法（直接法）判断</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E7%BA%BF%E6%80%A7%E5%8F%8D%E9%A6%88%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F"><span class="toc-number">9.</span> <span class="toc-text">7 线性反馈控制系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-%E7%8A%B6%E6%80%81%E5%8F%8D%E9%A6%88"><span class="toc-number">9.1.</span> <span class="toc-text">7.1 状态反馈</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-%E8%BE%93%E5%87%BA%E5%8F%8D%E9%A6%88"><span class="toc-number">9.2.</span> <span class="toc-text">7.2 输出反馈</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-%E4%B8%A4%E7%A7%8D%E5%8F%8D%E9%A6%88%E7%9A%84%E5%AF%B9%E6%AF%94"><span class="toc-number">9.3.</span> <span class="toc-text">7.3 两种反馈的对比</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-3-1-%E4%BB%8E%E8%BE%93%E5%87%BA%E5%88%B0%E7%8A%B6%E6%80%81%E7%9F%A2%E9%87%8F%E5%AF%BC%E6%95%B0-dot-x-%E5%8F%8D%E9%A6%88"><span class="toc-number">9.3.1.</span> <span class="toc-text">7.3.1 从输出到状态矢量导数$\dot x$反馈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-3-2-%E9%97%AD%E7%8E%AF%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%83%BD%E6%8E%A7%E6%80%A7%E5%92%8C%E8%83%BD%E8%A7%82%E6%80%A7"><span class="toc-number">9.3.2.</span> <span class="toc-text">7.3.2 闭环系统的能控性和能观性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-4-%E6%9E%81%E7%82%B9%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98"><span class="toc-number">9.4.</span> <span class="toc-text">7.4 极点配置问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-5-%E7%8A%B6%E6%80%81%E8%A7%82%E6%B5%8B%E5%99%A8"><span class="toc-number">9.5.</span> <span class="toc-text">7.5 状态观测器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-5-1-%E5%9F%BA%E6%9C%AC%E8%A7%82%E6%B5%8B%E5%99%A8"><span class="toc-number">9.5.1.</span> <span class="toc-text">7.5.1 基本观测器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-5-2-%E5%BC%80%E7%8E%AF%E8%A7%82%E6%B5%8B%E5%99%A8"><span class="toc-number">9.5.2.</span> <span class="toc-text">7.5.2 开环观测器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-5-3-%E6%B8%90%E8%BF%91%E8%A7%82%E6%B5%8B%E5%99%A8"><span class="toc-number">9.5.3.</span> <span class="toc-text">7.5.3 渐近观测器</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-6-%E7%BB%93%E5%90%88%E7%8A%B6%E6%80%81%E8%A7%82%E6%B5%8B%E5%99%A8%E7%9A%84%E7%8A%B6%E6%80%81%E5%8F%8D%E9%A6%88"><span class="toc-number">9.6.</span> <span class="toc-text">7.6 结合状态观测器的状态反馈</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">10.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E7%94%A8"><span class="toc-number">11.</span> <span class="toc-text">引用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E9%87%8D%E7%BB%93%E6%9E%9C"><span class="toc-number">12.</span> <span class="toc-text">查重结果</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/24/butterfly/" title="butterfly主题">butterfly主题</a><time datetime="2023-08-24T04:21:43.000Z" title="发表于 2023-08-24 12:21:43">2023-08-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/23/hello-world/" title="Hello Hexo">Hello Hexo</a><time datetime="2023-08-23T13:11:47.026Z" title="发表于 2023-08-23 21:11:47">2023-08-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/21/NTK-PINN/" title="NTK-PINN">NTK-PINN</a><time datetime="2023-08-21T12:17:39.000Z" title="发表于 2023-08-21 20:17:39">2023-08-21</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/09/WeightAdapt/" title="权重调整">权重调整</a><time datetime="2023-08-09T02:15:02.000Z" title="发表于 2023-08-09 10:15:02">2023-08-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/06/15/tips-GAN/" title="tips-GAN">tips-GAN</a><time datetime="2023-06-15T01:36:14.000Z" title="发表于 2023-06-15 09:36:14">2023-06-15</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By 剑仁宇仔</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
